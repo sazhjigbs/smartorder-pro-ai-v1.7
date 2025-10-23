@@ -58,3 +58,13 @@ error: failed to push some refs to 'https://github.com/sazhjigbs/smartorder-pro-
 [2025-10-23 11:12:20] ❌ systemctl restart smartorder-dashboard.service → Failed to restart smartorder-dashboard.service: Unit smartorder-dashboard.service not found.
 [2025-10-23 11:12:20] ✅ Vérification terminée.
 [2025-10-23 11:12:20] ⬆️ Synchronisation Git bidirectionnelle…
+[2025-10-23 11:12:21] ✅ Sync & Guardian terminé. 💤 Pause 30 min avant prochaine vérification.
+[2025-10-23 11:42:21] === 🛡️ Guardian Sync actif ===
+[2025-10-23 11:42:21] 🔍 Vérification des services critiques…
+[2025-10-23 11:42:21] ❌ systemctl is-active smartorder-auto-executor.service → activating
+[2025-10-23 11:42:21] ⚠️ Service smartorder-auto-executor.service inactif — redémarrage
+[2025-10-23 11:42:21] ❌ systemctl is-active smartorder-dashboard.service → inactive
+[2025-10-23 11:42:21] ⚠️ Service smartorder-dashboard.service inactif — redémarrage
+[2025-10-23 11:42:21] ❌ systemctl restart smartorder-dashboard.service → Failed to restart smartorder-dashboard.service: Unit smartorder-dashboard.service not found.
+[2025-10-23 11:42:21] ✅ Vérification terminée.
+[2025-10-23 11:42:21] ⬆️ Synchronisation Git bidirectionnelle…

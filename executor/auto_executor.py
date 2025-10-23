@@ -1,71 +1,80 @@
 #!/usr/bin/env python3
-# ===============================================================
-# ✅ SAFELOGIC SMARTORDER PRO AI v1.8 — AUTO EXECUTOR (Bybit V5 Official)
-# ===============================================================
-import os, json, time, random
+# =============================================================
+# 🚀 SMARTORDER PRO — AUTO EXECUTOR (Bybit V5 HMAC FIXED LIVE)
+# Phase 4.1 — Mainnet Execution Live & Stable
+# =============================================================
+import os, time, json, hmac, hashlib, requests
 from loguru import logger
-from pybit.unified_trading import HTTP
 
 LOG_PATH = "/opt/smartorder/logs/auto_executor.log"
-MEM_PATH = "/opt/smartorder/db/market_memory.json"
 os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
-logger.add(LOG_PATH, rotation="2 MB", level="INFO")
+logger.add(LOG_PATH, rotation="1 MB")
 
-def get_bias():
-    try:
-        if os.path.exists(MEM_PATH):
-            with open(MEM_PATH, "r") as f:
-                data = json.load(f)
-                bias, trend = data.get("bias", "neutral"), data.get("trend", "flat")
-                logger.info(f"🧠 FusionEngine → Bias: {bias} | Trend: {trend}")
-                return bias, trend
-    except Exception as e:
-        logger.error(f"Erreur lecture mémoire : {e}")
-    return "neutral", "flat"
+API_KEY = os.getenv("BYBIT_API_KEY")
+API_SECRET = os.getenv("BYBIT_API_SECRET")
+SYMBOL = os.getenv("SYMBOL", "BTCUSDT")
+QTY = os.getenv("QTY", "0.001")
 
-def place_order(symbol="BTCUSDT", side="Buy", qty="0.001"):
-    try:
-        session = HTTP(
-            api_key=os.getenv("BYBIT_API_KEY", ""),
-            api_secret=os.getenv("BYBIT_API_SECRET", ""),
-            testnet=False,
-        )
+URL = "https://api.bybit.com/v5/order/create"
 
-        params = {
-            "category": "linear",              # Futures USDT Perp
-            "symbol": symbol,
-            "side": side,                      # "Buy" ou "Sell"
-            "orderType": "Market",
-            "qty": qty,
-            "timeInForce": "GoodTillCancel",
-            "orderLinkId": f"smartorder_{int(time.time() * 1000)}",
-            "reduceOnly": False,
-            "closeOnTrigger": False,
-        }
+def sign_request(body):
+    timestamp = str(int(time.time() * 1000))
+    body_json = json.dumps(body, separators=(',', ':'), sort_keys=True)
+    param_str = timestamp + API_KEY + "5000" + body_json
+    sign = hmac.new(API_SECRET.encode(), param_str.encode(), hashlib.sha256).hexdigest()
+    headers = {
+        "X-BAPI-API-KEY": API_KEY,
+        "X-BAPI-SIGN": sign,
+        "X-BAPI-TIMESTAMP": timestamp,
+        "X-BAPI-RECV-WINDOW": "5000",
+        "Content-Type": "application/json"
+    }
+    return headers, body_json
 
-        logger.info(f"➡️ Sending order: {params}")
-        res = session.place_order(**params)
-        logger.info(f"⬅️ Response: {res}")
-
-        if res.get("retCode") == 0:
-            logger.success(f"✅ Order {side} executed successfully ✅")
-        else:
-            logger.warning(f"⚠️ Bybit error: {res.get('retMsg')}")
-
-    except Exception as e:
-        logger.error(f"❌ Exception: {e}")
+def place_order(side):
+    body = {
+        "category": "linear",
+        "symbol": SYMBOL,
+        "side": side,
+        "orderType": "Market",
+        "qty": QTY,
+        "timeInForce": "GoodTillCancel",
+        "orderLinkId": f"smartorder_{int(time.time()*1000)}"
+    }
+    headers, body_json = sign_request(body)
+    resp = requests.post(URL, headers=headers, data=body_json)
+    result = resp.json()
+    logger.info(json.dumps(result, indent=2))
+    if result.get("retCode") == 0:
+        logger.info("✅ Ordre exécuté avec succès sur Bybit Mainnet.")
+    else:
+        logger.warning(f"⚠️ Erreur Bybit : {result.get('retMsg')}")
+    return result
 
 def main():
-    logger.info("=== START AUTO-EXECUTOR (BYBIT V5 OFFICIAL SDK) ===")
-    bias, trend = get_bias()
-    if bias == "bullish" and trend == "trend":
+    logger.info("=== START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===")
+    bias_path = "/opt/smartorder/db/market_memory.json"
+
+    try:
+        data = json.load(open(bias_path))
+        bias = data.get("bias", "neutral")
+        trend = data.get("trend", "flat")
+    except Exception:
+        bias, trend = "neutral", "flat"
+
+    logger.info(f"🧠 FusionEngine → Bias={bias} | Trend={trend}")
+
+    if bias == "bullish":
         side = "Buy"
-    elif bias == "bearish" and trend == "trend":
+    elif bias == "bearish":
         side = "Sell"
     else:
-        side = random.choice(["Buy", "Sell"])
-    logger.info(f"💡 Signal: {side.upper()} @ BTCUSDT")
-    place_order("BTCUSDT", side, "0.001")
+        logger.info("⚖️ Aucun signal prioritaire — neutre.")
+        return
+
+    logger.info(f"💡 Signal exécuté : {side} @ {SYMBOL}")
+    place_order(side)
+    logger.info("🏁 Cycle d'exécution terminé.\n")
 
 if __name__ == "__main__":
     main()

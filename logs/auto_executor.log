@@ -173,3 +173,957 @@
 [2025-10-23 10:48:33] 💡 Nouveau signal : BUY @ BTCUSDT
 [2025-10-23 10:48:33] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216513287}
 [2025-10-23 10:48:33] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+2025-10-23 11:14:40.509 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:14:40.510 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:14:40.510 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:14:45.736 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:14:45.737 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:14:45.737 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:14:50.954 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:14:50.954 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:14:50.954 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:14:56.194 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:14:56.195 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:14:56.195 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:01.455 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:15:01.455 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:01.455 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:06.702 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:15:06.702 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:06.702 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:11.953 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:15:11.954 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:11.954 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:17.201 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:15:17.201 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:17.201 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:22.467 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:15:22.467 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:22.468 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:27.702 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:15:27.702 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:27.702 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:32.950 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:15:32.951 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:32.951 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:38.196 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:15:38.196 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:38.196 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:43.452 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:15:43.452 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:43.452 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:48.724 | INFO     | __main__:main:50 - === START AUTO-EXECUTOR (BYBIT V5 HMAC) ===
+2025-10-23 11:15:48.724 | INFO     | __main__:main:60 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:48.724 | INFO     | __main__:main:70 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:50.622 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:15:50.623 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:50.623 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:15:55.948 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:15:55.948 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:15:55.948 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:01.206 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:01.207 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:01.207 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:06.456 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:06.456 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:06.456 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:11.711 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:11.711 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:11.711 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:16.960 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:16.960 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:16.960 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:22.211 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:22.211 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:22.211 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:27.447 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:27.448 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:27.448 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:32.694 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:32.695 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:32.695 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:37.945 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:37.945 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:37.945 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:43.200 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:43.201 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:43.201 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:48.456 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:48.457 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:48.457 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:53.734 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:53.734 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:53.734 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:16:58.950 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:16:58.951 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:16:58.951 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:04.190 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:04.191 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:04.191 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:09.461 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:09.461 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:09.461 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:14.720 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:14.720 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:14.720 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:19.954 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:19.954 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:19.954 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:25.232 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:25.233 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:25.233 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:30.467 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:30.467 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:30.467 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:35.728 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:35.728 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:35.728 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:40.954 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:40.954 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:40.954 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:46.201 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:46.202 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:46.202 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:51.453 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:51.453 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:51.453 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:17:56.743 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:17:56.743 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:17:56.743 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:01.962 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:01.962 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:01.963 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:07.202 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:07.202 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:07.202 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:12.468 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:12.469 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:12.469 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:17.701 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:17.701 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:17.701 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:22.957 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:22.957 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:22.957 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:28.199 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:28.199 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:28.199 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:33.453 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:33.453 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:33.453 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:38.706 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:38.707 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:38.707 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:43.940 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:43.940 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:43.940 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:49.199 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:49.200 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:49.200 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:54.452 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:54.452 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:54.452 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:18:59.743 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:18:59.743 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:18:59.743 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:04.955 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:04.955 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:04.956 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:10.213 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:10.214 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:10.214 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:15.458 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:15.458 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:15.458 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:20.677 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:20.677 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:20.677 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:25.959 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:25.959 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:25.959 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:31.210 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:31.211 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:31.211 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:36.463 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:36.463 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:36.463 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:41.709 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:41.710 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:41.710 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:46.953 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:46.953 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:46.954 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:52.221 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:52.221 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:52.221 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:19:57.454 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:19:57.454 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:19:57.454 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:02.745 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:02.746 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:02.746 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:07.962 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:07.962 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:07.962 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:13.200 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:13.200 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:13.201 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:18.453 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:18.453 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:18.454 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:23.700 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:23.700 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:23.700 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:28.945 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:28.945 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:28.945 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:34.196 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:34.197 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:34.197 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:39.455 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:39.456 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:39.456 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:44.712 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:44.712 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:44.712 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:49.987 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:49.987 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:49.987 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:20:55.199 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:20:55.199 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:20:55.199 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:00.465 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:00.465 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:00.465 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:05.721 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:05.721 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:05.721 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:10.958 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:10.958 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:10.958 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:16.203 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:16.204 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:16.204 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:21.447 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:21.447 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:21.447 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:26.700 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:26.700 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:26.700 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:31.948 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:31.948 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:31.949 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:37.207 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:37.208 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:37.208 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:42.456 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:42.457 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:42.457 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:47.703 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:47.704 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:47.704 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:52.957 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:52.957 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:52.957 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:21:58.204 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:21:58.204 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:21:58.204 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:03.455 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:03.455 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:03.456 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:08.722 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:08.723 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:08.723 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:13.956 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:13.956 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:13.956 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:19.208 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:19.208 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:19.209 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:24.449 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:24.450 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:24.450 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:29.702 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:29.702 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:29.702 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:34.951 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:34.952 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:34.952 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:40.223 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:40.223 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:40.223 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:45.474 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:45.475 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:45.475 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:50.721 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:50.722 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:50.722 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:22:55.953 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:22:55.954 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:22:55.954 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:01.228 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:01.229 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:01.229 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:06.465 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:06.465 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:06.465 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:11.700 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:11.701 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:11.701 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:16.951 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:16.952 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:16.952 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:22.229 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:22.230 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:22.230 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:27.456 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:27.457 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:27.457 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:32.714 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:32.715 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:32.715 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:37.960 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:37.960 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:37.960 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:43.229 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:43.230 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:43.230 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:48.465 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:48.467 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:48.467 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:53.707 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:53.707 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:53.707 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:23:58.957 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:23:58.957 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:23:58.958 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:04.203 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:04.203 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:04.203 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:09.454 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:09.454 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:09.454 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:14.721 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:14.721 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:14.722 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:19.970 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:19.970 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:19.970 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:25.211 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:25.212 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:25.212 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:30.446 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:30.447 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:30.447 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:35.701 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:35.701 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:35.702 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:40.970 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:40.970 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:40.970 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:46.224 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:46.224 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:46.224 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:51.455 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:51.456 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:51.456 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:24:56.709 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:24:56.709 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:24:56.709 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:01.968 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:01.969 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:01.969 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:07.204 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:07.204 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:07.204 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:12.458 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:12.458 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:12.458 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:17.717 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:17.718 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:17.718 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:22.972 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:22.973 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:22.973 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:28.201 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:28.201 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:28.201 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:33.455 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:33.456 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:33.456 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:38.701 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:38.701 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:38.701 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:43.949 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:43.949 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:43.949 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:49.205 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:49.206 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:49.206 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:54.465 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:54.466 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:54.466 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:25:59.696 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:25:59.696 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:25:59.696 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:04.951 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:04.951 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:04.951 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:10.206 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:10.207 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:10.207 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:15.450 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:15.451 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:15.451 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:20.704 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:20.705 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:20.705 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:25.948 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:25.948 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:25.948 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:31.225 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:31.226 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:31.226 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:36.464 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:36.464 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:36.464 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:41.702 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:41.702 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:41.702 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:46.973 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:46.973 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:46.973 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:52.210 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:52.210 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:52.210 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:26:57.448 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:26:57.448 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:26:57.448 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:02.705 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:02.705 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:02.706 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:07.972 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:07.973 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:07.973 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:13.201 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:13.201 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:13.201 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:18.461 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:18.462 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:18.462 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:23.703 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:23.704 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:23.704 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:29.037 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:29.037 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:29.037 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:34.216 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:34.216 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:34.216 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:39.457 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:39.457 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:39.457 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:44.726 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:44.726 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:44.726 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:49.947 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:49.947 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:49.947 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:27:55.213 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:27:55.214 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:27:55.214 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:00.465 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:00.465 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:00.465 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:05.705 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:05.706 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:05.706 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:10.959 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:10.959 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:10.959 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:16.223 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:16.223 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:16.223 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:21.456 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:21.456 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:21.456 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:26.704 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:26.704 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:26.704 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:31.962 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:31.962 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:31.962 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:37.205 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:37.206 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:37.206 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:42.456 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:42.456 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:42.456 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:47.695 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:47.695 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:47.695 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:52.955 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:52.956 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:52.956 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:28:58.223 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:28:58.223 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:28:58.223 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:03.447 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:03.447 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:03.448 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:08.706 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:08.706 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:08.706 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:13.953 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:13.953 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:13.953 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:19.195 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:19.196 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:19.196 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:24.462 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:24.462 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:24.462 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:29.705 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:29.705 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:29.705 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:34.991 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:34.992 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:34.992 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:40.220 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:40.221 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:40.221 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:45.450 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:45.450 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:45.450 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:50.703 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:50.703 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:50.703 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:29:55.954 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:29:55.955 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:29:55.955 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:01.207 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:01.208 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:01.208 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:06.476 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:06.477 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:06.477 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:11.709 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:11.709 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:11.709 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:16.949 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:16.949 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:16.950 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:22.208 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:22.208 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:22.209 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:27.479 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:27.480 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:27.480 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:32.706 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:32.706 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:32.706 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:37.962 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:37.962 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:37.963 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:43.201 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:43.201 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:43.201 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:48.451 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:48.452 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:48.452 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:53.701 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:53.701 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:53.701 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:30:58.978 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:30:58.979 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:30:58.979 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:04.212 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:04.213 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:04.213 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:09.453 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:09.454 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:09.454 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:14.706 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:14.706 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:14.706 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:19.952 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:19.952 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:19.952 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:25.199 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:25.199 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:25.199 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:30.460 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:30.461 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:30.461 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:35.673 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:35.674 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:35.674 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:40.957 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:40.957 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:40.957 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:46.209 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:46.209 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:46.209 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:51.443 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:51.443 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:51.443 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:31:56.717 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:31:56.718 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:31:56.718 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:01.947 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:01.947 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:01.947 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:07.229 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:07.230 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:07.230 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:12.467 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:12.468 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:12.468 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:17.703 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:17.703 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:17.703 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:22.946 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:22.946 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:22.946 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:28.209 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:28.210 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:28.210 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:33.455 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:33.455 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:33.455 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:38.714 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:38.715 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:38.715 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:43.970 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:43.970 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:43.970 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:49.282 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:49.282 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:49.282 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:54.448 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:54.449 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:54.449 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:32:59.704 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:32:59.704 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:32:59.704 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:04.958 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:04.958 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:04.958 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:10.210 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:10.210 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:10.211 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:15.450 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:15.451 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:15.451 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:20.704 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:20.704 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:20.704 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:25.954 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:25.954 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:25.954 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:31.199 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:31.199 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:31.199 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:36.469 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:36.470 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:36.470 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:41.707 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:41.707 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:41.707 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:46.958 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:46.959 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:46.959 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:52.212 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:52.212 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:52.212 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:33:57.450 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:33:57.451 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:33:57.451 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:02.703 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:02.703 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:02.703 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:07.941 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:07.942 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:07.942 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:13.205 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:13.205 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:13.206 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:18.474 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:18.474 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:18.474 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:23.707 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:23.708 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:23.708 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:28.961 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:28.961 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:28.961 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:34.215 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:34.215 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:34.215 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:39.457 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:39.458 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:39.458 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:44.712 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:44.713 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:44.713 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:49.953 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:49.953 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:49.953 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:34:55.223 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:34:55.223 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:34:55.224 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:00.469 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:00.470 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:00.470 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:05.707 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:05.708 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:05.708 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:10.949 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:10.949 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:10.949 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:16.213 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:16.213 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:16.213 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:21.458 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:21.459 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:21.459 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:26.702 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:26.703 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:26.703 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:31.948 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:31.948 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:31.948 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:37.212 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:37.212 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:37.212 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:42.465 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:42.465 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:42.465 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:47.726 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:47.727 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:47.727 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:52.972 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:52.972 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:52.972 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:35:58.199 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:35:58.199 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:35:58.199 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:03.473 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:03.473 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:03.473 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:08.704 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:08.704 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:08.704 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:13.958 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:13.958 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:13.958 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:19.210 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:19.210 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:19.210 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:24.451 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:24.451 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:24.451 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:29.725 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:29.726 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:29.726 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:34.954 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:34.955 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:34.955 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:40.203 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:40.204 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:40.204 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:45.457 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:45.457 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:45.458 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:50.696 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:50.697 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:50.697 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:36:55.946 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:36:55.946 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:36:55.946 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:01.208 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:01.208 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:01.208 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:06.451 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:06.452 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:06.452 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:11.719 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:11.719 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:11.719 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:16.960 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:16.961 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:16.961 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:22.209 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:22.210 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:22.210 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:27.458 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:27.458 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:27.458 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:32.709 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:32.709 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:32.709 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:37.962 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:37.963 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:37.963 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:43.205 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:43.206 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:43.206 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:48.456 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:48.456 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:48.456 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:53.695 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:53.696 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:53.696 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:37:58.962 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:37:58.962 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:37:58.962 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:04.199 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:04.200 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:04.200 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:09.452 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:09.452 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:09.452 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:14.710 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:14.711 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:14.711 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:19.969 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:19.969 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:19.969 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:25.209 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:25.209 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:25.209 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:30.446 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:30.447 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:30.447 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:35.725 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:35.725 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:35.725 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:40.968 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:40.969 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:40.969 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:46.214 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:46.214 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:46.215 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:51.464 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:51.464 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:51.465 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:38:56.702 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:38:56.702 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:38:56.702 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:01.967 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:01.968 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:01.968 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:07.211 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:07.211 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:07.211 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:12.495 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:12.496 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:12.496 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:17.713 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:17.713 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:17.713 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:22.956 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:22.957 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:22.957 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:28.205 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:28.205 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:28.205 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:33.455 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:33.455 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:33.456 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:38.720 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:38.720 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:38.721 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:43.954 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:43.954 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:43.954 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:49.220 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:49.221 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:49.221 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:54.456 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:54.457 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:54.457 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:39:59.718 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:39:59.719 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:39:59.719 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:04.955 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:04.955 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:04.955 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:10.204 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:10.205 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:10.205 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:15.472 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:15.473 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:15.473 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:20.702 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:20.703 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:20.703 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:25.953 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:25.953 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:25.953 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:31.211 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:31.211 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:31.211 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:36.475 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:36.475 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:36.475 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:41.699 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:41.699 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:41.699 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:46.957 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:46.958 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:46.958 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:52.198 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:52.198 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:52.198 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:40:57.465 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:40:57.465 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:40:57.465 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:02.706 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:02.706 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:02.706 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:07.947 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:07.948 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:07.948 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:13.212 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:13.212 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:13.212 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:18.456 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:18.456 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:18.457 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:23.720 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:23.721 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:23.721 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:28.959 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:28.959 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:28.960 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:34.203 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:34.203 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:34.203 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:39.459 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:39.460 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:39.460 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:44.700 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:44.701 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:44.701 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:49.962 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:49.962 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:49.962 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:41:55.203 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:41:55.203 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:41:55.203 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:42:00.454 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:42:00.455 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:42:00.455 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:42:05.710 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:42:05.711 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:42:05.711 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:42:10.957 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:42:10.957 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:42:10.958 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:42:16.217 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:42:16.217 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:42:16.217 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
+2025-10-23 11:42:21.475 | INFO     | __main__:main:55 - === START AUTO-EXECUTOR (BYBIT V5 HMAC – LIVE) ===
+2025-10-23 11:42:21.475 | INFO     | __main__:main:65 - 🧠 FusionEngine → Bias=bearish | Trend=range
+2025-10-23 11:42:21.476 | INFO     | __main__:main:75 - 💡 Signal exécuté : Sell @ BTCUSDT
