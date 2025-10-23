@@ -33,9 +33,9 @@ async def start_app():
     asyncio.create_task(update_data())
     runner = web.AppRunner(app)
     await runner.setup()
-    site = web.TCPSite(runner, "0.0.0.0", 8088)
+    site = web.TCPSite(runner, "0.0.0.0", 8181)
     await site.start()
-    print("🧠 SAFELOGIC MTF Sync Dashboard stable sur port 8088")
+    print("🧠 SAFELOGIC MTF Sync Dashboard stable sur port 8181")
     while True:
         await asyncio.sleep(3600)
 

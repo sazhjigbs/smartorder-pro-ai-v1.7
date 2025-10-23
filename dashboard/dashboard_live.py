@@ -23,5 +23,5 @@ def root():
     return JSONResponse(data)
 
 if __name__ == "__main__":
-    logger.info("🖥️ SAFELOGIC Dashboard Live lancé sur port 8088")
-    uvicorn.run(app, host="0.0.0.0", port=8088)
+    logger.info("🖥️ SAFELOGIC Dashboard Live lancé sur port 8181")
+    uvicorn.run(app, host="0.0.0.0", port=8181)
