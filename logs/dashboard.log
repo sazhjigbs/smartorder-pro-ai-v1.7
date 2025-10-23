@@ -28,3 +28,996 @@
 2025-10-23 12:42:12.156 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
 2025-10-23 12:42:17.434 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
 2025-10-23 12:42:22.780 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:42:24.620 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:42:29.919 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:42:35.199 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:42:40.528 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:42:45.771 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:42:51.050 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:42:56.542 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:01.770 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:07.055 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:12.543 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:18.039 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:23.543 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:28.814 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:34.281 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:39.520 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:44.773 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:50.013 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:43:55.274 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+2025-10-23 12:44:00.554 | INFO     | __main__:<module>:26 - 🖥️ SAFELOGIC Dashboard Live lancé sur port 8088
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+Traceback (most recent call last):
+  File "/opt/smartorder/dashboard/dashboard_mtf_sync.py", line 46, in <module>
+    web.run_app(app, port=8088)
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 526, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 519, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web.py", line 423, in _run_app
+    await site.start()
+  File "/opt/smartorder/venv/lib/python3.8/site-packages/aiohttp/web_runner.py", line 119, in start
+    self._server = await loop.create_server(
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1463, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8088): address already in use
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited
+🧠 SAFELOGIC MTF Sync Dashboard en ligne sur port 8088 …
+======== Running on http://0.0.0.0:8088 ========
+(Press CTRL+C to quit)
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<update_data() running at /opt/smartorder/dashboard/dashboard_mtf_sync.py:14>>
+/usr/lib/python3.8/asyncio/base_events.py:641: RuntimeWarning: coroutine 'update_data' was never awaited

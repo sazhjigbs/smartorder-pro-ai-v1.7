@@ -87,3 +87,10 @@ error: failed to push some refs to 'https://github.com/sazhjigbs/smartorder-pro-
 [2025-10-23 12:42:24] ⚠️ Service smartorder-dashboard.service inactif — redémarrage
 [2025-10-23 12:42:24] ✅ Vérification terminée.
 [2025-10-23 12:42:24] ⬆️ Synchronisation Git bidirectionnelle…
+[2025-10-23 12:42:26] ✅ Sync & Guardian terminé. 💤 Pause 30 min avant prochaine vérification.
+[2025-10-23 13:12:26] === 🛡️ Guardian Sync actif ===
+[2025-10-23 13:12:26] 🔍 Vérification des services critiques…
+[2025-10-23 13:12:26] ❌ systemctl is-active smartorder-auto-executor.service → activating
+[2025-10-23 13:12:26] ⚠️ Service smartorder-auto-executor.service inactif — redémarrage
+[2025-10-23 13:12:26] ✅ Vérification terminée.
+[2025-10-23 13:12:26] ⬆️ Synchronisation Git bidirectionnelle…
