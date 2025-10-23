@@ -1,0 +1,11 @@
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/sazhjigbs/smartorder-pro-ai-v1.7.git'
+[2025-10-23 10:22:22] ⚠️ Service smartorder-auto-executor.service inactif — redémarrage
+[2025-10-23 10:22:22] ⚠️ Service smartorder-dashboard.service inactif — redémarrage
+[2025-10-23 10:22:22] ✅ Sync & Guardian terminé.
+[2025-10-23 10:24:52] === 🛡️ Guardian Sync actif ===
+[2025-10-23 10:24:52] 🔍 Vérification des services critiques…
+[2025-10-23 10:24:52] === 🛡️ Guardian Sync actif ===
+[2025-10-23 10:24:52] 🔍 Vérification des services critiques…
+[2025-10-23 10:24:52] ✅ Vérification terminée.
+[2025-10-23 10:24:52] ⬆️ Synchronisation vers GitHub…
