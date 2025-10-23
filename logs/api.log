@@ -283105,3 +283105,36 @@ INFO:     196.119.34.108:63344 - "GET /status HTTP/1.1" 200 OK
 INFO:     196.119.34.108:60395 - "GET /status HTTP/1.1" 200 OK
 INFO:     196.119.34.108:55077 - "GET /status HTTP/1.1" 200 OK
 INFO:     196.119.34.108:55077 - "GET /status HTTP/1.1" 200 OK
+INFO:     196.119.34.108:58545 - "GET /status HTTP/1.1" 200 OK
+INFO:     196.119.34.108:58545 - "GET /status HTTP/1.1" 200 OK
+INFO:     196.119.34.108:58545 - "GET /status HTTP/1.1" 200 OK
+INFO:     196.119.34.108:58545 - "GET /status HTTP/1.1" 200 OK
+INFO:     196.119.34.108:58545 - "GET /status HTTP/1.1" 200 OK
+INFO:     196.119.34.108:58545 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38166 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52308 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40590 - "GET /status HTTP/1.1" 200 OK
+INFO:     196.119.34.108:51618 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52518 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43888 - "GET /status HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [821552]
+INFO:     Started server process [827160]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8191 (Press CTRL+C to quit)
+INFO:     127.0.0.1:60768 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33054 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33070 - "GET /positions HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33072 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33084 - "GET /positions HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45042 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45054 - "GET /positions HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54650 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54654 - "GET /positions HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43422 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43428 - "GET /positions HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40992 - "GET /status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40998 - "GET /positions HTTP/1.1" 404 Not Found
