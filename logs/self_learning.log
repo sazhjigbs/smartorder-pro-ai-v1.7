@@ -1,0 +1,12 @@
+2025-10-23 12:31:27.743 | INFO     | __main__:main:34 - === 🤖 Self-Learning Loop actif ===
+2025-10-23 12:31:27.745 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:31:27.745665', 'bias': 'neutral', 'pnl': -1.85, 'adjustment': '→'}
+2025-10-23 12:32:27.806 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:32:27.806375', 'bias': 'neutral', 'pnl': -1.76, 'adjustment': '→'}
+2025-10-23 12:33:27.808 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:33:27.808543', 'bias': 'neutral', 'pnl': -1.89, 'adjustment': '→'}
+2025-10-23 12:34:27.847 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:34:27.847666', 'bias': 'neutral', 'pnl': -1.12, 'adjustment': '→'}
+2025-10-23 12:35:27.908 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:35:27.908424', 'bias': 'neutral', 'pnl': -1.38, 'adjustment': '→'}
+2025-10-23 12:36:27.936 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:36:27.936584', 'bias': 'neutral', 'pnl': 1.64, 'adjustment': '→'}
+2025-10-23 12:37:27.956 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:37:27.956592', 'bias': 'neutral', 'pnl': -1.66, 'adjustment': '→'}
+2025-10-23 12:38:27.999 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:38:27.999298', 'bias': 'neutral', 'pnl': 1.12, 'adjustment': '→'}
+2025-10-23 12:39:28.060 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:39:28.060019', 'bias': 'neutral', 'pnl': -0.94, 'adjustment': '→'}
+2025-10-23 12:40:28.061 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:40:28.061038', 'bias': 'neutral', 'pnl': 1.06, 'adjustment': '→'}
+2025-10-23 12:41:28.122 | INFO     | __main__:main:56 - Feedback enregistré → {'time': '2025-10-23T12:41:28.121846', 'bias': 'neutral', 'pnl': 0.02, 'adjustment': '→'}

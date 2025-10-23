@@ -1,37 +1,37 @@
 #!/usr/bin/env python3
-import json, os, time, datetime, random
+# =============================================================
+# 🧠 SMARTORDER PRO – MARKET LEARNER
+# Phase 9 → Bias Sync Engine (AI Memory AutoFeed)
+# =============================================================
+import os, time, json, random
+from datetime import datetime
+from loguru import logger
 
-MEMORY_PATH = "/opt/smartorder/db/market_memory.json"
 LOG_PATH = "/opt/smartorder/logs/market_learner.log"
+MEMORY_PATH = "/opt/smartorder/db/market_memory.json"
+os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
+logger.add(LOG_PATH, rotation="1 MB")
 
-def log(msg):
-    ts = datetime.datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
-    os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
-    with open(LOG_PATH, "a") as f:
-        f.write(f"{ts} {msg}\n")
+def generate_bias():
+    # ⚙️ Simulation provisoire (en attendant MTF Analyzer live)
+    options = ["bullish", "bearish", "neutral"]
+    trend = random.choice(["trend", "range", "flat"])
+    bias = random.choices(options, weights=[0.4, 0.4, 0.2])[0]
+    vol = round(random.uniform(0.5, 2.5), 2)
+    return {"bias": bias, "trend": trend, "volatility": vol, "time": datetime.now().isoformat()}
 
-def load_memory():
-    if os.path.exists(MEMORY_PATH):
-        with open(MEMORY_PATH, "r") as f:
-            return json.load(f)
-    return {"bias": "neutral", "volatility": 0.0, "trend": "flat"}
-
-def save_memory(mem):
+def save_memory(data):
+    os.makedirs(os.path.dirname(MEMORY_PATH), exist_ok=True)
     with open(MEMORY_PATH, "w") as f:
-        json.dump(mem, f, indent=2)
-
-def analyze_market():
-    bias = random.choice(["bullish", "bearish", "neutral"])
-    vol = round(random.uniform(0.5, 3.5), 2)
-    trend = "trend" if vol > 2 else "range" if vol < 1 else "flat"
-    return {"bias": bias, "volatility": vol, "trend": trend}
+        json.dump(data, f, indent=2)
 
 def main():
+    logger.info("=== 🧠 MarketLearner Sync actif ===")
     while True:
-        memory = analyze_market()
-        save_memory(memory)
-        log(f"🧠 MarketMemory updated → {memory}")
-        time.sleep(1800)  # Mise à jour toutes les 30 min
+        data = generate_bias()
+        save_memory(data)
+        logger.info(f"MarketMemory updated → {data}")
+        time.sleep(30)
 
 if __name__ == "__main__":
     main()
