@@ -31,7 +31,7 @@ def main():
         memory = analyze_market()
         save_memory(memory)
         log(f"🧠 MarketMemory updated → {memory}")
-        time.sleep(1800)  # update toutes les 30 min
+        time.sleep(1800)  # Mise à jour toutes les 30 min
 
 if __name__ == "__main__":
     main()

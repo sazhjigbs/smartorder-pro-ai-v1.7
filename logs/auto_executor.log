@@ -1,0 +1,175 @@
+[2025-10-23 10:45:29] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:45:29] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:45:29] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:45:30] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216329534&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216329534]', 'result': {}, 'retExtInfo': {}, 'time': 1761216329960}
+[2025-10-23 10:45:30] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216329534&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216329534]
+[2025-10-23 10:45:35] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:45:35] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:45:35] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:45:35] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216335176&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216335176]', 'result': {}, 'retExtInfo': {}, 'time': 1761216335271}
+[2025-10-23 10:45:35] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216335176&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216335176]
+[2025-10-23 10:45:40] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:45:40] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:45:40] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:45:40] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216340687&orderType=Market&qty=0.001&side=Sell&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216340687]', 'result': {}, 'retExtInfo': {}, 'time': 1761216340788}
+[2025-10-23 10:45:40] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216340687&orderType=Market&qty=0.001&side=Sell&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216340687]
+[2025-10-23 10:45:46] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:45:46] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:45:46] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:45:46] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216346181&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216346181]', 'result': {}, 'retExtInfo': {}, 'time': 1761216346288}
+[2025-10-23 10:45:46] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216346181&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216346181]
+[2025-10-23 10:45:51] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:45:51] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:45:51] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:45:51] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216351693&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216351693]', 'result': {}, 'retExtInfo': {}, 'time': 1761216351795}
+[2025-10-23 10:45:51] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216351693&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216351693]
+[2025-10-23 10:45:57] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:45:57] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:45:57] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:45:57] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216357195&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216357195]', 'result': {}, 'retExtInfo': {}, 'time': 1761216357293}
+[2025-10-23 10:45:57] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216357195&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216357195]
+[2025-10-23 10:46:02] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:46:02] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:02] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:46:02] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216362682&orderType=Market&qty=0.001&side=Sell&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216362682]', 'result': {}, 'retExtInfo': {}, 'time': 1761216362780}
+[2025-10-23 10:46:02] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216362682&orderType=Market&qty=0.001&side=Sell&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216362682]
+[2025-10-23 10:46:08] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:46:08] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:08] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:46:08] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216368179&orderType=Market&qty=0.001&side=Sell&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216368179]', 'result': {}, 'retExtInfo': {}, 'time': 1761216368275}
+[2025-10-23 10:46:08] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216368179&orderType=Market&qty=0.001&side=Sell&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216368179]
+[2025-10-23 10:46:13] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:46:13] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:13] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:46:13] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216373675&orderType=Market&qty=0.001&side=Sell&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216373675]', 'result': {}, 'retExtInfo': {}, 'time': 1761216373775}
+[2025-10-23 10:46:13] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216373675&orderType=Market&qty=0.001&side=Sell&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216373675]
+[2025-10-23 10:46:19] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:46:19] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:19] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:46:19] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216379178&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216379178]', 'result': {}, 'retExtInfo': {}, 'time': 1761216379277}
+[2025-10-23 10:46:19] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216379178&orderType=Market&qty=0.001&side=Buy&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216379178]
+[2025-10-23 10:46:24] === START AUTO-EXECUTOR (MAINNET BYBIT V5 FUSION) ===
+[2025-10-23 10:46:24] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:24] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:46:24] ⬅️ Raw: {'retCode': 10004, 'retMsg': 'error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216384683&orderType=Market&qty=0.001&side=Sell&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216384683]', 'result': {}, 'retExtInfo': {}, 'time': 1761216384782}
+[2025-10-23 10:46:24] ⚠️ Erreur Bybit: error sign! origin_string[api_key=Ku72UcnPKDC0vBJOu7&category=linear&orderLinkId=smartorder_1761216384683&orderType=Market&qty=0.001&side=Sell&symbol=BTCUSDT&timeInForce=GoodTillCancel&timestamp=1761216384683]
+[2025-10-23 10:46:26] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:46:26] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:26] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:46:26] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216386307}
+[2025-10-23 10:46:26] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:46:31] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:46:31] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:31] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:46:31] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216391775}
+[2025-10-23 10:46:31] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:46:37] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:46:37] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:37] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:46:37] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216397287}
+[2025-10-23 10:46:37] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:46:42] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:46:42] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:42] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:46:43] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216403105}
+[2025-10-23 10:46:43] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:46:48] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:46:48] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:48] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:46:48] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216408534}
+[2025-10-23 10:46:48] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:46:53] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:46:53] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:53] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:46:54] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216414049}
+[2025-10-23 10:46:54] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:46:59] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:46:59] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:46:59] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:46:59] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216419524}
+[2025-10-23 10:46:59] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:04] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:04] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:04] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:47:05] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216425044}
+[2025-10-23 10:47:05] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:10] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:10] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:10] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:47:10] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216430549}
+[2025-10-23 10:47:10] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:15] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:15] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:15] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:47:16] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216436030}
+[2025-10-23 10:47:16] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:21] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:21] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:21] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:47:21] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216441520}
+[2025-10-23 10:47:21] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:26] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:26] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:26] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:47:27] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216447021}
+[2025-10-23 10:47:27] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:32] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:32] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:32] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:47:32] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216452523}
+[2025-10-23 10:47:32] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:37] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:37] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:37] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:47:38] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216458030}
+[2025-10-23 10:47:38] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:43] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:43] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:43] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:47:43] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216463526}
+[2025-10-23 10:47:43] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:48] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:48] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:48] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:47:49] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216469022}
+[2025-10-23 10:47:49] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:54] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:54] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:54] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:47:54] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216474539}
+[2025-10-23 10:47:54] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:47:59] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:47:59] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:47:59] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:48:00] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216480020}
+[2025-10-23 10:48:00] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:48:05] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:48:05] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:48:05] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:48:05] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216485536}
+[2025-10-23 10:48:05] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:48:10] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:48:10] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:48:10] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:48:11] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216491365}
+[2025-10-23 10:48:11] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:48:16] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:48:16] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:48:16] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:48:16] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216496783}
+[2025-10-23 10:48:16] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:48:22] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:48:22] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:48:22] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:48:22] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216502287}
+[2025-10-23 10:48:22] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:48:27] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:48:27] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:48:27] 💡 Nouveau signal : SELL @ BTCUSDT
+[2025-10-23 10:48:27] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216507796}
+[2025-10-23 10:48:27] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
+[2025-10-23 10:48:33] === START AUTO-EXECUTOR (MAINNET BYBIT V5 SIGN FIX) ===
+[2025-10-23 10:48:33] 🧠 FusionEngine → Bias: bullish | Trend: flat
+[2025-10-23 10:48:33] 💡 Nouveau signal : BUY @ BTCUSDT
+[2025-10-23 10:48:33] ⬅️ Raw: {'retCode': 10001, 'retMsg': 'Invalid parameter: Invalid parameter', 'result': {}, 'retExtInfo': {}, 'time': 1761216513287}
+[2025-10-23 10:48:33] ⚠️ Erreur Bybit: Invalid parameter: Invalid parameter
