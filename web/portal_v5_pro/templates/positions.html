@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-title">Positions & Signaux Actuels</div>
+  <table class="w-full text-sm">
+    <thead><tr class="border-b border-slate-800">
+      <th class="text-left py-1">Symbole</th><th class="text-left">Side</th><th>Entrée</th><th>PNL</th><th>Confiance</th>
+    </tr></thead>
+    <tbody id="posTable"></tbody>
+  </table>
+</div>
+<script>
+async function refreshPositions(){
+  const res = await fetch('/api/status'); const data = await res.json();
+  const rows = (data.core?.positions||[]).map(p=>`
+    <tr><td>${p.symbol}</td><td>${p.side}</td><td>${p.entry}</td><td>${p.pnl}</td><td>${p.confidence}</td></tr>`).join('');
+  document.getElementById('posTable').innerHTML = rows || '<tr><td colspan="5">—</td></tr>';
+}
+setInterval(refreshPositions, 4000); refreshPositions();
+</script>

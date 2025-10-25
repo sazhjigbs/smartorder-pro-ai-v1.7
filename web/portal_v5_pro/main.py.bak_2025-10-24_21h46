@@ -1,0 +1,133 @@
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse, JSONResponse
+import psutil, subprocess, time, os
+
+app = FastAPI(title="SAFELOGIC SmartOrder PRO — Pulse Live v6.4 AutoFeed")
+
+# ==============================================================
+# 🖥️ PAGE PRINCIPALE — Dashboard + TradingView + Signaux Live
+# ==============================================================
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+    html = """
+    <html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SAFELOGIC SmartOrder PRO — Pulse Live v6.4</title>
+        <style>
+            body { margin:0; font-family:Arial; background:#0b1622; color:#fff; }
+            header { background:#122036; padding:10px; text-align:center; font-weight:bold; }
+            .section { padding:10px; }
+            iframe { width:100%; height:400px; border:none; }
+            table { width:100%; border-collapse:collapse; margin-top:10px; }
+            th,td { border:1px solid #1f3555; padding:6px; text-align:center; }
+            th { background:#162b45; }
+            .green { color:#4caf50; }
+            .red { color:#f44336; }
+            @media (max-width:600px){ iframe{height:300px;} th,td{font-size:11px;} }
+        </style>
+    </head>
+    <body>
+        <header id="statusBar">Chargement du statut serveur...</header>
+
+        <div class="section">
+            <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview" allowtransparency="true"></iframe>
+        </div>
+
+        <div class="section">
+            <h3>Positions / Signaux Live</h3>
+            <table>
+                <thead><tr><th>Symbole</th><th>Type</th><th>Confiance</th><th>PNL</th><th>Heure</th></tr></thead>
+                <tbody id="positionsTable">
+                    <tr><td colspan="5">En attente de signaux IA…</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            async function refreshStatus(){
+                try{
+                    const sys = await fetch('/api/system_status').then(r=>r.json());
+                    const proxy = await fetch('/api/proxy_status').then(r=>r.json());
+                    document.getElementById('statusBar').innerHTML =
+                        `CPU : ${sys.cpu}% | RAM : ${sys.ram}% | DISK : ${sys.disk}% | Proxy : ${proxy.proxy} | Watchdog : ${sys.services['smartorder-watchdog']} | Time : ${sys.timestamp}`;
+                }catch(e){
+                    document.getElementById('statusBar').innerHTML='⚠️ Erreur de statut serveur';
+                }
+            }
+
+            async function refreshSignals(){
+                try{
+                    const data = await fetch('/api/signals_live').then(r=>r.json());
+                    const tbody = document.getElementById('positionsTable');
+                    tbody.innerHTML = data.map(sig =>
+                        `<tr>
+                            <td>${sig.symbol}</td>
+                            <td class="${sig.type=='Buy'?'green':'red'}">${sig.type}</td>
+                            <td>${sig.confidence}%</td>
+                            <td>${sig.pnl}</td>
+                            <td>${sig.time}</td>
+                        </tr>`).join('');
+                }catch(e){
+                    document.getElementById('positionsTable').innerHTML='<tr><td colspan="5">⚠️ Erreur lecture signaux</td></tr>';
+                }
+            }
+
+            refreshStatus();
+            refreshSignals();
+            setInterval(refreshStatus,5000);
+            setInterval(refreshSignals,3000);
+        </script>
+    </body>
+    </html>
+    """
+    return HTMLResponse(content=html)
+
+# ==============================================================
+# 🧠 API SYSTEM STATUS
+# ==============================================================
+@app.get("/api/system_status")
+def system_status():
+    cpu = psutil.cpu_percent(interval=0.5)
+    ram = psutil.virtual_memory().percent
+    disk = psutil.disk_usage("/").percent
+    services = {
+        "smartorder-proxy": subprocess.getoutput("systemctl is-active smartorder-proxy.service"),
+        "smartorder-websync-bridge": subprocess.getoutput("systemctl is-active smartorder-websync-bridge.service"),
+        "smartorder-watchdog": subprocess.getoutput("systemctl is-active smartorder-watchdog.service"),
+    }
+    return {"cpu":cpu,"ram":ram,"disk":disk,"services":services,"timestamp":time.strftime("%Y-%m-%d %H:%M:%S")}
+
+# ==============================================================
+# 🔌 API PROXY STATUS
+# ==============================================================
+@app.get("/api/proxy_status")
+def proxy_status():
+    port_check = subprocess.getoutput("ss -tulnp | grep 8787 | wc -l")
+    return {"proxy":"🟢 actif","port":8787} if int(port_check)>0 else {"proxy":"🔴 inactif","port":None}
+
+# ==============================================================
+# 📡 API SIGNALS LIVE — lecture log bridge
+# ==============================================================
+@app.get("/api/signals_live")
+def signals_live():
+    path = "/opt/smartorder-pro/logs/websync_bridge.log"
+    if not os.path.exists(path):
+        return [{"symbol":"—","type":"—","confidence":"—","pnl":"—","time":"—"}]
+    lines = subprocess.getoutput(f"tail -n 10 {path}").splitlines()
+    result = []
+    for l in lines:
+        if "Buy" in l or "Sell" in l:
+            parts = l.split()
+            symbol = parts[0] if len(parts)>0 else "?"
+            side = "Buy" if "Buy" in l else "Sell"
+            price = parts[-1] if parts[-1].replace('.','',1).isdigit() else "?"
+            result.append({
+                "symbol":symbol,
+                "type":side,
+                "confidence":"95",
+                "pnl":"—",
+                "time":time.strftime("%H:%M:%S")
+            })
+    return result if result else [{"symbol":"—","type":"—","confidence":"—","pnl":"—","time":"—"}]

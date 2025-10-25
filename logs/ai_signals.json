@@ -1,0 +1,4 @@
+[
+    {"symbol": "BTCUSDT", "signal": "LONG", "confidence": 83},
+    {"symbol": "ETHUSDT", "signal": "SHORT", "confidence": 72}
+]

@@ -1,0 +1,86 @@
+from fastapi import FastAPI
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
+import psutil, datetime, os
+
+app = FastAPI(title="SAFELOGIC SmartOrder PRO v6.0 Pulse")
+
+# === 1️⃣ Chemin absolu vers le front ===
+static_dir = "/opt/smartorder-pro/web/portal_v5_pro/static"
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
+
+# === 2️⃣ Page d'accueil : renvoie le dashboard HTML ===
+@app.get("/", response_class=FileResponse)
+async def serve_front():
+    index_path = os.path.join(static_dir, "index.html")
+    return FileResponse(index_path)
+
+# === 3️⃣ API : renvoie les métriques du système ===
+@app.get("/api/unified", response_class=JSONResponse)
+async def unified():
+    data = {
+        "cpu": round(psutil.cpu_percent(), 1),
+        "mem": round(psutil.virtual_memory().percent, 1),
+        "exchange": "bybit",
+        "auto_mode": False,
+        "timestamp": datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+    }
+    return JSONResponse(data)
+
+@app.get("/api/livefeed")
+async def livefeed():
+    # Simulation d’un flux AI temps réel (remplacé ensuite par WebSync Bridge)
+    import random, datetime
+    sample = [
+        {"symbol":"BTCUSDT","side":random.choice(["LONG","SHORT","FLAT"]),
+         "confidence":round(random.uniform(78.5,99.2),2),
+         "pnl":round(random.uniform(-2.5,4.7),2),
+         "time":datetime.datetime.utcnow().strftime("%H:%M:%S")}
+        for _ in range(3)
+    ]
+    return {"signals": sample, "timestamp": datetime.datetime.utcnow().isoformat()}
+
+# --- WebSocket Bridge Integration ---
+import importlib.util
+spec = importlib.util.spec_from_file_location("websync_bridge", "/opt/smartorder-pro/web/portal_v5_pro/websync_bridge.py")
+websync_bridge = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(websync_bridge)
+
+@app.get("/api/livefeed")
+async def livefeed():
+    return {"signals": websync_bridge.LIVE_FEED, "timestamp": datetime.datetime.utcnow().isoformat()}
+
+# ==============================================================
+# 🧩 SAFELOGIC Unified Monitor API — Phase 6 (Portal v5 Integration)
+# ==============================================================
+
+from fastapi import FastAPI
+import psutil, subprocess, json, time
+
+app = FastAPI()
+
+@app.get("/api/system_status")
+def system_status():
+    cpu = psutil.cpu_percent(interval=0.5)
+    ram = psutil.virtual_memory().percent
+    disk = psutil.disk_usage("/").percent
+    services = {
+        "smartorder-proxy": subprocess.getoutput("systemctl is-active smartorder-proxy.service"),
+        "smartorder-websync-bridge": subprocess.getoutput("systemctl is-active smartorder-websync-bridge.service"),
+        "smartorder-watchdog": subprocess.getoutput("systemctl is-active smartorder-watchdog.service")
+    }
+    return {
+        "cpu": cpu,
+        "ram": ram,
+        "disk": disk,
+        "services": services,
+        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
+    }
+
+@app.get("/api/proxy_status")
+def proxy_status():
+    try:
+        port_check = subprocess.getoutput("ss -tulnp | grep 8787 | wc -l")
+        return {"proxy": "🟢 actif", "port": 8787} if int(port_check) > 0 else {"proxy": "🔴 inactif", "port": None}
+    except Exception as e:
+        return {"proxy": "⚠️ erreur", "error": str(e)}

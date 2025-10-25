@@ -1,0 +1,63 @@
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
+import psutil, subprocess, time, os
+
+app = FastAPI(title="SAFELOGIC SmartOrder PRO — Unified Portal v6.2")
+
+# 📂 Statics (si ton dashboard a un dossier ./static)
+if os.path.exists("static"):
+    app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# ==============================================================
+# 🖥️ Page principale (TradingView + Dashboard)
+# ==============================================================
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+    html = """
+    <html>
+    <head>
+        <title>SAFELOGIC SmartOrder PRO — Unified Portal v6.2 Pulse</title>
+        <style>
+            body { background-color: #0b1622; color: #fff; font-family: Arial; margin: 0; }
+            iframe { width: 100%; height: 600px; border: none; }
+            .status { padding: 10px; background: #122036; text-align: center; }
+        </style>
+    </head>
+    <body>
+        <div class="status" id="statusBar">Chargement du statut serveur...</div>
+        <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview" allowtransparency="true"></iframe>
+        <script>
+            async function refreshStatus() {
+                const sys = await fetch('/api/system_status').then(r=>r.json());
+                const proxy = await fetch('/api/proxy_status').then(r=>r.json());
+                document.getElementById('statusBar').innerHTML =
+                    `CPU: ${sys.cpu}% | RAM: ${sys.ram}% | DISK: ${sys.disk}% | Proxy: ${proxy.proxy} | Watchdog: ${sys.services['smartorder-watchdog']} | Time: ${sys.timestamp}`;
+            }
+            refreshStatus();
+            setInterval(refreshStatus, 5000);
+        </script>
+    </body>
+    </html>
+    """
+    return HTMLResponse(content=html)
+
+# ==============================================================
+# 🧠 Unified Monitoring APIs
+# ==============================================================
+@app.get("/api/system_status")
+def system_status():
+    cpu = psutil.cpu_percent(interval=0.5)
+    ram = psutil.virtual_memory().percent
+    disk = psutil.disk_usage("/").percent
+    services = {
+        "smartorder-proxy": subprocess.getoutput("systemctl is-active smartorder-proxy.service"),
+        "smartorder-websync-bridge": subprocess.getoutput("systemctl is-active smartorder-websync-bridge.service"),
+        "smartorder-watchdog": subprocess.getoutput("systemctl is-active smartorder-watchdog.service"),
+    }
+    return {"cpu": cpu, "ram": ram, "disk": disk, "services": services, "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")}
+
+@app.get("/api/proxy_status")
+def proxy_status():
+    port_check = subprocess.getoutput("ss -tulnp | grep 8787 | wc -l")
+    return {"proxy": "🟢 actif", "port": 8787} if int(port_check) > 0 else {"proxy": "🔴 inactif", "port": None}

@@ -1,0 +1,252 @@
+===== 🧠 SAFELOGIC PORTAL DIAGNOSTIC Sat Oct 25 01:41:29 UTC 2025 =====
+
+--- SYSTEM STATUS ---
+ 01:41:29 up 5 days,  6:45,  1 user,  load average: 0.32, 0.24, 0.19
+              total        used        free      shared  buff/cache   available
+Mem:          3.8Gi       874Mi       137Mi       2.0Mi       2.8Gi       2.7Gi
+Swap:         511Mi        11Mi       500Mi
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  1.1M  391M   1% /run
+/dev/vda1       117G   12G  105G  10% /
+tmpfs           2.0G     0  2.0G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
+/dev/loop0       64M   64M     0 100% /snap/core20/2599
+/dev/vda15      105M  6.1M   99M   6% /boot/efi
+/dev/loop1       92M   92M     0 100% /snap/lxd/32662
+/dev/loop3       51M   51M     0 100% /snap/snapd/25202
+/dev/loop4       64M   64M     0 100% /snap/core20/2669
+/dev/loop5       67M   67M     0 100% /snap/core24/1196
+/dev/loop6       42M   42M     0 100% /snap/gh/640
+/dev/loop7       51M   51M     0 100% /snap/snapd/25577
+/dev/loop8       67M   67M     0 100% /snap/core24/1225
+tmpfs           392M     0  392M   0% /run/user/0
+
+--- PORT 8555 STATUS ---
+tcp    LISTEN  0       2048                 0.0.0.0:8555          0.0.0.0:*      users:(("python3",pid=1029450,fd=6)) ino:27965316 sk:41 <->                    
+
+--- JOURNAL SMARTORDER-PORTAL-V5 ---
+-- Logs begin at Sun 2025-10-19 18:31:49 UTC, end at Sat 2025-10-25 01:41:29 UTC. --
+Oct 25 01:32:39 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:32:39 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:32:39 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:32:44 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 20.
+Oct 25 01:32:44 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:32:44 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:32:44 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:32:44 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:32:49 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 21.
+Oct 25 01:32:49 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:32:49 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:32:49 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:32:49 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:32:54 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 22.
+Oct 25 01:32:54 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:32:54 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:32:54 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:32:54 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:00 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 23.
+Oct 25 01:33:00 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:00 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:00 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:00 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:05 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 24.
+Oct 25 01:33:05 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:05 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:05 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:05 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:10 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 25.
+Oct 25 01:33:10 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:10 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:10 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:10 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:15 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 26.
+Oct 25 01:33:15 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:15 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:15 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:15 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:21 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 27.
+Oct 25 01:33:21 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:21 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:21 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:21 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:26 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 28.
+Oct 25 01:33:26 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:26 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:26 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:26 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:31 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 29.
+Oct 25 01:33:31 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:31 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:31 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:31 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:36 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 30.
+Oct 25 01:33:36 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:36 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:36 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:36 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:42 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 31.
+Oct 25 01:33:42 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:42 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:42 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:42 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:47 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 32.
+Oct 25 01:33:47 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:47 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:47 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:47 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:52 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 33.
+Oct 25 01:33:52 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:52 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:52 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:52 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:33:57 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 34.
+Oct 25 01:33:57 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:57 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:33:57 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:33:57 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:03 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 35.
+Oct 25 01:34:03 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:03 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:03 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:03 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:08 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 36.
+Oct 25 01:34:08 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:08 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:08 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:08 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:13 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 37.
+Oct 25 01:34:13 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:13 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:13 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:13 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:18 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 38.
+Oct 25 01:34:18 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:18 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:18 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:18 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:24 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 39.
+Oct 25 01:34:24 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:24 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:24 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:24 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:29 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 40.
+Oct 25 01:34:29 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:29 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:29 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:29 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:34 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 41.
+Oct 25 01:34:34 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:34 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:34 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:34 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:39 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 42.
+Oct 25 01:34:39 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:39 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:39 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:39 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:45 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 43.
+Oct 25 01:34:45 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:45 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:45 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:45 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:50 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 44.
+Oct 25 01:34:50 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:50 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:50 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:50 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:34:55 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 45.
+Oct 25 01:34:55 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:55 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:34:55 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:34:55 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:35:00 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 46.
+Oct 25 01:35:00 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:35:00 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:35:00 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:35:00 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:35:06 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 47.
+Oct 25 01:35:06 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:35:06 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:35:06 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Main process exited, code=exited, status=1/FAILURE
+Oct 25 01:35:06 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Failed with result 'exit-code'.
+Oct 25 01:35:11 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Scheduled restart job, restart counter is at 48.
+Oct 25 01:35:11 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:35:11 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:35:19 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopping SAFELOGIC SmartOrder PRO Unified Portal v5...
+Oct 25 01:35:19 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: smartorder-portal-v5.service: Succeeded.
+Oct 25 01:35:19 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Stopped SAFELOGIC SmartOrder PRO Unified Portal v5.
+Oct 25 01:35:19 ubuntu-Amsterdam-2Highvcpu-4gb systemd[1]: Started SAFELOGIC SmartOrder PRO Unified Portal v5.
+
+--- PYTHON TRACEBACK ERRORS (dernier 48h) ---
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+/opt/smartorder-pro/logs/portal_v5.log:Traceback (most recent call last):
+Binary file /opt/smartorder-pro/.git/index matches
+
+--- SERVICE STATUS GLOBAL ---
+  smartorder-ai-api.service                      loaded activating auto-restart SMARTORDER AI Side API (8091)                                                
+  smartorder-ai-guardian.service                 loaded activating auto-restart SMARTORDER AI Guardian                                                       
+  smartorder-ai-learner.service                  loaded activating auto-restart SMARTORDER AI Learner (Phase 5 – Self-Learning Loop)                         
+  smartorder-aisync.service                      loaded active     running      SAFELOGIC AI Memory Sync Live                                                
+  smartorder-auto-executor.service               loaded activating auto-restart SMARTORDER Auto-Executor (Bybit V5 Officiel)                                 
+● smartorder-auto-recovery.service               loaded failed     failed       SMARTORDER Auto-Recovery (Full Autonomy)                                     
+● smartorder-autosync.service                    loaded failed     failed       SMARTORDER Git Autosync (oneshot)                                            
+  smartorder-behavior.service                    loaded active     running      SAFELOGIC SmartOrder PRO Behavior Intelligence AI                            
+  smartorder-dashboard-v4.service                loaded active     running      SAFELOGIC SmartOrder PRO Dashboard v4-UI PRO                                 
+  smartorder-dashboard.service                   loaded active     running      SAFELOGIC SmartOrder PRO Web Dashboard (v4-UI Pro)                           
+  smartorder-feedback.service                    loaded active     running      SAFELOGIC SmartOrder PRO AI Feedback Loop                                    
+  smartorder-fusion-ai.service                   loaded active     running      SAFELOGIC SmartOrder PRO - AutoStrategy Fusion AI                            
+  smartorder-fusion.service                      loaded active     running      SAFELOGIC SmartOrder PRO AutoStrategy Fusion AI                              
+  smartorder-genetic.service                     loaded active     running      SAFELOGIC SmartOrder PRO Genetic AI Evolution Engine                         
+  smartorder-guardian.service                    loaded active     running      SAFELOGIC Guardian Diagnosis & Self-Healing                                  
+● smartorder-learner-watchdog.service            loaded failed     failed       SMARTORDER Learner Watchdog (Auto-supervision Phase 5)                       
+  smartorder-learner.service                     loaded active     running      SAFELOGIC SmartOrder PRO Self-Learning AI                                    
+  smartorder-live-sync.service                   loaded activating auto-restart SMARTORDER Bybit Live Signal Sync (Phase 7)                                  
+  smartorder-portal-v5.service                   loaded active     running      SAFELOGIC SmartOrder PRO Unified Portal v5                                   
+  smartorder-pro.service                         loaded active     running      SAFELOGIC SmartOrder Pro API (Port 8191)                                     
+  smartorder-proxy.service                       loaded active     running      SAFELOGIC WebSocket Local Proxy (NodeJS Minimal)                             
+  smartorder-reinforce.service                   loaded active     running      SAFELOGIC SmartOrder PRO Reinforcement AI (Risk Optimizer)                   
+  smartorder-selflearning.service                loaded active     running      SAFELOGIC Self-Learning Loop                                                 
+  smartorder-strategy-sync.service               loaded active     running      SAFELOGIC SmartOrder PRO - Fusion Strategy Sync (Phase 18)                   
+  smartorder-watchdog.service                    loaded active     running      SAFELOGIC SmartOrder Watchdog                                                
+  smartorder-websync-bridge.service              loaded active     running      SAFELOGIC SmartOrder WebSocket Bridge                                        
+
+--- END OF REPORT ---

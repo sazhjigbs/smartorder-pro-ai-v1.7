@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>SAFELOGIC SmartOrder PRO v6.0 Pulse</title>
+<style>
+body {background:#0b0f19;color:#e0e6f0;font-family:Segoe UI,Roboto,sans-serif;margin:0;padding:0;}
+header {background:#101624;padding:15px;text-align:center;font-size:1.4em;color:#4db7ff;font-weight:bold;}
+#status-bar {margin:10px;text-align:center;color:#7fc8ff;font-size:0.9em;}
+.container {width:95%;margin:auto;}
+.card {background:#141b2d;border-radius:10px;padding:15px;margin:15px 0;box-shadow:0 0 10px #000;}
+iframe {width:100%;height:480px;border:none;border-radius:8px;}
+table {width:100%;border-collapse:collapse;color:#d0d8e5;}
+th,td {padding:10px;text-align:center;}
+th {background:#1e253a;color:#4db7ff;}
+tr:nth-child(even){background:#1a2035;}
+</style>
+<script src="/static/js/app.js"></script>
+</head>
+<body>
+<header>SAFELOGIC SmartOrder PRO — Unified Portal v6.0 Pulse</header>
+<div id="status-bar">Chargement...</div>
+<div class="container">
+  <div class="card">
+    <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_f5d21&symbol=BYBIT:BTCUSDT.P&interval=15&theme=dark&style=1&locale=fr&toolbarbg=f1f3f6&enable_publishing=false&hide_legend=true&save_image=false"></iframe>
+  </div>
+  <div class="card">
+    <h3>Positions / Signaux Live</h3>
+    <table>
+      <thead>
+        <tr><th>Symbole</th><th>Type</th><th>Confiance</th><th>PNL</th><th>Heure</th></tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="5">En attente de signaux IA...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
