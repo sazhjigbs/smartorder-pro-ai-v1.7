@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SAFELOGIC SmartOrder PRO v4C — Live Dashboard</title>
+<link rel="stylesheet" href="/static/css/style.css">
+<script src="/static/js/dashboard.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>⚡ SAFELOGIC SmartOrder PRO — Live Dashboard</h1>
+  <nav>
+    <button onclick="reload()">🔄 Redémarrer</button>
+    <button onclick="trade('spot')">📊 Trade Spot (Halal)</button>
+    <button onclick="trade('futures')">📉 Trade Futures</button>
+    <button onclick="changeExchange()">🌐 Exchange</button>
+    <button onclick="telegramSync()">📲 Telegram Sync</button>
+  </nav>
+</header>
+
+<main>
+<section>
+  <h2>System Status</h2>
+  <pre id="sysinfo">{{ status | tojson(indent=2) }}</pre>
+</section>
+
+<section>
+  <h2>Positions & PnL Temps Réel</h2>
+  <table>
+    <tr><th>Symbole</th><th>Side</th><th>Qty</th><th>Entrée</th><th>Dernier Prix</th><th>PnL (%)</th></tr>
+    {% for p in positions %}
+      <tr>
+        <td>{{ p.symbol }}</td>
+        <td>{{ p.side }}</td>
+        <td>{{ p.size }}</td>
+        <td>{{ p.entry_price }}</td>
+        <td>{{ p.last_price }}</td>
+        <td>{{ p.pnl_percent }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</section>
+</main>
+
+<footer>© SAFELOGIC GENESIS AI — v4C Live Signals Interface</footer>
+</body>
+</html>

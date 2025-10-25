@@ -1,0 +1,9 @@
+body{background:#0b0c10;color:#c5c6c7;font-family:Arial;margin:0}
+header{background:#1f2833;padding:10px;text-align:center}
+button{margin:5px;padding:10px 15px;border:none;border-radius:8px;background:#45a29e;color:white;cursor:pointer}
+button:hover{background:#66fcf1;color:#0b0c10}
+section{margin:20px;padding:20px;background:#1f2833;border-radius:10px}
+pre{background:#0b0c10;color:#66fcf1;padding:10px;border-radius:6px;overflow:auto}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{border:1px solid #45a29e;padding:6px;text-align:center}
+th{background:#0b0c10;color:#66fcf1}

@@ -1208,3 +1208,111 @@
 2025-10-25 16:40:22,413 [INFO] 🔁 Tous les services SmartOrder redémarrés.
 2025-10-25 16:40:52,712 [INFO] 🔁 Tous les services SmartOrder redémarrés.
 2025-10-25 16:41:22,959 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:41:53,264 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:42:23,489 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:42:53,706 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:43:23,985 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:43:54,282 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:44:24,562 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:44:54,800 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:45:25,073 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:45:55,277 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:46:25,504 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:46:55,728 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:47:25,946 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:47:56,205 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:48:11,617 [INFO] 🛡️ Lancement du correcteur global SAFELOGIC Guardian...
+2025-10-25 16:48:11,813 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:48:42,034 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:49:12,280 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:49:42,516 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:50:12,720 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:50:42,971 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:51:13,193 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:51:43,425 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:52:13,642 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:52:43,911 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:53:14,146 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:53:44,409 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:54:14,668 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:54:44,870 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:55:15,136 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:55:45,423 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:56:15,645 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:56:45,842 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:57:16,072 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:57:35,515 [INFO] 🛡️ Lancement du correcteur global SAFELOGIC Guardian...
+2025-10-25 16:57:35,685 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:58:05,896 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 16:58:36,176 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+2025-10-25 16:59:47,917 [INFO] 🛡️ Lancement du correcteur global SAFELOGIC Guardian...
+2025-10-25 16:59:47,917 [INFO] 🧩 Correction appliquée : modules init vérifiés.
+2025-10-25 16:59:47,917 [INFO] ✅ Clés Bybit présentes dans .env
+2025-10-25 16:59:47,917 [INFO] ⚠️ AutoSync désactivé ou configuration incomplète.
+2025-10-25 16:59:48,067 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+  File "/opt/smartorder-pro/tools/auto_guardian_fix.py", line 1
+    (paste the script above here)
+           ^
+SyntaxError: invalid syntax
+2025-10-25 17:01:05,039 [INFO] 🛡️ Lancement du correcteur global SAFELOGIC Guardian...
+2025-10-25 17:01:05,039 [INFO] 🧩 Correction appliquée : modules init vérifiés.
+2025-10-25 17:01:05,039 [INFO] ✅ Clés Bybit présentes dans .env
+2025-10-25 17:01:05,039 [INFO] ⚠️ AutoSync désactivé ou configuration incomplète.
+2025-10-25 17:01:05,208 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 17:01:05,365 [INFO] 🛡️ Lancement du correcteur global SAFELOGIC Guardian...
+2025-10-25 17:01:05,366 [INFO] 🧩 Correction appliquée : modules init vérifiés.
+2025-10-25 17:01:05,366 [INFO] ✅ Clés Bybit présentes dans .env
+2025-10-25 17:01:05,366 [INFO] ⚠️ AutoSync désactivé ou configuration incomplète.
+2025-10-25 17:01:05,649 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 17:06:05,712 [INFO] 🧩 Correction appliquée : modules init vérifiés.
+2025-10-25 17:06:05,712 [INFO] ✅ Clés Bybit présentes dans .env
+2025-10-25 17:06:05,713 [INFO] ⚠️ AutoSync désactivé ou configuration incomplète.
+2025-10-25 17:06:05,881 [INFO] 🔁 Tous les services SmartOrder redémarrés.

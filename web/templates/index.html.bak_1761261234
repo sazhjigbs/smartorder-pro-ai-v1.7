@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SAFELOGIC SmartOrder PRO v4-UI Pro</title>
+<link rel="stylesheet" href="/static/css/style.css">
+<script src="/static/js/dashboard.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>⚡ SAFELOGIC SmartOrder PRO</h1>
+  <nav>
+    <button onclick="reload()">🔄 Refresh</button>
+    <button onclick="trade('spot')">📊 Trade Spot (Halal)</button>
+    <button onclick="trade('futures')">📉 Trade Futures</button>
+    <button onclick="changeExchange()">🌐 Exchange</button>
+  </nav>
+</header>
+<main>
+  <section id="status">
+    <h2>System Status</h2>
+    <pre id="sysinfo">{{ status | tojson(indent=2) }}</pre>
+  </section>
+</main>
+<footer>© SAFELOGIC GENESIS AI — Dashboard v4-UI Pro</footer>
+</body>
+</html>

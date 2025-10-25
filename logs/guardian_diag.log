@@ -7768,3 +7768,222 @@
 [2025-10-25 16:41:23.018372] 🟢 smartorder-websync-bridge.service OK
 [2025-10-25 16:41:23.026044] 🟢 smartorder-portal-v5.service OK
 [2025-10-25 16:41:23.030219] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:41:53.282958] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:41:53.299779] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:41:53.308942] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:41:53.326627] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:41:53.332902] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:42:23.509875] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:42:23.525077] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:42:23.527932] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:42:23.536979] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:42:23.552436] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:42:53.743311] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:42:53.750081] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:42:53.758910] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:42:53.769911] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:42:53.777654] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:43:24.020817] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:43:24.025772] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:43:24.033057] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:43:24.050143] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:43:24.062310] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:43:54.322410] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:43:54.340459] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:43:54.351986] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:43:54.355557] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:43:54.361568] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:44:24.600704] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:44:24.613747] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:44:24.620559] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:44:24.633822] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:44:24.647186] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:44:54.831153] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:44:54.848310] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:44:54.852777] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:44:54.860455] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:44:54.869376] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:45:25.087429] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:45:25.096085] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:45:25.116895] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:45:25.120737] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:45:25.123394] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:45:55.300365] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:45:55.311410] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:45:55.320429] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:45:55.325214] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:45:55.332963] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:46:25.536040] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:46:25.564815] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:46:25.568389] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:46:25.571563] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:46:25.577556] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:46:55.777690] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:46:55.789121] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:46:55.793568] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:46:55.807251] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:46:55.811179] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:47:25.967598] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:47:25.980212] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:47:25.983211] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:47:25.988863] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:47:25.996064] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:47:56.236010] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:47:56.247137] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:47:56.257743] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:47:56.263193] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:47:56.266814] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:48:11.838408] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:48:11.842800] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:48:11.849684] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:48:11.854482] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:48:11.859747] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:48:42.047215] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:48:42.073728] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:48:42.079588] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:48:42.088055] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:48:42.105226] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:49:12.291818] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:49:12.311529] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:49:12.315119] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:49:12.322909] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:49:12.327984] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:49:42.560980] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:49:42.568706] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:49:42.572101] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:49:42.578304] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:49:42.585441] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:50:12.739614] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:50:12.751770] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:50:12.755691] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:50:12.760876] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:50:12.764916] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:50:42.991858] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:50:43.004954] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:50:43.012849] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:50:43.021143] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:50:43.026533] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:51:13.206864] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:51:13.220689] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:51:13.225506] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:51:13.231166] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:51:13.238959] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:51:43.449207] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:51:43.454456] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:51:43.464716] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:51:43.472595] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:51:43.476679] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:52:13.678547] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:52:13.687456] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:52:13.690374] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:52:13.696967] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:52:13.701672] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:52:43.933423] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:52:43.943691] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:52:43.951538] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:52:43.962414] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:52:43.973243] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:53:14.174632] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:53:14.197974] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:53:14.201306] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:53:14.208372] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:53:14.216353] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:53:44.427478] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:53:44.458207] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:53:44.464485] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:53:44.474033] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:53:44.489466] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:54:14.698945] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:54:14.706530] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:54:14.710720] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:54:14.715230] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:54:14.722342] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:54:44.907157] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:54:44.911554] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:54:44.927198] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:54:44.931800] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:54:44.937020] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:55:15.149056] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:55:15.171511] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:55:15.174732] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:55:15.177589] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:55:15.185984] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:55:45.445882] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:55:45.453676] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:55:45.459158] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:55:45.464663] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:55:45.469348] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:56:15.693642] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:56:15.704493] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:56:15.707901] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:56:15.713230] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:56:15.721080] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:56:45.881248] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:56:45.898420] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:56:45.907745] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:56:45.912458] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:56:45.915354] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:57:16.099712] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:57:16.110750] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:57:16.116926] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:57:16.120944] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:57:16.126326] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:57:35.706540] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:57:35.715903] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:57:35.723622] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:57:35.742930] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:57:35.749027] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:58:05.932620] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:58:05.936618] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:58:05.941154] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:58:05.951110] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:58:05.956173] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:58:36.212657] === SAFELOGIC GUARDIAN DIAG INIT ===
+[2025-10-25 16:58:36.223374] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:58:36.229155] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:58:36.237376] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:58:36.248020] 🟢 smartorder-watchdog.service OK
+[2025-10-25 16:59:36.293013] 🟢 smartorder-proxy.service OK
+[2025-10-25 16:59:36.297688] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 16:59:36.301359] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 16:59:36.304882] 🟢 smartorder-watchdog.service OK
+[2025-10-25 17:00:36.314738] 🟢 smartorder-proxy.service OK
+[2025-10-25 17:00:36.319098] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 17:00:36.322144] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 17:00:36.324680] 🟢 smartorder-watchdog.service OK
+[2025-10-25 17:01:36.389278] 🟢 smartorder-proxy.service OK
+[2025-10-25 17:01:36.393407] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 17:01:36.396057] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 17:01:36.398691] 🟢 smartorder-watchdog.service OK
+[2025-10-25 17:02:36.452678] 🟢 smartorder-proxy.service OK
+[2025-10-25 17:02:36.456525] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 17:02:36.459942] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 17:02:36.463532] 🟢 smartorder-watchdog.service OK
+[2025-10-25 17:03:36.527669] 🟢 smartorder-proxy.service OK
+[2025-10-25 17:03:36.530306] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 17:03:36.533070] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 17:03:36.535593] 🟢 smartorder-watchdog.service OK
+[2025-10-25 17:04:36.546122] 🟢 smartorder-proxy.service OK
+[2025-10-25 17:04:36.549108] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 17:04:36.551965] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 17:04:36.554710] 🟢 smartorder-watchdog.service OK
+[2025-10-25 17:05:36.611814] 🟢 smartorder-proxy.service OK
+[2025-10-25 17:05:36.614473] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 17:05:36.616966] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 17:05:36.620129] 🟢 smartorder-watchdog.service OK
+[2025-10-25 17:06:36.682985] 🟢 smartorder-proxy.service OK
+[2025-10-25 17:06:36.686390] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 17:06:36.689121] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 17:06:36.691822] 🟢 smartorder-watchdog.service OK
+[2025-10-25 17:07:36.755900] 🟢 smartorder-proxy.service OK
+[2025-10-25 17:07:36.759005] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 17:07:36.761638] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 17:07:36.764681] 🟢 smartorder-watchdog.service OK
+[2025-10-25 17:08:36.828729] 🟢 smartorder-proxy.service OK
+[2025-10-25 17:08:36.831488] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 17:08:36.834790] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 17:08:36.837505] 🟢 smartorder-watchdog.service OK
+[2025-10-25 17:09:36.848456] 🟢 smartorder-proxy.service OK
+[2025-10-25 17:09:36.851325] 🟢 smartorder-websync-bridge.service OK
+[2025-10-25 17:09:36.853986] 🟢 smartorder-portal-v5.service OK
+[2025-10-25 17:09:36.856656] 🟢 smartorder-watchdog.service OK
