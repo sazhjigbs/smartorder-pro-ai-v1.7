@@ -1316,3 +1316,7 @@ SyntaxError: invalid syntax
 2025-10-25 17:06:05,712 [INFO] ✅ Clés Bybit présentes dans .env
 2025-10-25 17:06:05,713 [INFO] ⚠️ AutoSync désactivé ou configuration incomplète.
 2025-10-25 17:06:05,881 [INFO] 🔁 Tous les services SmartOrder redémarrés.
+2025-10-25 17:11:05,981 [INFO] 🧩 Correction appliquée : modules init vérifiés.
+2025-10-25 17:11:05,981 [INFO] ✅ Clés Bybit présentes dans .env
+2025-10-25 17:11:05,981 [INFO] ⚠️ AutoSync désactivé ou configuration incomplète.
+2025-10-25 17:11:06,137 [INFO] 🔁 Tous les services SmartOrder redémarrés.

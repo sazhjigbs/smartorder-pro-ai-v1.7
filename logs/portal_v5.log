@@ -79544,3 +79544,119 @@ Traceback (most recent call last):
 TypeError: unhashable type: 'dict'
 INFO:     196.119.34.108:63761 - "GET /api/spot_balances HTTP/1.1" 200 OK
 INFO:     196.119.34.108:63761 - "GET /api/futures_positions HTTP/1.1" 200 OK
+INFO:     196.119.34.108:54364 - "GET /api/system_status HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/routing.py", line 291, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/anyio/_backends/_asyncio.py", line 2364, in run_sync_in_worker_thread
+    return await future
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/anyio/_backends/_asyncio.py", line 864, in run
+    result = context.run(func, *args)
+  File "/opt/smartorder-pro/web/portal_v5_pro/main.py", line 14, in system_status
+    return JSONResponse({{"cpu": cpu, "ram": ram, "uptime": time.strftime("%H:%M:%S", time.gmtime(time.time()-psutil.boot_time()))}})
+TypeError: unhashable type: 'dict'
+INFO:     196.119.34.108:52148 - "GET /api/spot_balances HTTP/1.1" 200 OK
+INFO:     196.119.34.108:52148 - "GET /api/futures_positions HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1154600]
+INFO:     Started server process [1155128]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8555 (Press CTRL+C to quit)
+INFO:     196.119.34.108:51241 - "GET /api/system_status HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/fastapi/routing.py", line 291, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/anyio/_backends/_asyncio.py", line 2364, in run_sync_in_worker_thread
+    return await future
+  File "/opt/smartorder-pro/venv/lib/python3.8/site-packages/anyio/_backends/_asyncio.py", line 864, in run
+    result = context.run(func, *args)
+  File "/opt/smartorder-pro/web/portal_v5_pro/main.py", line 14, in system_status
+    return JSONResponse({{"cpu": cpu, "ram": ram, "uptime": time.strftime("%H:%M:%S", time.gmtime(time.time()-psutil.boot_time()))}})
+TypeError: unhashable type: 'dict'
+INFO:     196.119.34.108:62017 - "GET /api/spot_balances HTTP/1.1" 200 OK
+INFO:     196.119.34.108:62017 - "GET /api/futures_positions HTTP/1.1" 200 OK

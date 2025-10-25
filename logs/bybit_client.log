@@ -191,3 +191,7 @@
 2025-10-25 17:08:39,877 [ERROR] GET /v5/position/list -> {'retCode': 10001, 'retMsg': 'Missing some parameters that must be filled in, symbol or settleCoin', 'result': {}, 'retExtInfo': {}, 'time': 1761412119793}
 2025-10-25 17:09:39,655 [ERROR] GET /v5/asset/transfer/query-asset-info -> {'retCode': 131203, 'retMsg': 'request parameter err: account_type illegal temporary spot support', 'result': {}, 'retExtInfo': {}, 'time': 1761412179572}
 2025-10-25 17:09:39,891 [ERROR] GET /v5/position/list -> {'retCode': 10001, 'retMsg': 'Missing some parameters that must be filled in, symbol or settleCoin', 'result': {}, 'retExtInfo': {}, 'time': 1761412179806}
+2025-10-25 17:10:39,662 [ERROR] GET /v5/asset/transfer/query-asset-info -> {'retCode': 131203, 'retMsg': 'request parameter err: account_type illegal temporary spot support', 'result': {}, 'retExtInfo': {}, 'time': 1761412239577}
+2025-10-25 17:10:40,224 [ERROR] GET /v5/position/list -> {'retCode': 10001, 'retMsg': 'Missing some parameters that must be filled in, symbol or settleCoin', 'result': {}, 'retExtInfo': {}, 'time': 1761412240139}
+2025-10-25 17:11:39,696 [ERROR] GET /v5/asset/transfer/query-asset-info -> {'retCode': 131203, 'retMsg': 'request parameter err: account_type illegal temporary spot support', 'result': {}, 'retExtInfo': {}, 'time': 1761412299611}
+2025-10-25 17:11:39,958 [ERROR] GET /v5/position/list -> {'retCode': 10001, 'retMsg': 'Missing some parameters that must be filled in, symbol or settleCoin', 'result': {}, 'retExtInfo': {}, 'time': 1761412299873}
