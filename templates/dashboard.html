@@ -1,0 +1,393 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - SmartOrder PRO{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Status Cards -->
+    <div class="col-md-3 mb-4">
+        <div class="card stats-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Total Balance</h6>
+                        <h3 class="mb-0" id="total-balance">$0.00</h3>
+                        <small class="text-success" id="balance-change">+0.00%</small>
+                    </div>
+                    <div class="stat-icon bg-primary">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card stats-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Today P&L</h6>
+                        <h3 class="mb-0" id="today-pnl">$0.00</h3>
+                        <small class="text-success" id="pnl-percent">+0.00%</small>
+                    </div>
+                    <div class="stat-icon bg-success">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card stats-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Open Positions</h6>
+                        <h3 class="mb-0" id="open-positions">0</h3>
+                        <small class="text-info" id="position-value">$0.00</small>
+                    </div>
+                    <div class="stat-icon bg-info">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card stats-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Win Rate</h6>
+                        <h3 class="mb-0" id="win-rate">0%</h3>
+                        <small class="text-muted" id="total-trades">0 trades</small>
+                    </div>
+                    <div class="stat-icon bg-warning">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Trading Status -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-robot"></i> Trading Status</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <strong>Status:</strong>
+                    <span class="badge bg-secondary ms-2" id="trading-status">Loading...</span>
+                </div>
+                <div class="mb-3">
+                    <strong>Mode:</strong>
+                    <span class="badge bg-info ms-2" id="trading-mode">-</span>
+                </div>
+                <div class="mb-3">
+                    <strong>Uptime:</strong>
+                    <span id="uptime">-</span>
+                </div>
+                <div class="mb-3">
+                    <strong>Last Update:</strong>
+                    <span id="last-update">-</span>
+                </div>
+                <hr>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-success btn-sm" onclick="startTrading()">
+                        <i class="fas fa-play"></i> Start
+                    </button>
+                    <button class="btn btn-warning btn-sm" onclick="pauseTrading()">
+                        <i class="fas fa-pause"></i> Pause
+                    </button>
+                    <button class="btn btn-danger btn-sm" onclick="stopTrading()">
+                        <i class="fas fa-stop"></i> Stop
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Portfolio Chart -->
+    <div class="col-md-8 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-chart-area"></i> Portfolio Value</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="portfolioChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Recent Trades -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-exchange-alt"></i> Recent Trades</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Symbol</th>
+                                <th>Side</th>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>P&L</th>
+                            </tr>
+                        </thead>
+                        <tbody id="trades-table">
+                            <tr>
+                                <td colspan="6" class="text-center text-muted">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Active Alerts -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-bell"></i> Recent Alerts</h5>
+            </div>
+            <div class="card-body">
+                <div id="alerts-list" style="max-height: 300px; overflow-y: auto;">
+                    <p class="text-muted text-center">Loading alerts...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+let socket;
+let portfolioChart;
+
+// Initialize dashboard
+document.addEventListener('DOMContentLoaded', function() {
+    initWebSocket();
+    initCharts();
+    loadDashboardData();
+    
+    // Refresh data every 30 seconds
+    setInterval(loadDashboardData, 30000);
+});
+
+// WebSocket connection
+function initWebSocket() {
+    socket = io();
+    
+    socket.on('connect', function() {
+        console.log('Connected to server');
+        updateConnectionStatus(true);
+    });
+    
+    socket.on('disconnect', function() {
+        console.log('Disconnected from server');
+        updateConnectionStatus(false);
+    });
+    
+    socket.on('portfolio_update', function(data) {
+        updatePortfolioData(data);
+    });
+    
+    socket.on('new_trade', function(data) {
+        addTradeToTable(data);
+    });
+    
+    socket.on('new_alert', function(data) {
+        addAlert(data);
+    });
+    
+    socket.on('trading_status', function(data) {
+        updateTradingStatus(data);
+    });
+}
+
+// Initialize charts
+function initCharts() {
+    const ctx = document.getElementById('portfolioChart').getContext('2d');
+    portfolioChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Portfolio Value',
+                data: [],
+                borderColor: '#667eea',
+                backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                tension: 0.4,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Load dashboard data
+async function loadDashboardData() {
+    try {
+        const [status, portfolio, orders, alerts] = await Promise.all([
+            fetch('/api/status').then(r => r.json()),
+            fetch('/api/portfolio').then(r => r.json()),
+            fetch('/api/orders').then(r => r.json()),
+            fetch('/api/alerts').then(r => r.json())
+        ]);
+        
+        if (status.success) updateStatus(status.status);
+        if (portfolio.success) updatePortfolioData(portfolio.portfolio);
+        if (orders.success) updateTradesTable(orders.orders);
+        if (alerts.success) updateAlerts(alerts.alerts);
+        
+    } catch (error) {
+        console.error('Error loading dashboard data:', error);
+    }
+}
+
+// Update functions
+function updateConnectionStatus(connected) {
+    const indicator = document.getElementById('connection-status');
+    const text = document.getElementById('connection-text');
+    
+    if (connected) {
+        indicator.className = 'status-indicator status-connected';
+        text.textContent = 'Connected';
+    } else {
+        indicator.className = 'status-indicator status-disconnected';
+        text.textContent = 'Disconnected';
+    }
+}
+
+function updateStatus(status) {
+    document.getElementById('trading-status').textContent = status.is_running ? 'Running' : 'Stopped';
+    document.getElementById('trading-mode').textContent = status.mode || 'Auto';
+    document.getElementById('last-update').textContent = new Date().toLocaleTimeString();
+}
+
+function updatePortfolioData(data) {
+    document.getElementById('total-balance').textContent = '$' + (data.total_balance || 0).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    document.getElementById('today-pnl').textContent = '$' + (data.today_pnl || 0).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    document.getElementById('open-positions').textContent = data.open_positions || 0;
+    document.getElementById('win-rate').textContent = (data.win_rate || 0) + '%';
+}
+
+function updateTradesTable(orders) {
+    const tbody = document.getElementById('trades-table');
+    tbody.innerHTML = '';
+    
+    orders.slice(0, 10).forEach(order => {
+        addTradeToTable(order);
+    });
+}
+
+function addTradeToTable(trade) {
+    const tbody = document.getElementById('trades-table');
+    const row = tbody.insertRow(0);
+    
+    const pnlClass = trade.pnl >= 0 ? 'text-success' : 'text-danger';
+    
+    row.innerHTML = `
+        <td>${new Date(trade.timestamp).toLocaleTimeString()}</td>
+        <td>${trade.symbol}</td>
+        <td><span class="badge bg-${trade.side === 'buy' ? 'success' : 'danger'}">${trade.side}</span></td>
+        <td>${trade.size}</td>
+        <td>$${trade.price.toFixed(2)}</td>
+        <td class="${pnlClass}">$${(trade.pnl || 0).toFixed(2)}</td>
+    `;
+}
+
+function updateAlerts(alerts) {
+    const list = document.getElementById('alerts-list');
+    list.innerHTML = '';
+    
+    alerts.slice(0, 10).forEach(alert => {
+        addAlert(alert);
+    });
+}
+
+function addAlert(alert) {
+    const list = document.getElementById('alerts-list');
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${alert.level || 'info'} alert-sm mb-2`;
+    alertDiv.innerHTML = `
+        <strong>${new Date(alert.timestamp).toLocaleTimeString()}</strong><br>
+        ${alert.message}
+    `;
+    list.prepend(alertDiv);
+}
+
+// Control functions
+async function startTrading() {
+    try {
+        const response = await fetch('/api/control/start', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'}
+        });
+        const data = await response.json();
+        alert(data.message || 'Trading started');
+    } catch (error) {
+        alert('Error starting trading: ' + error);
+    }
+}
+
+async function pauseTrading() {
+    try {
+        const response = await fetch('/api/control/pause', {
+            method: 'POST'
+        });
+        const data = await response.json();
+        alert(data.message || 'Trading paused');
+    } catch (error) {
+        alert('Error pausing trading: ' + error);
+    }
+}
+
+async function stopTrading() {
+    if (confirm('Are you sure you want to stop trading?')) {
+        try {
+            const response = await fetch('/api/control/stop', {
+                method: 'POST'
+            });
+            const data = await response.json();
+            alert(data.message || 'Trading stopped');
+        } catch (error) {
+            alert('Error stopping trading: ' + error);
+        }
+    }
+}
+</script>
+{% endblock %}

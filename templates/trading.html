@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block title %}Trading Control - SmartOrder PRO{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-robot"></i> Trading Control Panel</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <h6>System Status</h6>
+                        <p><strong>Status:</strong> <span class="badge bg-secondary" id="system-status">Loading...</span></p>
+                        <p><strong>Mode:</strong> <span id="trading-mode">-</span></p>
+                        <p><strong>Active Modules:</strong> <span id="active-modules">-</span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Quick Stats</h6>
+                        <p><strong>Open Orders:</strong> <span id="open-orders">0</span></p>
+                        <p><strong>Open Positions:</strong> <span id="open-positions">0</span></p>
+                        <p><strong>Today's Trades:</strong> <span id="today-trades">0</span></p>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <h6 class="mb-3">Trading Controls</h6>
+                <div class="row g-2">
+                    <div class="col-md-3">
+                        <button class="btn btn-success w-100" onclick="startTrading()">
+                            <i class="fas fa-play"></i> Start Trading
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-warning w-100" onclick="pauseTrading()">
+                            <i class="fas fa-pause"></i> Pause
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-secondary w-100" onclick="resumeTrading()">
+                            <i class="fas fa-play-circle"></i> Resume
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-danger w-100" onclick="stopTrading()">
+                            <i class="fas fa-stop"></i> Stop
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-3">
+                    <button class="btn btn-danger w-100" onclick="emergencyStop()">
+                        <i class="fas fa-exclamation-triangle"></i> EMERGENCY STOP (Close All Positions)
+                    </button>
+                </div>
+                
+                <hr class="my-4">
+                
+                <h6 class="mb-3">Manual Override</h6>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Action</label>
+                        <select class="form-select" id="manual-action">
+                            <option value="">Select action...</option>
+                            <option value="buy">Buy</option>
+                            <option value="sell">Sell</option>
+                            <option value="close">Close Position</option>
+                            <option value="cancel">Cancel Order</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Symbol</label>
+                        <input type="text" class="form-control" id="manual-symbol" placeholder="BTCUSDT">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="manual-qty" placeholder="0.001">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Price (optional)</label>
+                        <input type="number" class="form-control" id="manual-price" placeholder="Leave empty for market">
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100" onclick="executeManual()">
+                            <i class="fas fa-hand-paper"></i> Execute Manual Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h6 class="mb-0"><i class="fas fa-cogs"></i> Active Strategies</h6>
+            </div>
+            <div class="card-body" id="active-strategies">
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="strategy-grid" checked>
+                    <label class="form-check-label" for="strategy-grid">Grid Trading</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="strategy-dca" checked>
+                    <label class="form-check-label" for="strategy-dca">DCA</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="strategy-whale" checked>
+                    <label class="form-check-label" for="strategy-whale">Whale Tracking</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="strategy-sentiment" checked>
+                    <label class="form-check-label" for="strategy-sentiment">Sentiment Analysis</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="strategy-flash" checked>
+                    <label class="form-check-label" for="strategy-flash">Flash Crash</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h6 class="mb-0"><i class="fas fa-shield-alt"></i> Risk Controls</h6>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Max Drawdown: <strong id="max-dd-val">10%</strong></label>
+                    <input type="range" class="form-range" min="5" max="25" value="10" id="max-dd" oninput="updateRiskControl('max-dd')">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Position Size: <strong id="pos-size-val">5%</strong></label>
+                    <input type="range" class="form-range" min="1" max="20" value="5" id="pos-size" oninput="updateRiskControl('pos-size')">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Max Leverage: <strong id="max-lev-val">3x</strong></label>
+                    <input type="range" class="form-range" min="1" max="10" value="3" id="max-lev" oninput="updateRiskControl('max-lev')">
+                </div>
+                <button class="btn btn-primary btn-sm w-100" onclick="applyRiskSettings()">
+                    <i class="fas fa-check"></i> Apply Settings
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-history"></i> Recent Actions</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Action</th>
+                                <th>Details</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="actions-table">
+                            <tr><td colspan="4" class="text-center text-muted">No recent actions</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+async function startTrading() {
+    const response = await smartorder.apiCall('/api/control/start', 'POST');
+    smartorder.showNotification(response.message || 'Trading started', 'success');
+}
+
+async function pauseTrading() {
+    const response = await smartorder.apiCall('/api/control/pause', 'POST');
+    smartorder.showNotification(response.message || 'Trading paused', 'warning');
+}
+
+async function resumeTrading() {
+    const response = await smartorder.apiCall('/api/control/resume', 'POST');
+    smartorder.showNotification(response.message || 'Trading resumed', 'success');
+}
+
+async function stopTrading() {
+    if (confirm('Are you sure you want to stop trading?')) {
+        const response = await smartorder.apiCall('/api/control/stop', 'POST');
+        smartorder.showNotification(response.message || 'Trading stopped', 'info');
+    }
+}
+
+async function emergencyStop() {
+    if (confirm('⚠️ EMERGENCY STOP: This will close ALL open positions immediately. Continue?')) {
+        const response = await smartorder.apiCall('/api/control/emergency', 'POST');
+        smartorder.showNotification('Emergency stop activated', 'danger');
+    }
+}
+
+async function executeManual() {
+    const action = document.getElementById('manual-action').value;
+    const symbol = document.getElementById('manual-symbol').value;
+    const qty = document.getElementById('manual-qty').value;
+    const price = document.getElementById('manual-price').value;
+    
+    if (!action || !symbol || !qty) {
+        smartorder.showNotification('Please fill all required fields', 'warning');
+        return;
+    }
+    
+    const params = { symbol, qty: parseFloat(qty) };
+    if (price) params.price = parseFloat(price);
+    
+    const response = await smartorder.apiCall('/api/control/override', 'POST', { action, params });
+    smartorder.showNotification(response.message || 'Manual order executed', 'success');
+}
+
+function updateRiskControl(id) {
+    const value = document.getElementById(id).value;
+    const unit = id === 'max-lev' ? 'x' : '%';
+    document.getElementById(id + '-val').textContent = value + unit;
+}
+
+async function applyRiskSettings() {
+    smartorder.showNotification('Risk settings applied', 'success');
+}
+</script>
+{% endblock %}
