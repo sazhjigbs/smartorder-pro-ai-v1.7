@@ -1,0 +1,25 @@
+{
+  "version": "v1.8-FINAL → Phase 6.14",
+  "active_exchange": "bybit",
+  "mode": "live",
+  "auto_mode": true,
+  "risk_max_pct": 0.8,
+  "leverage_default": 2,
+  "trading_enabled": true,
+  "last_update": "2025-10-25T18:00:00Z",
+  "routing_history": [],
+  "positions": {},
+  "ai_memory": {
+    "confidence": 0.75,
+    "bias": "neutral",
+    "volatility": 0.5,
+    "learning_score": 80,
+    "adaptations": 0
+  },
+  "system": {
+    "uptime_start": "2025-10-25T18:00:00Z",
+    "total_trades": 0,
+    "successful_trades": 0,
+    "total_pnl": 0.0
+  }
+}

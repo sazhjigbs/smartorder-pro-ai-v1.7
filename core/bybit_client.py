@@ -4,7 +4,14 @@ from typing import Dict, Any, Tuple
 
 LOG = logging.getLogger("bybit_client")
 LOG.setLevel(logging.INFO)
-fh = logging.FileHandler("/opt/smartorder-pro/logs/bybit_client.log")
+# Windows-compatible logging
+try:
+    log_dir = "C:\\smartorder-pro\\logs"
+    os.makedirs(log_dir, exist_ok=True)
+    fh = logging.FileHandler(f"{log_dir}\\bybit_client.log")
+except:
+    # Fallback to local logs
+    fh = logging.FileHandler("bybit_client.log")
 fh.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(message)s"))
 LOG.addHandler(fh)
 

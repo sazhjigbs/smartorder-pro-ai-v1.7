@@ -1,0 +1,23 @@
+[Unit]
+Description=SmartOrder PRO Auto-Backup Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/smartorder-pro
+ExecStart=/usr/bin/python3 /opt/smartorder-pro/tools/auto_backup.py
+Restart=on-failure
+RestartSec=60
+
+# Optimisations VPS RAM limitée
+Nice=10
+CPUQuota=15%
+MemoryMax=100M
+
+# Logs
+StandardOutput=append:/opt/smartorder-pro/logs/backup.log
+StandardError=append:/opt/smartorder-pro/logs/backup-error.log
+
+[Install]
+WantedBy=multi-user.target
