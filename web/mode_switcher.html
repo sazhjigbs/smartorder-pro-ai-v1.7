@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartOrder PRO - Mode Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .mode-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .mode-btn {
+            padding: 20px;
+            border: 3px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            background: white;
+        }
+
+        .mode-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .mode-btn.active {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .mode-btn .icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .mode-btn .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .mode-btn .description {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .strategy-panel {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .strategy-title {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .confidence-bar {
+            background: rgba(255,255,255,0.3);
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .confidence-fill {
+            background: white;
+            height: 100%;
+            transition: width 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f5576c;
+            font-weight: bold;
+        }
+
+        .reasons-list {
+            margin-top: 15px;
+        }
+
+        .reason-item {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+        }
+
+        .coins-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .coin-card {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: transform 0.3s;
+        }
+
+        .coin-card:hover {
+            transform: scale(1.05);
+        }
+
+        .suggestion-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .suggestion-modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .modal-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-approve {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        .btn-reject {
+            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            color: white;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+
+        .badge-manual { background: #95a5a6; color: white; }
+        .badge-auto-spot { background: #3498db; color: white; }
+        .badge-auto-futures { background: #e74c3c; color: white; }
+        .badge-hybrid { background: #9b59b6; color: white; }
+
+        .refresh-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .refresh-btn:hover {
+            transform: rotate(180deg) scale(1.1);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 SmartOrder PRO - Mode Manager</h1>
+            <p>Gestion intelligente des modes de trading avec IA</p>
+        </div>
+
+        <!-- Current Mode -->
+        <div class="card">
+            <h2>📍 Mode Actuel
+                <span id="currentModebadges" class="status-badge badge-manual">MANUAL</span>
+            </h2>
+        </div>
+
+        <!-- Mode Selector -->
+        <div class="card">
+            <h2 style="margin-bottom: 20px;">🎮 Choisir le Mode</h2>
+            <div class="mode-selector">
+                <div class="mode-btn" data-mode="AUTO_SPOT">
+                    <div class="icon">🤖</div>
+                    <div class="title">Auto Spot</div>
+                    <div class="description">Trading automatique spot uniquement</div>
+                </div>
+
+                <div class="mode-btn" data-mode="AUTO_FUTURES">
+                    <div class="icon">⚡</div>
+                    <div class="title">Auto Futures</div>
+                    <div class="description">Trading automatique futures uniquement</div>
+                </div>
+
+                <div class="mode-btn" data-mode="MANUAL">
+                    <div class="icon">👨‍💻</div>
+                    <div class="title">Manuel</div>
+                    <div class="description">Contrôle manuel complet</div>
+                </div>
+
+                <div class="mode-btn" data-mode="HYBRID">
+                    <div class="icon">🤝</div>
+                    <div class="title">Hybride</div>
+                    <div class="description">IA suggère, vous validez</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Suggestions -->
+        <div class="card">
+            <h2 style="margin-bottom: 20px;">🤖 Suggestions IA Temps Réel</h2>
+            <div id="suggestionsPanel" class="loading">
+                Chargement des suggestions...
+            </div>
+        </div>
+
+        <!-- Recommended Coins -->
+        <div class="card">
+            <h2 style="margin-bottom: 20px;">💎 Coins Recommandés</h2>
+            <div id="coinsPanel" class="coins-panel">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hybrid Mode Validation Modal -->
+    <div id="suggestionModal" class="suggestion-modal">
+        <div class="modal-content">
+            <div class="modal-title">🤖 IA Suggère une Opportunité</div>
+            <div id="modalContent"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-approve" onclick="validateSuggestion(true)">
+                    ✅ Approuver
+                </button>
+                <button class="btn btn-reject" onclick="validateSuggestion(false)">
+                    ❌ Rejeter
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button class="refresh-btn" onclick="refreshData()" title="Rafraîchir">
+        🔄
+    </button>
+
+    <script>
+        const API_BASE = 'http://localhost:8560';
+        let currentSuggestionId = null;
+        let currentMode = 'MANUAL';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCurrentMode();
+            loadSuggestions();
+            setupModeButtons();
+            
+            // Auto-refresh every 30 seconds
+            setInterval(refreshData, 30000);
+        });
+
+        // Setup mode buttons
+        function setupModeButtons() {
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const mode = btn.dataset.mode;
+                    setMode(mode);
+                });
+            });
+        }
+
+        // Load current mode
+        async function loadCurrentMode() {
+            try {
+                const response = await fetch(`${API_BASE}/api/mode/current`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    currentMode = data.data.mode;
+                    updateModeUI(currentMode);
+                }
+            } catch (error) {
+                console.error('Error loading current mode:', error);
+            }
+        }
+
+        // Load AI suggestions
+        async function loadSuggestions() {
+            try {
+                const response = await fetch(`${API_BASE}/api/mode/suggestions`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    displaySuggestions(data.data);
+                }
+            } catch (error) {
+                console.error('Error loading suggestions:', error);
+                document.getElementById('suggestionsPanel').innerHTML = 
+                    '<p style="color: red;">❌ Erreur de chargement</p>';
+            }
+        }
+
+        // Display suggestions
+        function displaySuggestions(data) {
+            const panel = document.getElementById('suggestionsPanel');
+            const coinsPanel = document.getElementById('coinsPanel');
+            
+            panel.innerHTML = `
+                <div class="strategy-panel">
+                    <div class="strategy-title">
+                        🔥 ${data.strategy.name}
+                        <span style="font-size: 0.5em; opacity: 0.8;">
+                            (Risk: ${data.strategy.risk_level})
+                        </span>
+                    </div>
+                    <p style="font-size: 1.1em; margin-bottom: 15px;">
+                        ${data.strategy.description}
+                    </p>
+                    
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="width: ${data.confidence * 100}%">
+                            ${Math.round(data.confidence * 100)}% Confiance
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 20px; margin: 15px 0;">
+                        <div>
+                            <strong>Mode suggéré:</strong> ${data.suggested_mode}
+                        </div>
+                        <div>
+                            <strong>Timeframes:</strong> ${data.strategy.timeframes.join(', ')}
+                        </div>
+                        <div>
+                            <strong>Position Size:</strong> ${data.strategy.position_size_multiplier}x
+                        </div>
+                    </div>
+                    
+                    <div class="reasons-list">
+                        <strong>📊 Raisons:</strong>
+                        ${data.reasons.map(r => `<div class="reason-item">• ${r}</div>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            // Display coins
+            coinsPanel.innerHTML = data.recommended_coins.map(coin => 
+                `<div class="coin-card">${coin}</div>`
+            ).join('') || '<p>Aucun coin recommandé pour cette stratégie</p>';
+        }
+
+        // Set mode
+        async function setMode(mode) {
+            try {
+                const response = await fetch(`${API_BASE}/api/mode/set`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mode, reason: 'Manuel via UI' })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    currentMode = mode;
+                    updateModeUI(mode);
+                    
+                    // If HYBRID mode, show suggestion modal
+                    if (mode === 'HYBRID') {
+                        setTimeout(() => showHybridSuggestion(), 2000);
+                    }
+                    
+                    alert(`✅ Mode changé vers: ${mode}`);
+                    refreshData();
+                } else {
+                    alert(`❌ Erreur: ${data.data.error}`);
+                }
+            } catch (error) {
+                console.error('Error setting mode:', error);
+                alert('❌ Erreur de connexion');
+            }
+        }
+
+        // Update mode UI
+        function updateModeUI(mode) {
+            // Update buttons
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                if (btn.dataset.mode === mode) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Update badge
+            const badge = document.getElementById('currentModeBadge');
+            if (badge) {
+                badge.textContent = mode;
+                badge.className = `status-badge badge-${mode.toLowerCase().replace('_', '-')}`;
+            }
+        }
+
+        // Show hybrid suggestion modal
+        async function showHybridSuggestion() {
+            try {
+                const response = await fetch(`${API_BASE}/api/mode/hybrid/suggest`, {
+                    method: 'POST'
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    currentSuggestionId = data.data.id;
+                    
+                    const modal = document.getElementById('suggestionModal');
+                    const content = document.getElementById('modalContent');
+                    
+                    content.innerHTML = `
+                        <p style="font-size: 1.2em; margin-bottom: 15px;">
+                            <strong>Stratégie:</strong> ${data.data.strategy}
+                        </p>
+                        <p style="margin-bottom: 10px;">
+                            <strong>Mode:</strong> ${data.data.mode}
+                        </p>
+                        <p style="margin-bottom: 10px;">
+                            <strong>Confiance:</strong> ${Math.round(data.data.confidence * 100)}%
+                        </p>
+                        <p style="margin-bottom: 10px;">
+                            <strong>Coins:</strong> ${data.data.recommended_coins.join(', ')}
+                        </p>
+                        <div style="text-align: left; margin-top: 20px; padding: 15px; background: #f5f5f5; border-radius: 10px;">
+                            <strong>Raisons:</strong>
+                            ${data.data.reasons.map(r => `<div style="margin: 5px 0;">• ${r}</div>`).join('')}
+                        </div>
+                    `;
+                    
+                    modal.classList.add('show');
+                }
+            } catch (error) {
+                console.error('Error creating suggestion:', error);
+            }
+        }
+
+        // Validate suggestion
+        async function validateSuggestion(approved) {
+            if (!currentSuggestionId) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/mode/hybrid/validate`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        suggestion_id: currentSuggestionId,
+                        approved
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert(approved ? '✅ Suggestion approuvée !' : '❌ Suggestion rejetée');
+                    document.getElementById('suggestionModal').classList.remove('show');
+                    refreshData();
+                }
+            } catch (error) {
+                console.error('Error validating suggestion:', error);
+            }
+        }
+
+        // Refresh all data
+        function refreshData() {
+            loadCurrentMode();
+            loadSuggestions();
+        }
+    </script>
+</body>
+</html>
