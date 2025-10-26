@@ -45,6 +45,7 @@ try:
     from web.portal_v5_pro.api_auth import router as auth_router
     from web.portal_v5_pro.api_charts import router as charts_router
     from web.portal_v5_pro.api_alerts import router as alerts_router
+    from web.portal_v5_pro.api_trading_control import router as control_router
     NEW_FEATURES_ENABLED = True
 except ImportError as e:
     print(f"⚠️ New features not available: {e}")
@@ -70,6 +71,7 @@ if NEW_FEATURES_ENABLED:
     app.include_router(auth_router)
     app.include_router(charts_router)
     app.include_router(alerts_router)
+    app.include_router(control_router)
 
 # ========== SYSTEM APIs ==========
 
@@ -269,6 +271,7 @@ def unified_dashboard(username: str = Depends(require_auth) if AUTH_ENABLED else
       <button class="tab" onclick="switchTab('execution')">⚡ Execution</button>
       <button class="tab" onclick="switchTab('pnl')">📈 PNL Live</button>
       <button class="tab" onclick="switchTab('signals')">🎯 Signals</button>
+      <button class="tab" onclick="window.location.href='/trading'">🎮 Trading Control</button>
       <button class="tab" onclick="window.location.href='/analytics'">📊 Analytics</button>
       <button class="tab" onclick="window.location.href='/login'">🔐 Login</button>
     </div>
@@ -576,9 +579,14 @@ async def login_page(request: Request):
     return templates.TemplateResponse("login_pro.html", {"request": request})
 
 @app.get("/analytics", response_class=HTMLResponse)
-async def analytics_page(request: Request):
-    """Page analytics avec graphiques"""
+def analytics_page(request: Request):
+    """Page Analytics"""
     return templates.TemplateResponse("analytics.html", {"request": request})
+
+@app.get("/trading", response_class=HTMLResponse)
+def trading_control_page(request: Request):
+    """🎮 Trading Control Panel"""
+    return templates.TemplateResponse("trading_control.html", {"request": request})
 
 # Health check
 @app.get("/health")
