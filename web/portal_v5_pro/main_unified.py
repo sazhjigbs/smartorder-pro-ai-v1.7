@@ -4,10 +4,18 @@
 Dashboard complet avec Execution Engine intégrée
 """
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Depends
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 import os, time, psutil, sys
+
+# Import auth
+try:
+    from web.portal_v5_pro.auth import require_auth
+    AUTH_ENABLED = True
+except ImportError:
+    AUTH_ENABLED = False
+    def require_auth(): return None
 
 # Add project root to path
 sys.path.insert(0, '/opt/smartorder-pro')
@@ -151,7 +159,7 @@ async def execution_health():
 # ========== UNIFIED DASHBOARD ==========
 
 @app.get("/", response_class=HTMLResponse)
-def unified_dashboard():
+def unified_dashboard(username: str = Depends(require_auth) if AUTH_ENABLED else None):
     html = """
 <!doctype html>
 <html lang="fr">
@@ -479,9 +487,48 @@ async function loadPNL() {
 
 async function loadSignals() {
   try {
-    const res = await fetch('/api/signal/history/10').then(r=>r.json());
-    document.getElementById('signals-data').innerHTML = `<pre>${JSON.stringify(res, null, 2)}</pre>`;
+    // Load stats
+    const stats = await fetch('/api/signal/stats').then(r=>r.json());
+    
+    // Load recent history
+    const history = await fetch('/api/signal/history?limit=10').then(r=>r.json());
+    
+    let html = '<div class="stats-grid">';
+    
+    if(stats.success && stats.data) {
+      const d = stats.data;
+      html += `
+        <div class="stat-card"><div class="stat-value">${d.total_signals || 0}</div><div class="stat-label">Total Signals</div></div>
+        <div class="stat-card"><div class="stat-value" style="color:var(--success)">${d.wins || 0}</div><div class="stat-label">Wins</div></div>
+        <div class="stat-card"><div class="stat-value" style="color:var(--danger)">${d.losses || 0}</div><div class="stat-label">Losses</div></div>
+        <div class="stat-card"><div class="stat-value">${d.win_rate ? d.win_rate.toFixed(1) : 0}%</div><div class="stat-label">Win Rate</div></div>
+        <div class="stat-card"><div class="stat-value">${d.avg_pnl_pct ? d.avg_pnl_pct.toFixed(2) : 0}%</div><div class="stat-label">Avg PNL</div></div>
+        <div class="stat-card"><div class="stat-value">${d.total_pnl_usdt ? d.total_pnl_usdt.toFixed(2) : 0} USDT</div><div class="stat-label">Total PNL</div></div>
+      `;
+    }
+    
+    html += '</div>';
+    
+    if(history.success && history.data && history.data.length > 0) {
+      html += '<table style="margin-top:20px"><thead><tr><th>Symbol</th><th>Type</th><th>Entry</th><th>Exit</th><th>PNL %</th><th>Outcome</th></tr></thead><tbody>';
+      history.data.forEach(s => {
+        html += `<tr>
+          <td>${s.symbol}</td>
+          <td><span class="badge badge-${s.signal_type==='LONG'||s.signal_type==='BUY'?'success':'danger'}">${s.signal_type}</span></td>
+          <td>${s.entry_price ? s.entry_price.toFixed(2) : '-'}</td>
+          <td>${s.exit_price ? s.exit_price.toFixed(2) : '-'}</td>
+          <td style="color:${s.pnl_pct>=0?'var(--success)':'var(--danger)'}">${s.pnl_pct ? s.pnl_pct.toFixed(2) : '-'}%</td>
+          <td><span class="badge badge-${s.outcome==='WIN'?'success':s.outcome==='LOSS'?'danger':'warning'}">${s.outcome}</span></td>
+        </tr>`;
+      });
+      html += '</tbody></table>';
+    } else {
+      html += '<p style="text-align:center;color:var(--muted);margin-top:20px">No signal history yet</p>';
+    }
+    
+    document.getElementById('signals-data').innerHTML = html;
   } catch(e) {
+    console.error('Signals error:', e);
     document.getElementById('signals-data').innerHTML = '<p style="color:var(--danger)">Signals API not available</p>';
   }
 }
