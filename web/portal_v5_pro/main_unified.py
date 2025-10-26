@@ -269,6 +269,8 @@ def unified_dashboard(username: str = Depends(require_auth) if AUTH_ENABLED else
       <button class="tab" onclick="switchTab('execution')">⚡ Execution</button>
       <button class="tab" onclick="switchTab('pnl')">📈 PNL Live</button>
       <button class="tab" onclick="switchTab('signals')">🎯 Signals</button>
+      <button class="tab" onclick="window.location.href='/analytics'">📊 Analytics</button>
+      <button class="tab" onclick="window.location.href='/login'">🔐 Login</button>
     </div>
 
     <!-- TAB: Dashboard -->
