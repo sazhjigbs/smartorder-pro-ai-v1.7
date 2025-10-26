@@ -1,0 +1,23 @@
+[Unit]
+Description=SmartOrder PRO - Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/smartorder-pro
+Environment="PATH=/opt/smartorder-pro/venv/bin"
+Environment="PYTHONPATH=/opt/smartorder-pro"
+EnvironmentFile=/opt/smartorder-pro/.env
+ExecStart=/opt/smartorder-pro/venv/bin/python3 telegram/telegram_bot.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/opt/smartorder-pro/logs/telegram_bot.log
+StandardError=append:/opt/smartorder-pro/logs/telegram_bot.log
+
+# Limits
+CPUQuota=15%
+MemoryLimit=100M
+
+[Install]
+WantedBy=multi-user.target
