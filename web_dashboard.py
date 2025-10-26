@@ -453,4 +453,4 @@ if __name__ == '__main__':
     print(f"📊 Login with username: admin | password: {os.getenv('ADMIN_PASSWORD', 'admin123')}")
     print("\n" + "="*60 + "\n")
     
-    socketio.run(app, host=host, port=port, debug=debug)
+    socketio.run(app, host=host, port=port, debug=debug, allow_unsafe_werkzeug=True)
