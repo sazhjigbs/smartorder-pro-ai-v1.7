@@ -1,19 +1,47 @@
-/* SmartOrder PRO - Dashboard Styles */
+/* SmartOrder PRO - Dashboard Styles
+   by MAIGA ABOUBACAR
+   Ultra-Premium Dark Theme
+*/
 
 :root {
+    /* Brand Colors */
     --primary-color: #667eea;
     --secondary-color: #764ba2;
+    --accent-cyan: #00f5ff;
+    --accent-gold: #ffd700;
+    
+    /* Status Colors */
     --success-color: #10b981;
     --danger-color: #ef4444;
     --warning-color: #f59e0b;
     --info-color: #3b82f6;
+    
+    /* Dark Theme */
+    --bg-primary: #0a0e27;
+    --bg-secondary: #151932;
+    --bg-tertiary: #1e2139;
     --dark-color: #1f2937;
     --light-color: #f3f4f6;
+    
+    /* Text */
+    --text-primary: #ffffff;
+    --text-secondary: #8b93b0;
+    --text-muted: #5a6178;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-cyber: linear-gradient(135deg, #00f5ff 0%, #00b4d8 100%);
+    --gradient-gold: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
 }
 
 body {
-    background-color: #f8f9fa;
+    background: var(--bg-primary);
+    background-image: 
+        radial-gradient(at 20% 80%, rgba(102, 126, 234, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 20%, rgba(0, 245, 255, 0.15) 0px, transparent 50%);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-primary);
+    min-height: 100vh;
 }
 
 /* Navigation */
@@ -208,3 +236,184 @@ canvas {
 .shadow-soft {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+
+/* ==================== GLASSMORPHISM ==================== */
+
+.glass-card {
+    background: rgba(21, 25, 50, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card:hover {
+    background: rgba(21, 25, 50, 0.8);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ==================== SIGNATURE MAIGA ABOUBACAR ==================== */
+
+.signature-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.signature-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+}
+
+.signature-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.by-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.author-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.gradient-text {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.badge-premium {
+    background: var(--gradient-gold);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* ==================== FOOTER PREMIUM ==================== */
+
+.premium-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-logo i {
+    color: var(--accent-cyan);
+    animation: pulse 2s infinite;
+}
+
+.footer-signature {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-signature .separator {
+    margin: 0 10px;
+    color: var(--accent-cyan);
+}
+
+.footer-copyright {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 245, 255, 0.6);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.animate-glow {
+    animation: glow 2s infinite;
+}
+
+/* ==================== NAVBAR DARK ==================== */
+
+.navbar-dark {
+    background: var(--bg-secondary) !important;
+    border-bottom: 1px solid rgba(0, 245, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ==================== CARDS DARK ==================== */
+
+.card {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.card-header {
+    background: var(--bg-tertiary) !important;
+    border-bottom: 1px solid rgba(0, 245, 255, 0.2);
+    color: var(--text-primary);
+}
+
+.stats-card {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+    border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+/* ==================== AUTHOR CREDIT ==================== */
+
+/* Developed by MAIGA ABOUBACAR - 2025 */
+/* SmartOrder PRO v2.0 Ultra-Pro */
