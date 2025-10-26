@@ -90,13 +90,24 @@ def wallet_spot_balances() -> Dict[str, Any]:
     ok, data = _get("/v5/account/wallet-balance", {"accountType": "UNIFIED"})
     if not ok:
         return {"spot": [{"error": data}]}
-    # Normaliser un peu
+    # Normaliser - Bybit V5 structure: result.list[0].coin[]
     result = []
-    for a in data.get("result", {}).get("list", []):
-        coin = a.get("coin", "-")
-        free = a.get("free", a.get("walletBalance", "0"))
-        result.append({"asset": coin, "free": free})
-    return {"spot": result}
+    list_data = data.get("result", {}).get("list", [])
+    if list_data:
+        # Le premier élément de 'list' contient 'coin' array
+        coins = list_data[0].get("coin", [])
+        for coin_data in coins:
+            coin = coin_data.get("coin", "-")
+            wallet_balance = coin_data.get("walletBalance", "0")
+            locked = coin_data.get("locked", "0")
+            # Seulement montrer les coins avec balance > 0
+            if float(wallet_balance) > 0:
+                result.append({
+                    "asset": coin,
+                    "free": wallet_balance,
+                    "locked": locked
+                })
+    return {"spot": result if result else [{"asset": "No balances", "free": "0", "locked": "0"}]}
 
 def futures_positions() -> Dict[str, Any]:
     # Positions perp futures (UNIFIED)
