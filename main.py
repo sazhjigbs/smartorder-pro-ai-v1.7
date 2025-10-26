@@ -51,3 +51,13 @@ def proxy_status():
             return {"proxy": "🔴 inactif", "port": None}
     except Exception as e:
         return {"proxy": "⚠️ erreur", "error": str(e)}
+
+# ==============================================================
+# 🎯 SAFELOGIC Smart Execution API – Phase 6.13
+# ==============================================================
+try:
+    from api.api_execution import router as execution_router
+    app.include_router(execution_router)
+    print("✅ Smart Execution API loaded")
+except ImportError as e:
+    print(f"⚠️ Smart Execution API not loaded: {e}")
