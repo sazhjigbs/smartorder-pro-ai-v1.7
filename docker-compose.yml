@@ -1,0 +1,130 @@
+# SmartOrder PRO - Docker Compose
+# by MAIGA ABOUBACAR
+#
+# Usage: docker-compose up -d
+
+version: '3.8'
+
+services:
+  # Main Application
+  smartorder-app:
+    build: .
+    container_name: smartorder-pro
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+      - "8555:8555"
+    environment:
+      # Trading
+      - MODE=live
+      - REAL_MODE=True
+      
+      # Bybit
+      - BYBIT_ENABLED=${BYBIT_ENABLED:-true}
+      - BYBIT_API_KEY=${BYBIT_API_KEY}
+      - BYBIT_API_SECRET=${BYBIT_API_SECRET}
+      - BYBIT_TESTNET=${BYBIT_TESTNET:-false}
+      
+      # Binance
+      - BINANCE_ENABLED=${BINANCE_ENABLED:-false}
+      - BINANCE_API_KEY=${BINANCE_API_KEY:-}
+      - BINANCE_API_SECRET=${BINANCE_API_SECRET:-}
+      
+      # OKX
+      - OKX_ENABLED=${OKX_ENABLED:-false}
+      - OKX_API_KEY=${OKX_API_KEY:-}
+      - OKX_API_SECRET=${OKX_API_SECRET:-}
+      
+      # KuCoin
+      - KUCOIN_ENABLED=${KUCOIN_ENABLED:-false}
+      - KUCOIN_API_KEY=${KUCOIN_API_KEY:-}
+      - KUCOIN_API_SECRET=${KUCOIN_API_SECRET:-}
+      
+      # Telegram
+      - TG_TOKEN=${TG_TOKEN}
+      - TG_CHAT_ID=${TG_CHAT_ID}
+      
+      # Security
+      - MASTER_PASSWORD=${MASTER_PASSWORD:-SmartOrderPRO2025}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
+      - FLASK_SECRET_KEY=${FLASK_SECRET_KEY}
+      
+      # Monitoring
+      - LOG_LEVEL=INFO
+      - HEALTHCHECK_ENABLED=true
+      
+    volumes:
+      - ./logs:/app/logs
+      - ./security:/app/security
+      - ./data:/app/data
+    
+    networks:
+      - smartorder-network
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Redis (for caching - optional)
+  redis:
+    image: redis:7-alpine
+    container_name: smartorder-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - smartorder-network
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+  # Monitoring with Prometheus (optional)
+  # prometheus:
+  #   image: prom/prometheus:latest
+  #   container_name: smartorder-prometheus
+  #   restart: unless-stopped
+  #   ports:
+  #     - "9090:9090"
+  #   volumes:
+  #     - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+  #     - prometheus-data:/prometheus
+  #   networks:
+  #     - smartorder-network
+
+  # Grafana Dashboard (optional)
+  # grafana:
+  #   image: grafana/grafana:latest
+  #   container_name: smartorder-grafana
+  #   restart: unless-stopped
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - grafana-data:/var/lib/grafana
+  #   networks:
+  #     - smartorder-network
+
+networks:
+  smartorder-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+  prometheus-data:
+  grafana-data:
+
+# Developed by MAIGA ABOUBACAR
+# SmartOrder PRO v2.0
