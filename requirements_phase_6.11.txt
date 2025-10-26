@@ -1,0 +1,5 @@
+# Phase 6.11 - WebSocket PNL Live
+websocket-client>=1.6.0  # WebSocket client
+requests>=2.31.0
+psutil>=5.9.0
+python-dotenv>=1.0.0
