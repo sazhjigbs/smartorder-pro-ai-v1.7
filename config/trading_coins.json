@@ -1,0 +1,290 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-10-26",
+  "default_settings": {
+    "enabled": false,
+    "max_capital_pct": 10,
+    "leverage_spot": 1,
+    "leverage_futures": 10,
+    "risk_level": "MEDIUM",
+    "strategies": {
+      "spot": ["grid", "dca"],
+      "futures": ["scalping", "swing"]
+    }
+  },
+  "coins": {
+    "BTCUSDT": {
+      "enabled": true,
+      "name": "Bitcoin",
+      "category": "majors",
+      "max_capital_pct": 25,
+      "leverage_spot": 1,
+      "leverage_futures": 15,
+      "risk_level": "LOW",
+      "volatility_avg": 2.5,
+      "strategies": {
+        "spot": ["grid", "dca", "rebalancing"],
+        "futures": ["scalping", "swing", "momentum"]
+      },
+      "grid_config": {
+        "grid_levels": 20,
+        "price_range_pct": 5,
+        "profit_per_grid": 0.3
+      },
+      "sl_pct": 2.0,
+      "tp_levels": [2.0, 4.0, 8.0],
+      "priority": 1
+    },
+    "ETHUSDT": {
+      "enabled": true,
+      "name": "Ethereum",
+      "category": "majors",
+      "max_capital_pct": 20,
+      "leverage_spot": 1,
+      "leverage_futures": 15,
+      "risk_level": "LOW",
+      "volatility_avg": 3.0,
+      "strategies": {
+        "spot": ["grid", "dca", "rebalancing"],
+        "futures": ["scalping", "swing", "momentum"]
+      },
+      "grid_config": {
+        "grid_levels": 20,
+        "price_range_pct": 6,
+        "profit_per_grid": 0.35
+      },
+      "sl_pct": 2.5,
+      "tp_levels": [2.5, 5.0, 10.0],
+      "priority": 2
+    },
+    "SOLUSDT": {
+      "enabled": true,
+      "name": "Solana",
+      "category": "top_altcoins",
+      "max_capital_pct": 15,
+      "leverage_spot": 1,
+      "leverage_futures": 10,
+      "risk_level": "MEDIUM",
+      "volatility_avg": 5.0,
+      "strategies": {
+        "spot": ["grid", "dca", "momentum"],
+        "futures": ["scalping", "swing"]
+      },
+      "grid_config": {
+        "grid_levels": 15,
+        "price_range_pct": 8,
+        "profit_per_grid": 0.5
+      },
+      "sl_pct": 3.0,
+      "tp_levels": [3.0, 6.0, 12.0],
+      "priority": 3
+    },
+    "BNBUSDT": {
+      "enabled": false,
+      "name": "Binance Coin",
+      "category": "exchange_tokens",
+      "max_capital_pct": 10,
+      "leverage_spot": 1,
+      "leverage_futures": 10,
+      "risk_level": "LOW",
+      "volatility_avg": 3.5,
+      "strategies": {
+        "spot": ["grid", "dca"],
+        "futures": ["swing"]
+      },
+      "grid_config": {
+        "grid_levels": 15,
+        "price_range_pct": 5,
+        "profit_per_grid": 0.4
+      },
+      "sl_pct": 2.5,
+      "tp_levels": [2.0, 4.0, 8.0],
+      "priority": 4
+    },
+    "DOGEUSDT": {
+      "enabled": true,
+      "name": "Dogecoin",
+      "category": "memecoins",
+      "max_capital_pct": 8,
+      "leverage_spot": 1,
+      "leverage_futures": 8,
+      "risk_level": "HIGH",
+      "volatility_avg": 8.0,
+      "strategies": {
+        "spot": ["grid", "momentum"],
+        "futures": ["scalping", "momentum"]
+      },
+      "grid_config": {
+        "grid_levels": 25,
+        "price_range_pct": 10,
+        "profit_per_grid": 0.4
+      },
+      "sl_pct": 5.0,
+      "tp_levels": [5.0, 10.0, 20.0],
+      "priority": 5
+    },
+    "SHIBUSDT": {
+      "enabled": false,
+      "name": "Shiba Inu",
+      "category": "memecoins",
+      "max_capital_pct": 5,
+      "leverage_spot": 1,
+      "leverage_futures": 5,
+      "risk_level": "HIGH",
+      "volatility_avg": 10.0,
+      "strategies": {
+        "spot": ["grid", "momentum"],
+        "futures": ["scalping", "momentum"]
+      },
+      "grid_config": {
+        "grid_levels": 30,
+        "price_range_pct": 12,
+        "profit_per_grid": 0.5
+      },
+      "sl_pct": 7.0,
+      "tp_levels": [7.0, 15.0, 30.0],
+      "priority": 8
+    },
+    "ADAUSDT": {
+      "enabled": false,
+      "name": "Cardano",
+      "category": "top_altcoins",
+      "max_capital_pct": 10,
+      "leverage_spot": 1,
+      "leverage_futures": 10,
+      "risk_level": "MEDIUM",
+      "volatility_avg": 4.5,
+      "strategies": {
+        "spot": ["grid", "dca"],
+        "futures": ["swing"]
+      },
+      "grid_config": {
+        "grid_levels": 18,
+        "price_range_pct": 7,
+        "profit_per_grid": 0.4
+      },
+      "sl_pct": 3.5,
+      "tp_levels": [3.0, 6.0, 12.0],
+      "priority": 6
+    },
+    "MATICUSDT": {
+      "enabled": false,
+      "name": "Polygon",
+      "category": "top_altcoins",
+      "max_capital_pct": 8,
+      "leverage_spot": 1,
+      "leverage_futures": 10,
+      "risk_level": "MEDIUM",
+      "volatility_avg": 5.5,
+      "strategies": {
+        "spot": ["grid", "dca"],
+        "futures": ["scalping", "swing"]
+      },
+      "grid_config": {
+        "grid_levels": 18,
+        "price_range_pct": 8,
+        "profit_per_grid": 0.45
+      },
+      "sl_pct": 4.0,
+      "tp_levels": [4.0, 8.0, 15.0],
+      "priority": 7
+    },
+    "AVAXUSDT": {
+      "enabled": false,
+      "name": "Avalanche",
+      "category": "top_altcoins",
+      "max_capital_pct": 10,
+      "leverage_spot": 1,
+      "leverage_futures": 10,
+      "risk_level": "MEDIUM",
+      "volatility_avg": 6.0,
+      "strategies": {
+        "spot": ["grid", "momentum"],
+        "futures": ["scalping", "swing"]
+      },
+      "grid_config": {
+        "grid_levels": 18,
+        "price_range_pct": 9,
+        "profit_per_grid": 0.5
+      },
+      "sl_pct": 4.0,
+      "tp_levels": [4.0, 8.0, 16.0],
+      "priority": 9
+    },
+    "LINKUSDT": {
+      "enabled": false,
+      "name": "Chainlink",
+      "category": "top_altcoins",
+      "max_capital_pct": 10,
+      "leverage_spot": 1,
+      "leverage_futures": 10,
+      "risk_level": "MEDIUM",
+      "volatility_avg": 5.0,
+      "strategies": {
+        "spot": ["grid", "dca"],
+        "futures": ["swing"]
+      },
+      "grid_config": {
+        "grid_levels": 18,
+        "price_range_pct": 7,
+        "profit_per_grid": 0.4
+      },
+      "sl_pct": 3.5,
+      "tp_levels": [3.5, 7.0, 14.0],
+      "priority": 10
+    }
+  },
+  "categories": {
+    "majors": {
+      "description": "Bitcoin et Ethereum - Les plus stables",
+      "max_allocation_pct": 50,
+      "recommended_leverage_futures": 15
+    },
+    "top_altcoins": {
+      "description": "Top 20 altcoins établis",
+      "max_allocation_pct": 40,
+      "recommended_leverage_futures": 10
+    },
+    "memecoins": {
+      "description": "Coins volatils type memes",
+      "max_allocation_pct": 15,
+      "recommended_leverage_futures": 5
+    },
+    "exchange_tokens": {
+      "description": "Tokens d'exchanges (BNB, FTT, etc)",
+      "max_allocation_pct": 20,
+      "recommended_leverage_futures": 10
+    }
+  },
+  "risk_profiles": {
+    "CONSERVATIVE": {
+      "max_coins_active": 3,
+      "max_leverage": 5,
+      "prefer_majors": true,
+      "capital_per_trade_pct": 5
+    },
+    "MODERATE": {
+      "max_coins_active": 5,
+      "max_leverage": 10,
+      "prefer_majors": false,
+      "capital_per_trade_pct": 10
+    },
+    "AGGRESSIVE": {
+      "max_coins_active": 8,
+      "max_leverage": 20,
+      "prefer_majors": false,
+      "capital_per_trade_pct": 15
+    }
+  },
+  "notes": {
+    "enabled": "Active ce coin pour le trading auto",
+    "max_capital_pct": "% maximum du capital total pour ce coin",
+    "leverage_futures": "Leverage par défaut pour futures (adaptatif selon volatilité)",
+    "risk_level": "LOW/MEDIUM/HIGH - Détermine position sizing",
+    "strategies": "Stratégies autorisées pour ce coin",
+    "grid_config": "Configuration du grid trading",
+    "sl_pct": "Stop Loss par défaut (%)",
+    "tp_levels": "Niveaux de Take Profit [TP1, TP2, TP3] (%)",
+    "priority": "Priorité (1 = le plus important)"
+  }
+}
