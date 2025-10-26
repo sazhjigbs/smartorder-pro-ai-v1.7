@@ -87,7 +87,7 @@ def system_ping() -> Dict[str, Any]:
 
 def wallet_spot_balances() -> Dict[str, Any]:
     # Unified wallet – assets (spot y sont visibles)
-    ok, data = _get("/v5/asset/transfer/query-asset-info", {"accountType": "UNIFIED"})
+    ok, data = _get("/v5/account/wallet-balance", {"accountType": "UNIFIED"})
     if not ok:
         return {"spot": [{"error": data}]}
     # Normaliser un peu
@@ -100,7 +100,7 @@ def wallet_spot_balances() -> Dict[str, Any]:
 
 def futures_positions() -> Dict[str, Any]:
     # Positions perp futures (UNIFIED)
-    ok, data = _get("/v5/position/list", {"category": "linear"})
+    ok, data = _get("/v5/position/list", {"category": "linear", "settleCoin": "USDT"})
     if not ok:
         return {"futures": [{"error": data}]}
     out = []
