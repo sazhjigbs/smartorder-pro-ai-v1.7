@@ -5,8 +5,9 @@ Dashboard complet avec Execution Engine intégrée
 """
 
 from fastapi import FastAPI, Request, Depends
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 import os, time, psutil, sys
 
 # Import auth
@@ -39,12 +40,36 @@ try:
 except ImportError:
     PNL_ENABLED = False
 
+# Import NEW APIs (v6.0 features)
+try:
+    from web.portal_v5_pro.api_auth import router as auth_router
+    from web.portal_v5_pro.api_charts import router as charts_router
+    from web.portal_v5_pro.api_alerts import router as alerts_router
+    NEW_FEATURES_ENABLED = True
+except ImportError as e:
+    print(f"⚠️ New features not available: {e}")
+    NEW_FEATURES_ENABLED = False
+
 app = FastAPI(title="SAFELOGIC SmartOrder PRO — Unified Dashboard v6.0")
+
+# Templates for new features
+templates = Jinja2Templates(directory="web/portal_v5_pro/templates")
+
+# Mount static files
+try:
+    app.mount("/static", StaticFiles(directory="web/portal_v5_pro/static"), name="static")
+except:
+    pass
 
 # Include routers
 if PNL_ENABLED:
     app.include_router(pnl_router)
     app.include_router(signal_router)
+
+if NEW_FEATURES_ENABLED:
+    app.include_router(auth_router)
+    app.include_router(charts_router)
+    app.include_router(alerts_router)
 
 # ========== SYSTEM APIs ==========
 
@@ -541,6 +566,18 @@ window.onload = loadAll;
 """
     return HTMLResponse(html)
 
+# ========== NEW PAGES (v6.0) ==========
+
+@app.get("/login", response_class=HTMLResponse)
+async def login_page(request: Request):
+    """Page de login moderne"""
+    return templates.TemplateResponse("login_pro.html", {"request": request})
+
+@app.get("/analytics", response_class=HTMLResponse)
+async def analytics_page(request: Request):
+    """Page analytics avec graphiques"""
+    return templates.TemplateResponse("analytics.html", {"request": request})
+
 # Health check
 @app.get("/health")
 def health():
@@ -548,5 +585,6 @@ def health():
         "status": "healthy",
         "version": "6.0",
         "execution_engine": EXECUTION_ENABLED,
-        "pnl_api": PNL_ENABLED
+        "pnl_api": PNL_ENABLED,
+        "new_features": NEW_FEATURES_ENABLED
     })
