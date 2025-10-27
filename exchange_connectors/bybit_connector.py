@@ -198,6 +198,55 @@ class BybitConnector:
     
     # ==================== MARKET DATA ====================
     
+    def get_ticker(self, symbol: str, category: str = "spot") -> Dict:
+        """
+        Récupère ticker complet (alias pour compatibilité)
+        
+        Args:
+            symbol: Symbol (ex: BTCUSDT)
+            category: "spot" | "linear" | "inverse"
+            
+        Returns:
+            {
+                'symbol': str,
+                'last_price': float,
+                'bid': float,
+                'ask': float,
+                'volume_24h': float,
+                'high_24h': float,
+                'low_24h': float
+            }
+        """
+        try:
+            response = self._retry_request(
+                self.session.get_tickers,
+                category=category,
+                symbol=symbol
+            )
+            
+            if response['retCode'] != 0:
+                return {}
+            
+            ticker_list = response['result'].get('list', [])
+            if ticker_list:
+                t = ticker_list[0]
+                return {
+                    'symbol': t.get('symbol'),
+                    'last_price': float(t.get('lastPrice', 0)),
+                    'bid': float(t.get('bid1Price', 0)),
+                    'ask': float(t.get('ask1Price', 0)),
+                    'volume_24h': float(t.get('volume24h', 0)),
+                    'high_24h': float(t.get('highPrice24h', 0)),
+                    'low_24h': float(t.get('lowPrice24h', 0)),
+                    'timestamp': t.get('time', 0)
+                }
+            
+            return {}
+            
+        except Exception as e:
+            LOG.error(f"❌ Error getting ticker: {e}")
+            return {}
+    
     def get_ticker_price(self, symbol: str, category: str = "spot") -> float:
         """
         Récupère le prix actuel d'un symbol

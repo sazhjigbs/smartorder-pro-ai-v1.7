@@ -51,6 +51,14 @@ except ImportError as e:
     print(f"⚠️ New features not available: {e}")
     NEW_FEATURES_ENABLED = False
 
+# Import Mode Manager
+try:
+    from ai.mode_manager import TradingModeManager
+    MODE_MANAGER_ENABLED = True
+except ImportError as e:
+    print(f"⚠️ Mode Manager not available: {e}")
+    MODE_MANAGER_ENABLED = False
+
 app = FastAPI(title="SAFELOGIC SmartOrder PRO — Unified Dashboard v6.0")
 
 # Templates for new features
@@ -183,6 +191,48 @@ async def execution_health():
         "active_split_orders": len(engine.split_orders)
     })
 
+# ========== MODE MANAGER APIs ==========
+
+@app.get("/api/mode/current")
+def api_mode_current():
+    """Retourne le mode actuel"""
+    if not MODE_MANAGER_ENABLED:
+        return JSONResponse({"success": False, "error": "Mode Manager not available"})
+    
+    manager = TradingModeManager()
+    mode_data = manager.get_current_mode()
+    return JSONResponse({"success": True, "data": mode_data})
+
+@app.post("/api/mode/set")
+async def api_mode_set(data: dict):
+    """Change le mode de trading"""
+    if not MODE_MANAGER_ENABLED:
+        return JSONResponse({"success": False, "error": "Mode Manager not available"})
+    
+    mode = data.get("mode")
+    reason = data.get("reason")
+    
+    manager = TradingModeManager()
+    result = manager.set_mode(mode, reason)
+    return JSONResponse({"success": result.get("success", False), "data": result})
+
+@app.get("/api/mode/suggestions")
+def api_mode_suggestions():
+    """Retourne les suggestions IA"""
+    if not MODE_MANAGER_ENABLED:
+        return JSONResponse({"success": False, "error": "Mode Manager not available"})
+    
+    manager = TradingModeManager()
+    suggestions = manager.get_suggestions()
+    return JSONResponse({"success": True, "data": suggestions})
+
+# ========== MODE SELECTOR PAGE ==========
+
+@app.get("/modes", response_class=HTMLResponse)
+def modes_page(request: Request, username: str = Depends(require_auth) if AUTH_ENABLED else None):
+    """Page de gestion des modes de trading"""
+    return templates.TemplateResponse("modes.html", {"request": request})
+
 # ========== UNIFIED DASHBOARD ==========
 
 @app.get("/", response_class=HTMLResponse)
@@ -271,6 +321,7 @@ def unified_dashboard(username: str = Depends(require_auth) if AUTH_ENABLED else
       <button class="tab" onclick="switchTab('execution')">⚡ Execution</button>
       <button class="tab" onclick="switchTab('pnl')">📈 PNL Live</button>
       <button class="tab" onclick="switchTab('signals')">🎯 Signals</button>
+      <button class="tab" onclick="window.location.href='/modes'">🎮 Modes</button>
       <button class="tab" onclick="window.location.href='/trading'">🎮 Trading Control</button>
       <button class="tab" onclick="window.location.href='/analytics'">📊 Analytics</button>
       <button class="tab" onclick="window.location.href='/login'">🔐 Login</button>

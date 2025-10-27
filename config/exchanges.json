@@ -1,0 +1,117 @@
+{
+  "bybit": {
+    "name": "Bybit",
+    "enabled": true,
+    "features": {
+      "spot": true,
+      "futures": true,
+      "margin": true
+    },
+    "fees": {
+      "maker": 0.001,
+      "taker": 0.006
+    },
+    "rate_limits": {
+      "requests_per_minute": 100
+    },
+    "min_order_sizes": {
+      "BTCUSDT": 0.001,
+      "ETHUSDT": 0.01,
+      "default": 0.001
+    },
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT",
+      "BNBUSDT",
+      "XRPUSDT"
+    ]
+  },
+  "binance": {
+    "name": "Binance",
+    "enabled": true,
+    "features": {
+      "spot": true,
+      "futures": true,
+      "margin": true
+    },
+    "fees": {
+      "maker": 0.001,
+      "taker": 0.001
+    },
+    "rate_limits": {
+      "requests_per_minute": 1200
+    },
+    "min_order_sizes": {
+      "BTCUSDT": 0.00001,
+      "ETHUSDT": 0.0001,
+      "default": 0.00001
+    },
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "BNBUSDT",
+      "SOLUSDT",
+      "XRPUSDT",
+      "ADAUSDT",
+      "DOGEUSDT"
+    ]
+  },
+  "okx": {
+    "name": "OKX",
+    "enabled": true,
+    "features": {
+      "spot": true,
+      "futures": true,
+      "swap": true,
+      "margin": true
+    },
+    "fees": {
+      "maker": 0.0008,
+      "taker": 0.001
+    },
+    "rate_limits": {
+      "requests_per_2seconds": 20
+    },
+    "min_order_sizes": {
+      "BTC-USDT": 0.00001,
+      "ETH-USDT": 0.0001,
+      "default": 0.00001
+    },
+    "symbols": [
+      "BTC-USDT",
+      "ETH-USDT",
+      "SOL-USDT",
+      "BNB-USDT",
+      "XRP-USDT"
+    ]
+  },
+  "kucoin": {
+    "name": "KuCoin",
+    "enabled": true,
+    "features": {
+      "spot": true,
+      "futures": true,
+      "margin": true
+    },
+    "fees": {
+      "maker": 0.001,
+      "taker": 0.001
+    },
+    "rate_limits": {
+      "requests_per_second": 10
+    },
+    "min_order_sizes": {
+      "BTC-USDT": 0.00001,
+      "ETH-USDT": 0.0001,
+      "default": 0.00001
+    },
+    "symbols": [
+      "BTC-USDT",
+      "ETH-USDT",
+      "SOL-USDT",
+      "XRP-USDT",
+      "ADA-USDT"
+    ]
+  }
+}

@@ -116,12 +116,21 @@ def futures_positions() -> Dict[str, Any]:
         return {"futures": [{"error": data}]}
     out = []
     for p in data.get("result", {}).get("list", []):
-        out.append({
-            "symbol": p.get("symbol"),
-            "side": p.get("side"),
-            "size": p.get("size"),
-            "entryPrice": p.get("avgPrice"),
-            "unrealPnl": p.get("unrealisedPnl"),
-            "leverage": p.get("leverage"),
-        })
+        # Ne montrer que les positions avec size > 0
+        size = float(p.get("size", "0"))
+        if size > 0:
+            out.append({
+                "symbol": p.get("symbol"),
+                "side": p.get("side"),
+                "size": p.get("size"),
+                "entryPrice": p.get("avgPrice"),
+                "unrealPnl": p.get("unrealisedPnl"),
+                "leverage": p.get("leverage"),
+                "markPrice": p.get("markPrice"),
+                "liqPrice": p.get("liqPrice"),
+                "positionValue": p.get("positionValue")
+            })
+    # Si aucune position, retourner un message
+    if not out:
+        return {"futures": [{"symbol": "Aucune position ouverte", "side": "-", "size": "0", "entryPrice": "-", "unrealPnl": "0", "leverage": "-"}]}
     return {"futures": out}

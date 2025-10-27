@@ -1,0 +1,157 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-01-27T00:00:00Z",
+  
+  "trading": {
+    "mode": "manual",
+    "paper_trading": true,
+    "auto_start": false,
+    "exchange": "bybit",
+    "risk_level": "low",
+    "max_position_size_usd": 100,
+    "max_daily_trades": 10,
+    "min_confidence_threshold": 0.75,
+    "enable_stop_loss": true,
+    "enable_take_profit": true,
+    "default_leverage": 1
+  },
+  
+  "exchanges": {
+    "bybit": {
+      "enabled": true,
+      "testnet": false,
+      "api_key_env": "BYBIT_API_KEY",
+      "api_secret_env": "BYBIT_API_SECRET",
+      "recv_window": "5000",
+      "rate_limit_requests_per_minute": 50
+    },
+    "binance": {
+      "enabled": false,
+      "testnet": false,
+      "api_key_env": "BINANCE_API_KEY",
+      "api_secret_env": "BINANCE_API_SECRET"
+    }
+  },
+  
+  "strategies": {
+    "auto_spot": {
+      "enabled": false,
+      "coins": ["BTC", "ETH", "SOL", "BNB"],
+      "min_volume_24h_usd": 100000000,
+      "max_positions": 3,
+      "position_size_percent": 30
+    },
+    "auto_futures": {
+      "enabled": false,
+      "coins": ["BTCUSDT", "ETHUSDT"],
+      "leverage": 2,
+      "max_positions": 2,
+      "position_size_percent": 20
+    },
+    "hybrid": {
+      "enabled": false,
+      "require_manual_validation": true,
+      "auto_approve_confidence_threshold": 0.9
+    },
+    "signal_simulator": {
+      "enabled": false,
+      "mode": "REALISTIC",
+      "comment": "Modes: RANDOM, BULLISH, BEARISH, REALISTIC, TREND_FOLLOWING"
+    }
+  },
+  
+  "risk_management": {
+    "max_portfolio_risk_percent": 2,
+    "stop_loss_percent": 2.5,
+    "take_profit_percent": 5.0,
+    "trailing_stop_percent": 1.5,
+    "max_drawdown_percent": 10,
+    "emergency_stop_loss_percent": 5
+  },
+  
+  "alerts": {
+    "telegram": {
+      "enabled": true,
+      "bot_token_env": "TELEGRAM_BOT_TOKEN",
+      "chat_id_env": "TELEGRAM_CHAT_ID",
+      "send_on_trade": true,
+      "send_on_signal": false,
+      "send_on_error": true,
+      "send_daily_summary": true
+    },
+    "email": {
+      "enabled": false,
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
+      "from_email_env": "EMAIL_FROM",
+      "to_email_env": "EMAIL_TO",
+      "password_env": "EMAIL_PASSWORD"
+    },
+    "discord": {
+      "enabled": false,
+      "webhook_url_env": "DISCORD_WEBHOOK_URL"
+    }
+  },
+  
+  "ai": {
+    "fusion_ai": {
+      "enabled": true,
+      "confidence_weight": 0.4
+    },
+    "genetic_ai": {
+      "enabled": true,
+      "confidence_weight": 0.3
+    },
+    "behavior_ai": {
+      "enabled": true,
+      "confidence_weight": 0.3
+    },
+    "sentiment_analysis": {
+      "enabled": true,
+      "fear_greed_weight": 0.2,
+      "btc_dominance_threshold": 45
+    }
+  },
+  
+  "dashboard": {
+    "port": 8555,
+    "host": "0.0.0.0",
+    "enable_auth": true,
+    "session_timeout_minutes": 60,
+    "refresh_interval_seconds": 5,
+    "enable_websocket": true
+  },
+  
+  "database": {
+    "sqlite_path": "data/smartorder.db",
+    "backup_enabled": true,
+    "backup_interval_hours": 24,
+    "max_backups": 7
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "console_output": true,
+    "file_output": true,
+    "log_dir": "logs",
+    "max_log_size_mb": 10,
+    "backup_count": 5
+  },
+  
+  "monitoring": {
+    "enable_health_checks": true,
+    "health_check_interval_seconds": 60,
+    "enable_performance_metrics": true,
+    "alert_on_api_error": true,
+    "alert_on_strategy_failure": true
+  },
+  
+  "security": {
+    "enable_ip_whitelist": false,
+    "allowed_ips": ["127.0.0.1"],
+    "enable_2fa": false,
+    "session_secret_env": "SESSION_SECRET",
+    "jwt_secret_env": "JWT_SECRET",
+    "jwt_expiration_hours": 24
+  }
+}

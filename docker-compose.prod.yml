@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  smartorder-bot:
+    build: .
+    container_name: smartorder-pro
+    restart: always
+    ports:
+      - "8555:8555"
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+      - ./.env:/app/.env
+    environment:
+      - PAPER_TRADING=false
+      - LOG_LEVEL=INFO
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8555/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - smartorder-net
+
+networks:
+  smartorder-net:
+    driver: bridge
