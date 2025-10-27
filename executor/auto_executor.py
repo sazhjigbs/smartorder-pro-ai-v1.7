@@ -2,9 +2,20 @@
 # =============================================================
 # 🚀 SMARTORDER PRO — AUTO EXECUTOR (Bybit V5 HMAC FIXED LIVE)
 # Phase 4.2 — SafeGuard + Anti-Duplication + AutoRetry
+# by MAIGA ABOUBACAR
 # =============================================================
 import os, time, json, hmac, hashlib, requests
+from pathlib import Path
+from dotenv import load_dotenv
 from loguru import logger
+
+# Charger le .env automatiquement
+env_path = Path("/opt/smartorder-pro/.env")
+if env_path.exists():
+    load_dotenv(env_path)
+    logger.info(f"✅ .env chargé depuis {env_path}")
+else:
+    logger.warning(f"⚠️ Fichier .env introuvable : {env_path}")
 
 LOG_PATH = "/opt/smartorder/logs/auto_executor.log"
 os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
@@ -70,6 +81,32 @@ def save_last_order(side):
 
 def main():
     logger.info("=== START AUTO-EXECUTOR (BYBIT V5 HMAC – SAFEGUARD) ===")
+    
+    # Vérifier l'état du bot
+    state_path = "/opt/smartorder-pro/data/bot_state.json"
+    if os.path.exists(state_path):
+        try:
+            with open(state_path, 'r') as f:
+                bot_state = json.load(f)
+            
+            # Ne trader que si le bot est en mode RUNNING
+            if bot_state.get("status") != "running":
+                logger.info(f"⏸️ Bot status: {bot_state.get('status')} - No trading")
+                return
+            
+            # Vérifier le paper trading
+            if bot_state.get("paper_trading", True):
+                logger.warning("📋 PAPER TRADING MODE - Orders not executed")
+                return
+            
+            logger.info(f"✅ Bot status: RUNNING - Mode: {bot_state.get('mode')}")
+        except Exception as e:
+            logger.error(f"❌ Error reading bot state: {e}")
+            return
+    else:
+        logger.warning("⚠️ No bot_state.json found - trading disabled by default")
+        return
+    
     bias_path = "/opt/smartorder/db/market_memory.json"
 
     try:
