@@ -1,45 +1,161 @@
 # -*- coding: utf-8 -*-
-"""Advanced Telegram Bot - Analytics & Remote Control"""
+"""
+🔥 SmartOrder PRO - Telegram Bot COMPLET
+=========================================
+Bot Telegram avec contrôle total
+by MAIGA ABOUBACAR
+
+Commandes:
+- MODE: /mode_spot, /mode_futures, /mode_hybrid, /mode_manual
+- STRATÉGIES: /strategies, /enable_strategy, /disable_strategy
+- EXCHANGE: /exchanges, /exchange_select
+- WATCHLIST: /watchlist, /add_coin, /remove_coin, /scan_gainers
+- EMERGENCY: /emergency_stop, /pause, /resume
+- INFO: /status, /balance, /positions, /analytics
+"""
 import os
+import sys
+from pathlib import Path
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
+from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes, MessageHandler, filters
 import json
 from datetime import datetime
+
+# Import managers
+sys.path.insert(0, str(Path(__file__).parent.parent))
+try:
+    from core.watchlist_manager import get_watchlist_manager
+    from core.auto_spot_ai_manager import get_auto_spot_manager
+    from core.auto_futures_ai_manager import get_auto_futures_manager
+except:
+    pass
 
 class AdvancedTelegramBot:
     def __init__(self, token: str):
         self.token = token
         self.app = Application.builder().token(token).build()
+        
+        # State
+        self.current_mode = "manual"  # manual | spot | futures | hybrid
+        self.is_paused = False
+        
+        # Managers
+        try:
+            self.watchlist_mgr = get_watchlist_manager()
+            self.spot_mgr = get_auto_spot_manager()
+            self.futures_mgr = get_auto_futures_manager()
+        except:
+            self.watchlist_mgr = None
+            self.spot_mgr = None
+            self.futures_mgr = None
+        
         self._setup_handlers()
         
     def _setup_handlers(self):
         """Setup command and callback handlers"""
+        # Info commands
         self.app.add_handler(CommandHandler("start", self.cmd_start))
+        self.app.add_handler(CommandHandler("help", self.cmd_help))
         self.app.add_handler(CommandHandler("status", self.cmd_status))
         self.app.add_handler(CommandHandler("balance", self.cmd_balance))
         self.app.add_handler(CommandHandler("positions", self.cmd_positions))
         self.app.add_handler(CommandHandler("analytics", self.cmd_analytics))
         self.app.add_handler(CommandHandler("report", self.cmd_report))
+        
+        # MODE commands
+        self.app.add_handler(CommandHandler("mode", self.cmd_mode))
+        self.app.add_handler(CommandHandler("mode_spot", self.cmd_mode_spot))
+        self.app.add_handler(CommandHandler("mode_futures", self.cmd_mode_futures))
+        self.app.add_handler(CommandHandler("mode_hybrid", self.cmd_mode_hybrid))
+        self.app.add_handler(CommandHandler("mode_manual", self.cmd_mode_manual))
+        
+        # STRATÉGIES commands
+        self.app.add_handler(CommandHandler("strategies", self.cmd_strategies))
+        self.app.add_handler(CommandHandler("enable_strategy", self.cmd_enable_strategy))
+        self.app.add_handler(CommandHandler("disable_strategy", self.cmd_disable_strategy))
+        
+        # EXCHANGE commands
+        self.app.add_handler(CommandHandler("exchanges", self.cmd_exchanges))
+        self.app.add_handler(CommandHandler("exchange_select", self.cmd_exchange_select))
+        
+        # WATCHLIST commands
+        self.app.add_handler(CommandHandler("watchlist", self.cmd_watchlist))
+        self.app.add_handler(CommandHandler("add_coin", self.cmd_add_coin))
+        self.app.add_handler(CommandHandler("remove_coin", self.cmd_remove_coin))
+        self.app.add_handler(CommandHandler("scan_gainers", self.cmd_scan_gainers))
+        
+        # EMERGENCY commands
+        self.app.add_handler(CommandHandler("emergency_stop", self.cmd_emergency_stop))
         self.app.add_handler(CommandHandler("pause", self.cmd_pause))
         self.app.add_handler(CommandHandler("resume", self.cmd_resume))
+        
+        # Callback handler
         self.app.add_handler(CallbackQueryHandler(self.button_handler))
     
     async def cmd_start(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Start command with menu"""
         keyboard = [
-            [InlineKeyboardButton("📊 Status", callback_data='status'),
+            [InlineKeyboardButton("🎯 MODE", callback_data='mode_menu'),
+             InlineKeyboardButton("📊 Status", callback_data='status')],
+            [InlineKeyboardButton("⚙️ Strategies", callback_data='strategies_menu'),
+             InlineKeyboardButton("🏦 Exchanges", callback_data='exchanges_menu')],
+            [InlineKeyboardButton("🪙 Watchlist", callback_data='watchlist_menu'),
              InlineKeyboardButton("💰 Balance", callback_data='balance')],
             [InlineKeyboardButton("📈 Positions", callback_data='positions'),
-             InlineKeyboardButton("📉 Analytics", callback_data='analytics')],
+             InlineKeyboardButton("📊 Analytics", callback_data='analytics')],
             [InlineKeyboardButton("⏸ Pause", callback_data='pause'),
-             InlineKeyboardButton("▶️ Resume", callback_data='resume')]
+             InlineKeyboardButton("🛑 Emergency Stop", callback_data='emergency')]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
-        await update.message.reply_text(
-            '🚀 *SmartOrder PRO Bot*\n\nSelect an option:',
-            reply_markup=reply_markup,
-            parse_mode='Markdown'
-        )
+        msg = f'''🔥 *SmartOrder PRO Bot*
+by MAIGA ABOUBACAR
+
+*Current Mode:* {self.current_mode.upper()}
+*Status:* {'⏸ PAUSED' if self.is_paused else '✅ RUNNING'}
+
+Select an option:'''
+        await update.message.reply_text(msg, reply_markup=reply_markup, parse_mode='Markdown')
+    
+    async def cmd_help(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Help command"""
+        help_text = '''
+*📚 SmartOrder PRO Commands*
+
+*🎯 MODE*
+/mode - Mode menu
+/mode\_spot - Auto Spot AI
+/mode\_futures - Auto Futures AI
+/mode\_hybrid - Hybrid Mode
+/mode\_manual - Manual Mode
+
+*⚙️ STRATEGIES*
+/strategies - View strategies
+/enable\_strategy - Enable strategy
+/disable\_strategy - Disable strategy
+
+*🏦 EXCHANGES*
+/exchanges - View exchanges
+/exchange\_select - Select exchange
+
+*🪙 WATCHLIST*
+/watchlist - View watchlist
+/add\_coin BTC ETH - Add coins
+/remove\_coin XRP - Remove coin
+/scan\_gainers - Scan top gainers
+
+*🛑 EMERGENCY*
+/emergency\_stop - Stop ALL
+/pause - Pause trading
+/resume - Resume trading
+
+*📊 INFO*
+/status - Bot status
+/balance - Account balance
+/positions - Open positions
+/analytics - Performance
+/report - Daily report
+'''
+        await update.message.reply_text(help_text, parse_mode='Markdown')
     
     async def cmd_status(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Bot status"""

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartOrder PRO - Trading Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white min-h-screen">
+    <!-- Sidebar -->
+    <div class="flex">
+        <aside class="w-64 min-h-screen bg-gray-900 border-r border-gray-800 fixed">
+            <div class="p-6">
+                <h1 class="text-2xl font-bold text-purple-400">🚀 SmartOrder PRO</h1>
+                <p class="text-xs text-gray-400 mt-1">by MAIGA ABOUBACAR</p>
+            </div>
+            <nav class="mt-6">
+                <a href="#dashboard" class="flex items-center px-6 py-3 text-purple-400 bg-gray-800 border-l-4 border-purple-400">
+                    <span class="mr-3">📊</span> Dashboard
+                </a>
+                <a href="#mode" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white">
+                    <span class="mr-3">⚙️</span> Mode Trading
+                </a>
+                <a href="#strategies" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white">
+                    <span class="mr-3">⚡</span> Stratégies
+                </a>
+                <a href="#exchanges" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white">
+                    <span class="mr-3">🌐</span> Exchanges
+                </a>
+                <a href="#watchlist" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white">
+                    <span class="mr-3">🪙</span> Watchlist
+                </a>
+                <a href="#positions" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white">
+                    <span class="mr-3">📈</span> Positions
+                </a>
+                <a href="#risk" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white">
+                    <span class="mr-3">🛡️</span> Risk Management
+                </a>
+                <a href="#emergency" class="flex items-center px-6 py-3 text-red-400 hover:bg-red-900 hover:text-white">
+                    <span class="mr-3">🚨</span> URGENCE
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 flex-1 p-8">
+            <!-- Header -->
+            <header class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold">Dashboard Principal</h2>
+                    <p class="text-gray-400" id="currentTime"></p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="px-4 py-2 bg-green-500 rounded-full text-sm font-semibold">● LIVE</span>
+                    <button onclick="refreshData()" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg">
+                        🔄 Refresh
+                    </button>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="glass rounded-xl p-6 border border-gray-700">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-400 text-sm">Total PnL</p>
+                            <h3 class="text-3xl font-bold text-green-400 mt-2" id="totalPnl">+$0.00</h3>
+                            <p class="text-xs text-gray-500 mt-1">All time</p>
+                        </div>
+                        <span class="text-3xl">💰</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl p-6 border border-gray-700">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-400 text-sm">Daily PnL</p>
+                            <h3 class="text-3xl font-bold text-yellow-400 mt-2" id="dailyPnl">$0.00</h3>
+                            <p class="text-xs text-gray-500 mt-1">Today</p>
+                        </div>
+                        <span class="text-3xl">📅</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl p-6 border border-gray-700">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-400 text-sm">Positions</p>
+                            <h3 class="text-3xl font-bold mt-2" id="positionsCount">0</h3>
+                            <p class="text-xs text-gray-500 mt-1">Active</p>
+                        </div>
+                        <span class="text-3xl">📊</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl p-6 border border-gray-700">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-400 text-sm">Win Rate</p>
+                            <h3 class="text-3xl font-bold mt-2" id="winRate">0%</h3>
+                            <p class="text-xs text-gray-500 mt-1">Last 30 days</p>
+                        </div>
+                        <span class="text-3xl">🎯</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mode & Strategies -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Trading Mode -->
+                <div class="glass rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-4">⚙️ Mode de Trading</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 bg-gray-800 rounded-lg">
+                            <span class="font-semibold">Mode actuel</span>
+                            <span class="px-3 py-1 bg-purple-600 rounded-full text-sm" id="currentMode">SPOT</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3 mt-4">
+                            <button onclick="changeMode('spot')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg">SPOT</button>
+                            <button onclick="changeMode('futures')" class="px-4 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg">FUTURES</button>
+                            <button onclick="changeMode('hybrid')" class="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg">HYBRID</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Strategies -->
+                <div class="glass rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-4">⚡ Stratégies Actives</h3>
+                    <div class="space-y-2" id="strategiesList">
+                        <div class="flex items-center justify-between p-3 bg-gray-800 rounded-lg">
+                            <span>Grid Trading</span>
+                            <button class="px-3 py-1 bg-gray-600 hover:bg-green-600 rounded text-sm">Start</button>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-800 rounded-lg">
+                            <span>DCA Strategy</span>
+                            <button class="px-3 py-1 bg-gray-600 hover:bg-green-600 rounded text-sm">Start</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exchanges -->
+            <div class="glass rounded-xl p-6 border border-gray-700 mb-8">
+                <h3 class="text-xl font-bold mb-4">🌐 Exchanges Status</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="exchangesGrid">
+                    <div class="p-4 bg-gray-800 rounded-lg border-2 border-red-500">
+                        <div class="text-center">
+                            <p class="font-bold">Bybit</p>
+                            <p class="text-xs text-red-400 mt-1">Disconnected</p>
+                            <p class="text-sm mt-2">$0.00</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-gray-800 rounded-lg border-2 border-red-500">
+                        <div class="text-center">
+                            <p class="font-bold">Binance</p>
+                            <p class="text-xs text-red-400 mt-1">Disconnected</p>
+                            <p class="text-sm mt-2">$0.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Positions Table -->
+            <div class="glass rounded-xl p-6 border border-gray-700 mb-8">
+                <h3 class="text-xl font-bold mb-4">📈 Positions Ouvertes</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-800">
+                            <tr>
+                                <th class="px-4 py-3 text-left">Symbole</th>
+                                <th class="px-4 py-3 text-left">Côté</th>
+                                <th class="px-4 py-3 text-left">Taille</th>
+                                <th class="px-4 py-3 text-left">Prix Entry</th>
+                                <th class="px-4 py-3 text-left">Prix Actuel</th>
+                                <th class="px-4 py-3 text-left">PnL</th>
+                                <th class="px-4 py-3 text-left">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="positionsTable">
+                            <tr>
+                                <td colspan="7" class="px-4 py-8 text-center text-gray-500">Aucune position ouverte</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Chart -->
+            <div class="glass rounded-xl p-6 border border-gray-700">
+                <h3 class="text-xl font-bold mb-4">📊 PnL Performance</h3>
+                <canvas id="pnlChart" height="80"></canvas>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const API_BASE = window.location.origin;
+        
+        // Update time
+        setInterval(() => {
+            document.getElementById('currentTime').textContent = new Date().toLocaleString('fr-FR');
+        }, 1000);
+
+        // Load data
+        async function refreshData() {
+            try {
+                // PnL
+                const pnl = await fetch(`${API_BASE}/api/pnl`).then(r => r.json());
+                document.getElementById('totalPnl').textContent = `${pnl.total_pnl >= 0 ? '+' : ''}$${pnl.total_pnl.toFixed(2)}`;
+                document.getElementById('dailyPnl').textContent = `${pnl.daily_pnl >= 0 ? '+' : ''}$${pnl.daily_pnl.toFixed(2)}`;
+
+                // Mode
+                const mode = await fetch(`${API_BASE}/api/mode`).then(r => r.json());
+                document.getElementById('currentMode').textContent = mode.current_mode.toUpperCase();
+
+                // Exchanges
+                const exchanges = await fetch(`${API_BASE}/api/exchanges`).then(r => r.json());
+                updateExchanges(exchanges);
+
+                // Positions
+                const positions = await fetch(`${API_BASE}/api/positions`).then(r => r.json());
+                document.getElementById('positionsCount').textContent = positions.length;
+                updatePositions(positions);
+
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        function updateExchanges(exchanges) {
+            const grid = document.getElementById('exchangesGrid');
+            grid.innerHTML = exchanges.map(ex => `
+                <div class="p-4 bg-gray-800 rounded-lg border-2 ${ex.connected ? 'border-green-500' : 'border-red-500'}">
+                    <div class="text-center">
+                        <p class="font-bold">${ex.name}</p>
+                        <p class="text-xs ${ex.connected ? 'text-green-400' : 'text-red-400'} mt-1">
+                            ${ex.connected ? '✓ Connected' : '✗ Disconnected'}
+                        </p>
+                        <p class="text-sm mt-2">$${(ex.balance.USDT || 0).toFixed(2)}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updatePositions(positions) {
+            const table = document.getElementById('positionsTable');
+            if (positions.length === 0) {
+                table.innerHTML = '<tr><td colspan="7" class="px-4 py-8 text-center text-gray-500">Aucune position ouverte</td></tr>';
+                return;
+            }
+            table.innerHTML = positions.map(pos => `
+                <tr class="border-b border-gray-800 hover:bg-gray-800">
+                    <td class="px-4 py-3 font-bold">${pos.symbol}</td>
+                    <td class="px-4 py-3">
+                        <span class="px-2 py-1 rounded ${pos.side === 'long' ? 'bg-green-600' : 'bg-red-600'} text-xs">
+                            ${pos.side.toUpperCase()}
+                        </span>
+                    </td>
+                    <td class="px-4 py-3">${pos.size}</td>
+                    <td class="px-4 py-3">$${pos.entry_price.toFixed(2)}</td>
+                    <td class="px-4 py-3">$${pos.current_price.toFixed(2)}</td>
+                    <td class="px-4 py-3">
+                        <span class="${pos.pnl >= 0 ? 'text-green-400' : 'text-red-400'} font-bold">
+                            ${pos.pnl >= 0 ? '+' : ''}$${pos.pnl.toFixed(2)} (${pos.pnl_percent.toFixed(2)}%)
+                        </span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <button onclick="closePosition('${pos.symbol}')" class="px-3 py-1 bg-red-600 hover:bg-red-700 rounded text-sm">
+                            Close
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function changeMode(mode) {
+            try {
+                await fetch(`${API_BASE}/api/mode`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({mode, strategy: 'default', active: true, capital_allocated: 1000})
+                });
+                alert(`Mode changed to ${mode.toUpperCase()}`);
+                refreshData();
+            } catch (error) {
+                alert('Error changing mode');
+            }
+        }
+
+        function closePosition(symbol) {
+            if (confirm(`Close position ${symbol}?`)) {
+                alert('Feature coming soon');
+            }
+        }
+
+        // Init chart
+        const ctx = document.getElementById('pnlChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'PnL ($)',
+                    data: [],
+                    borderColor: 'rgb(139, 92, 246)',
+                    backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { grid: { color: 'rgba(255, 255, 255, 0.1)' } },
+                    x: { grid: { color: 'rgba(255, 255, 255, 0.1)' } }
+                }
+            }
+        });
+
+        // Auto refresh
+        refreshData();
+        setInterval(refreshData, 5000);
+    </script>
+</body>
+</html>

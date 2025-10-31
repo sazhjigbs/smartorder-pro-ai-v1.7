@@ -200,41 +200,80 @@ class ExchangeRouter:
             preferred_exchange: Preferred exchange (optional)
         
         Returns:
-            Order result with exchange info
+            Order result
         """
-        # Use preferred exchange if specified
+        # Select exchange
         if preferred_exchange and preferred_exchange in self.manager.connectors:
             exchange = preferred_exchange
         else:
-            # Auto-select best exchange
-            exchange = self.get_best_exchange(symbol, criteria='auto')
+            exchange = self.get_best_exchange(symbol, 'auto')
         
         if not exchange:
-            return {
-                'success': False,
-                'error': 'No exchange available'
-            }
+            return {"success": False, "error": "No exchange available"}
         
-        # Normalize symbol for exchange
-        normalized_symbol = self._normalize_symbol(symbol, exchange)
+        try:
+            # Place order via unified manager
+            result = self.manager.place_order(
+                exchange=exchange,
+                symbol=symbol,
+                side=side,
+                order_type=order_type,
+                quantity=quantity,
+                price=price
+            )
+            return result
+        except Exception as e:
+            # Fallback to another exchange
+            LOG.warning(f"⚠️ {exchange} failed, trying fallback...")
+            return self._fallback_order(symbol, side, order_type, quantity, price, exclude=[exchange])
+    
+    def _fallback_order(self, symbol: str, side: str, order_type: str, 
+                       quantity: float, price: float, exclude: List[str]) -> Dict:
+        """Fallback automatique si exchange principal échoue"""
+        available = [ex for ex in self.manager.connectors.keys() if ex not in exclude]
         
-        LOG.info(f"🔄 Routing order to {exchange}: {side} {quantity} {normalized_symbol}")
+        for exchange in available:
+            if self.manager.health_monitor.is_healthy(exchange):
+                try:
+                    LOG.info(f"🔄 Fallback to {exchange}")
+                    return self.manager.place_order(
+                        exchange=exchange,
+                        symbol=symbol,
+                        side=side,
+                        order_type=order_type,
+                        quantity=quantity,
+                        price=price
+                    )
+                except:
+                    continue
         
-        # Place order via unified manager
-        result = self.manager.place_order(
-            exchange=exchange,
-            symbol=normalized_symbol,
-            side=side,
-            order_type=order_type,
-            quantity=quantity,
-            price=price
-        )
+        return {"success": False, "error": "All exchanges failed"}
+    
+    def load_balance_orders(self, orders: List[Dict]) -> List[Dict]:
+        """Répartit les ordres sur plusieurs exchanges"""
+        results = []
+        exchanges = list(self.manager.connectors.keys())
         
-        # Add exchange info to result
-        result['exchange'] = exchange
-        result['original_symbol'] = symbol
+        for i, order in enumerate(orders):
+            exchange = exchanges[i % len(exchanges)]
+            result = self.route_order(
+                symbol=order["symbol"],
+                side=order["side"],
+                order_type=order["type"],
+                quantity=order["quantity"],
+                price=order.get("price"),
+                preferred_exchange=exchange
+            )
+            results.append(result)
         
-        return result
+        return results
+
+_router = None
+def get_exchange_router(manager):
+    global _router
+    if _router is None:
+        _router = ExchangeRouter(manager)
+    return _router
     
     def get_best_price(self, symbol: str) -> Dict:
         """

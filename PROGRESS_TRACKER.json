@@ -1,0 +1,403 @@
+{
+  "project": "SmartOrder PRO",
+  "version": "1.0",
+  "last_update": "2025-10-29T17:41:00Z",
+  "current_phase": "LAYER_0_BASELINE",
+  "completion_percentage": 82,
+  
+  "phases": {
+    "LAYER_0_BASELINE": {
+      "status": "COMPLETED",
+      "date_completed": "2025-10-29T17:32:50Z",
+      "tasks": [
+        {"id": "L0-1", "name": "Diagnostic exécuté", "status": "DONE", "file": "bot_diagnostic_pro.py"},
+        {"id": "L0-2", "name": "Rapport JSON généré", "status": "DONE", "file": "bot_diagnostic_report.json"},
+        {"id": "L0-3", "name": "État réel documenté", "status": "DONE", "file": "ETAT_REEL_BASELINE.md"},
+        {"id": "L0-4", "name": "Plan intégration créé", "status": "DONE", "file": "INTEGRATION_PROGRESSIVE_PLAN.md"}
+      ],
+      "next_phase": "LAYER_1_CORRECTIONS"
+    },
+    
+    "LAYER_1_CORRECTIONS": {
+      "status": "PENDING",
+      "estimated_time": "15 min",
+      "tasks": [
+        {
+          "id": "L1-1",
+          "name": "Supprimer fichiers dupliqués",
+          "status": "TODO",
+          "command": "ssh root@107.189.22.255 'rm /opt/smartorder-pro/ai/{signal_memory,sentiment,mode_manager,signal_simulator}.py'",
+          "verification": "ls /opt/smartorder-pro/ai/*.py"
+        },
+        {
+          "id": "L1-2",
+          "name": "Vérifier nom classe Multi-TP",
+          "status": "TODO",
+          "command": "ssh root@107.189.22.255 \"grep -n 'class ' /opt/smartorder-pro/core/multi_tp_and_funding_optimizer.py | head -5\"",
+          "action": "Corriger nom dans bot_diagnostic_pro.py ou module si nécessaire"
+        },
+        {
+          "id": "L1-3",
+          "name": "Init Git repository",
+          "status": "TODO",
+          "commands": [
+            "cd /opt/smartorder-pro",
+            "git init",
+            "git add .",
+            "git commit -m 'BASELINE: État après diagnostic'",
+            "git tag v1.0-baseline"
+          ]
+        }
+      ],
+      "rollback": "N/A (corrections légères)",
+      "next_phase": "LAYER_2_APIS"
+    },
+    
+    "LAYER_2_APIS": {
+      "status": "PENDING",
+      "estimated_time": "30 min",
+      "tasks": [
+        {
+          "id": "L2-1",
+          "name": "Ajouter endpoint /api/adaptive_scalping/status",
+          "status": "TODO",
+          "file": "api/main.py",
+          "line_after": "# Ajouter après les endpoints existants"
+        },
+        {
+          "id": "L2-2",
+          "name": "Ajouter endpoint /api/position_manager/status",
+          "status": "TODO",
+          "file": "api/main.py"
+        },
+        {
+          "id": "L2-3",
+          "name": "Ajouter endpoint /api/funding/rates",
+          "status": "TODO",
+          "file": "api/main.py"
+        },
+        {
+          "id": "L2-4",
+          "name": "Ajouter endpoint /api/market_regime",
+          "status": "TODO",
+          "file": "api/main.py"
+        },
+        {
+          "id": "L2-5",
+          "name": "Ajouter endpoint /api/volatility",
+          "status": "TODO",
+          "file": "api/main.py"
+        },
+        {
+          "id": "L2-6",
+          "name": "Restart service API",
+          "status": "TODO",
+          "command": "systemctl restart smartorder-api"
+        },
+        {
+          "id": "L2-7",
+          "name": "Tester tous les nouveaux endpoints",
+          "status": "TODO",
+          "validation": "curl http://localhost:8000/api/adaptive_scalping/status | jq ."
+        }
+      ],
+      "git_tag": "v1.1-apis-added",
+      "rollback": "git checkout v1.0-baseline",
+      "next_phase": "LAYER_3_ADAPTIVE_SCALPING"
+    },
+    
+    "LAYER_3_ADAPTIVE_SCALPING": {
+      "status": "PENDING",
+      "estimated_time": "45 min",
+      "tasks": [
+        {
+          "id": "L3-1",
+          "name": "Importer AdaptiveScalpingEngine dans run_paper",
+          "status": "TODO",
+          "file": "run_paper_infinity_pro.py",
+          "line": 15
+        },
+        {
+          "id": "L3-2",
+          "name": "Créer instance dans __init__",
+          "status": "TODO",
+          "file": "run_paper_infinity_pro.py"
+        },
+        {
+          "id": "L3-3",
+          "name": "Ajouter méthode _adjust_for_volatility",
+          "status": "TODO",
+          "file": "run_paper_infinity_pro.py"
+        },
+        {
+          "id": "L3-4",
+          "name": "Appeler dans loop principale (60s)",
+          "status": "TODO",
+          "file": "run_paper_infinity_pro.py"
+        },
+        {
+          "id": "L3-5",
+          "name": "Restart paper trading",
+          "status": "TODO",
+          "command": "systemctl restart smartorder-papertrading"
+        },
+        {
+          "id": "L3-6",
+          "name": "Monitorer logs 5 minutes",
+          "status": "TODO",
+          "command": "journalctl -u smartorder-papertrading -f"
+        }
+      ],
+      "git_tag": "v1.2-adaptive-scalping",
+      "rollback": "git checkout v1.1-apis-added",
+      "next_phase": "LAYER_4_POSITION_MANAGER"
+    },
+    
+    "LAYER_4_POSITION_MANAGER": {
+      "status": "PENDING",
+      "estimated_time": "45 min",
+      "tasks": [
+        {
+          "id": "L4-1",
+          "name": "Importer SmartPositionManager",
+          "status": "TODO",
+          "file": "run_paper_infinity_pro.py"
+        },
+        {
+          "id": "L4-2",
+          "name": "Créer instance position_manager",
+          "status": "TODO"
+        },
+        {
+          "id": "L4-3",
+          "name": "Ajouter méthode _check_positions",
+          "status": "TODO"
+        },
+        {
+          "id": "L4-4",
+          "name": "Appeler dans loop (5 min)",
+          "status": "TODO"
+        },
+        {
+          "id": "L4-5",
+          "name": "Test & validation",
+          "status": "TODO"
+        }
+      ],
+      "git_tag": "v1.3-position-manager",
+      "rollback": "git checkout v1.2-adaptive-scalping",
+      "next_phase": "LAYER_5_MULTI_TP"
+    },
+    
+    "LAYER_5_MULTI_TP": {
+      "status": "PENDING",
+      "estimated_time": "45 min",
+      "tasks": [
+        {
+          "id": "L5-1",
+          "name": "Corriger nom classe si nécessaire",
+          "status": "TODO"
+        },
+        {
+          "id": "L5-2",
+          "name": "Importer MultiTP Optimizer",
+          "status": "TODO"
+        },
+        {
+          "id": "L5-3",
+          "name": "Modifier _place_sell_order pour Multi-TP",
+          "status": "TODO"
+        },
+        {
+          "id": "L5-4",
+          "name": "Test & validation",
+          "status": "TODO"
+        }
+      ],
+      "git_tag": "v1.4-multi-tp",
+      "rollback": "git checkout v1.3-position-manager",
+      "next_phase": "LAYER_6_DASHBOARD"
+    },
+    
+    "LAYER_6_DASHBOARD": {
+      "status": "PENDING",
+      "estimated_time": "30 min",
+      "tasks": [
+        {
+          "id": "L6-1",
+          "name": "Connecter dashboard aux nouvelles APIs",
+          "status": "TODO",
+          "file": "web/dashboard.html"
+        },
+        {
+          "id": "L6-2",
+          "name": "Tester affichage données réelles",
+          "status": "TODO"
+        }
+      ],
+      "git_tag": "v1.5-dashboard-connected",
+      "rollback": "git checkout v1.4-multi-tp",
+      "next_phase": "TESTS_72H"
+    },
+    
+    "TESTS_72H": {
+      "status": "PENDING",
+      "estimated_time": "72 heures",
+      "tasks": [
+        {
+          "id": "T-1",
+          "name": "Lancer paper trading avec tous modules",
+          "status": "TODO"
+        },
+        {
+          "id": "T-2",
+          "name": "Monitor PnL toutes les 4h",
+          "status": "TODO",
+          "target": "PnL > 0%, Win rate > 60%"
+        },
+        {
+          "id": "T-3",
+          "name": "Vérifier stabilité (pas de crash)",
+          "status": "TODO"
+        },
+        {
+          "id": "T-4",
+          "name": "Validation finale",
+          "status": "TODO"
+        }
+      ],
+      "success_criteria": {
+        "pnl_positive": false,
+        "win_rate_above_60": false,
+        "no_crashes": false,
+        "all_services_running": false
+      },
+      "next_phase": "PRODUCTION_REAL"
+    }
+  },
+  
+  "files_created": [
+    {
+      "name": "bot_diagnostic_pro.py",
+      "date": "2025-10-29",
+      "location": "VPS:/opt/smartorder-pro/",
+      "purpose": "Diagnostic automatique"
+    },
+    {
+      "name": "bot_diagnostic_report.json",
+      "date": "2025-10-29",
+      "location": "VPS:/opt/smartorder-pro/",
+      "purpose": "Rapport diagnostic complet"
+    },
+    {
+      "name": "ETAT_REEL_BASELINE.md",
+      "date": "2025-10-29",
+      "location": "Local + VPS",
+      "purpose": "État réel exact du système"
+    },
+    {
+      "name": "INTEGRATION_PROGRESSIVE_PLAN.md",
+      "date": "2025-10-29",
+      "location": "Local",
+      "purpose": "Plan Layer by Layer"
+    },
+    {
+      "name": "VERIFICATION_COMPLETE_REPORT.md",
+      "date": "2025-10-29",
+      "location": "Local",
+      "purpose": "Analyse détaillée problèmes"
+    },
+    {
+      "name": "PROGRESS_TRACKER.json",
+      "date": "2025-10-29",
+      "location": "Local",
+      "purpose": "Fichier de suivi progression (CE FICHIER)"
+    }
+  ],
+  
+  "current_state": {
+    "paper_trading": {
+      "status": "RUNNING",
+      "balance": 8636.91,
+      "initial_balance": 10000,
+      "pnl": -1363.09,
+      "pnl_percentage": -13.6,
+      "trades_count": 20,
+      "win_rate": 0,
+      "strategy": "Infinity Grid PRO only"
+    },
+    "services": {
+      "smartorder-api": "RUNNING",
+      "smartorder-papertrading": "RUNNING"
+    },
+    "modules_status": {
+      "adaptive_scalping": "CREATED_NOT_INTEGRATED",
+      "position_manager": "CREATED_NOT_INTEGRATED",
+      "multi_tp_optimizer": "CREATED_NOT_INTEGRATED"
+    }
+  },
+  
+  "problems_identified": {
+    "critical": [
+      {
+        "id": "P1",
+        "description": "Modules avancés non intégrés dans loop",
+        "impact": "Bot perd argent (-13.6%)",
+        "solution": "Layers 3-4-5"
+      }
+    ],
+    "warnings": [
+      {
+        "id": "P2",
+        "description": "Nom classe Multi-TP incorrect",
+        "impact": "Cannot import",
+        "solution": "Layer 1 task L1-2"
+      },
+      {
+        "id": "P3",
+        "description": "4 fichiers dupliqués",
+        "impact": "Confusion",
+        "solution": "Layer 1 task L1-1"
+      }
+    ]
+  },
+  
+  "next_action": {
+    "phase": "LAYER_1_CORRECTIONS",
+    "task_id": "L1-1",
+    "description": "Supprimer fichiers dupliqués",
+    "command": "ssh root@107.189.22.255 'rm /opt/smartorder-pro/ai/{signal_memory,sentiment,mode_manager,signal_simulator}.py'",
+    "estimated_time": "2 minutes"
+  },
+  
+  "rules_to_follow": [
+    "✅ TOUJOURS lire ce fichier en premier",
+    "✅ TOUJOURS mettre à jour ce fichier après chaque tâche",
+    "✅ JAMAIS sauter une tâche",
+    "✅ TOUJOURS tester après chaque layer",
+    "✅ TOUJOURS créer git tag après validation",
+    "✅ Si erreur: rollback au tag précédent uniquement",
+    "❌ JAMAIS refaire une tâche marquée DONE",
+    "❌ JAMAIS avancer sans valider layer actuel"
+  ],
+  
+  "git_tags": {
+    "v1.0-baseline": "État initial après diagnostic (PENDING)",
+    "v1.1-apis-added": "5 nouveaux endpoints ajoutés (PENDING)",
+    "v1.2-adaptive-scalping": "Adaptive Scalping intégré (PENDING)",
+    "v1.3-position-manager": "Position Manager intégré (PENDING)",
+    "v1.4-multi-tp": "Multi-TP intégré (PENDING)",
+    "v1.5-dashboard-connected": "Dashboard connecté (PENDING)",
+    "v1.6-tests-passed": "Tests 72h validés (PENDING)",
+    "v2.0-production": "Prêt pour REAL (PENDING)"
+  },
+  
+  "communication_protocol": {
+    "when_user_asks_status": "Lire PROGRESS_TRACKER.json et afficher current_phase + next_action",
+    "when_user_asks_history": "Lire phases[].tasks et montrer DONE vs TODO",
+    "when_starting_work": "Lire next_action et exécuter task_id",
+    "after_completing_task": "Update task.status = DONE, update next_action",
+    "if_error_occurs": "Update task.status = ERROR, note error, propose rollback",
+    "never_repeat": "Check task.status before doing anything"
+  }
+}

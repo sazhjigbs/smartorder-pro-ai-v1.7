@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartOrder PRO - Ultimate Dashboard by MAIGA ABOUBACAR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 0.8s;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        .header .signature {
+            font-size: 1.1em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* STATUS BAR */
+        .status-bar {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            animation: fadeIn 1s;
+        }
+
+        .status-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .status-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+
+        .status-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .status-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /* BADGES */
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        .badge-online {
+            background: #10b981;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+        }
+
+        .badge-recovery {
+            background: #f59e0b;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+        }
+
+        .badge-critical {
+            background: #ef4444;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+            animation: blink 0.8s infinite;
+        }
+
+        /* VOLATILITY INDICATOR */
+        .volatility-indicator {
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .volatility-low { border: 3px solid #10b981; }
+        .volatility-medium { border: 3px solid #3b82f6; }
+        .volatility-high { border: 3px solid #f59e0b; }
+        .volatility-extreme { border: 3px solid #ef4444; animation: shake 0.5s infinite; }
+
+        /* GRID LAYOUT */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .grid-full {
+            grid-column: 1 / -1;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+
+        /* MODE SELECTOR */
+        .mode-selector {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .mode-btn {
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 3px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .mode-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.05);
+        }
+
+        .mode-btn.active {
+            background: #3b82f6;
+            border-color: #60a5fa;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+
+        .mode-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .mode-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .mode-desc {
+            font-size: 0.85em;
+            opacity: 0.8;
+        }
+
+        /* STRATEGIES LIST */
+        .strategies-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .strategy-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .strategy-item:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .strategy-item.active {
+            border-left: 4px solid #10b981;
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .strategy-item.recommended {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .strategy-info {
+            flex: 1;
+        }
+
+        .strategy-name {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 5px;
+        }
+
+        .strategy-status {
+            font-size: 0.85em;
+            opacity: 0.8;
+        }
+
+        .strategy-score {
+            margin-left: 10px;
+            padding: 5px 12px;
+            background: rgba(59, 130, 246, 0.3);
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+
+        /* TOGGLE SWITCH */
+        .toggle {
+            width: 55px;
+            height: 28px;
+            background: #ccc;
+            border-radius: 28px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .toggle.active {
+            background: #10b981;
+        }
+
+        .toggle::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s;
+        }
+
+        .toggle.active::after {
+            left: 29px;
+        }
+
+        /* EXCHANGES */
+        .exchange-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .exchange-connected {
+            border-left: 4px solid #10b981;
+        }
+
+        .exchange-disconnected {
+            border-left: 4px solid #ef4444;
+            opacity: 0.6;
+        }
+
+        /* WHALE ALERTS */
+        .whale-feed {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+
+        .whale-alert {
+            padding: 12px;
+            background: rgba(59, 130, 246, 0.2);
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            animation: slideInLeft 0.5s;
+        }
+
+        .whale-alert.large {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.2);
+        }
+
+        .whale-time {
+            font-size: 0.85em;
+            opacity: 0.7;
+        }
+
+        /* LIVE ACTIVITY LOG */
+        .activity-log {
+            max-height: 250px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .log-entry {
+            padding: 8px;
+            margin: 5px 0;
+            border-left: 3px solid #3b82f6;
+            padding-left: 12px;
+            animation: slideInRight 0.3s;
+        }
+
+        .log-success { border-left-color: #10b981; }
+        .log-warning { border-left-color: #f59e0b; }
+        .log-error { border-left-color: #ef4444; }
+        .log-flash { 
+            border-left-color: #ef4444;
+            background: rgba(239, 68, 68, 0.2);
+            animation: pulse 1s infinite;
+        }
+
+        /* PNL DISPLAY */
+        .pnl-display {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .pnl-positive { color: #10b981; text-shadow: 0 0 20px rgba(16, 185, 129, 0.5); }
+        .pnl-negative { color: #ef4444; text-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+
+        /* RECOVERY MODE BANNER */
+        .recovery-banner {
+            padding: 20px;
+            background: rgba(245, 158, 11, 0.3);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        .recovery-progress {
+            width: 100%;
+            height: 25px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .recovery-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #f59e0b, #10b981);
+            transition: width 0.5s;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .btn-primary { background: #3b82f6; color: white; }
+        .btn-success { background: #10b981; color: white; }
+        .btn-danger { background: #ef4444; color: white; }
+        .btn-warning { background: #f59e0b; color: white; }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.3; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .mode-selector {
+                grid-template-columns: 1fr 1fr;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🚀 SmartOrder PRO - Ultimate Dashboard</h1>
+            <div class="signature">by MAIGA ABOUBACAR</div>
+        </div>
+
+        <!-- RECOVERY MODE BANNER (hidden by default) -->
+        <div id="recovery-banner" class="recovery-banner" style="display: none;">
+            <h3>🔴 RECOVERY MODE ACTIVE</h3>
+            <p>Loss: $<span id="recovery-loss">0</span> | Target: $<span id="recovery-target">0</span></p>
+            <div class="recovery-progress">
+                <div class="recovery-progress-bar" id="recovery-progress" style="width: 0%;"></div>
+            </div>
+            <p style="margin-top: 10px;">Strategy: <span id="recovery-strategy">Conservative</span></p>
+        </div>
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-label">Bot Status</div>
+                <div class="status-value">
+                    <span class="badge badge-online" id="bot-status">ONLINE</span>
+                </div>
+            </div>
+
+            <div class="status-item">
+                <div class="status-label">Active Strategy</div>
+                <div class="status-value" id="active-strategy">None</div>
+            </div>
+
+            <div class="status-item volatility-indicator" id="volatility-indicator">
+                <div class="status-label">Volatility Regime</div>
+                <div class="status-value" id="volatility-regime">MEDIUM</div>
+            </div>
+
+            <div class="status-item">
+                <div class="status-label">Total PnL</div>
+                <div class="status-value pnl-positive" id="total-pnl">+$0.00</div>
+            </div>
+
+            <div class="status-item">
+                <div class="status-label">Market Regime</div>
+                <div class="status-value" id="market-regime">Sideways</div>
+            </div>
+
+            <div class="status-item">
+                <div class="status-label">Last Update</div>
+                <div class="status-value" id="last-update" style="font-size: 1em;">--:--:--</div>
+            </div>
+        </div>
+
+        <!-- MAIN GRID -->
+        <div class="grid">
+            <!-- MODE SELECTOR -->
+            <div class="card">
+                <h2>🎯 Trading Mode</h2>
+                <div class="mode-selector">
+                    <div class="mode-btn active" data-mode="SPOT" onclick="selectMode('SPOT')">
+                        <div class="mode-icon">📊</div>
+                        <div class="mode-name">SPOT</div>
+                        <div class="mode-desc">Trading au comptant</div>
+                    </div>
+                    <div class="mode-btn" data-mode="FUTURES" onclick="selectMode('FUTURES')">
+                        <div class="mode-icon">⚡</div>
+                        <div class="mode-name">FUTURES</div>
+                        <div class="mode-desc">Trading à terme</div>
+                    </div>
+                    <div class="mode-btn" data-mode="HYBRIDE" onclick="selectMode('HYBRIDE')">
+                        <div class="mode-icon">🔀</div>
+                        <div class="mode-name">HYBRIDE</div>
+                        <div class="mode-desc">Spot + Futures</div>
+                    </div>
+                    <div class="mode-btn" data-mode="MANUEL" onclick="selectMode('MANUEL')">
+                        <div class="mode-icon">✋</div>
+                        <div class="mode-name">MANUEL</div>
+                        <div class="mode-desc">Contrôle total</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STRATEGIES -->
+            <div class="card">
+                <h2>⚙️ Strategies <span style="font-size: 0.8em; opacity: 0.7;">(Mode: <span id="current-mode-display">SPOT</span>)</span></h2>
+                <div class="strategies-list" id="strategies-list">
+                    <!-- Dynamically loaded -->
+                </div>
+            </div>
+
+            <!-- EXCHANGES -->
+            <div class="card">
+                <h2>🌐 Exchanges</h2>
+                <div id="exchanges-list">
+                    <!-- Dynamically loaded -->
+                </div>
+            </div>
+
+            <!-- WHALE ALERTS -->
+            <div class="card">
+                <h2>🐋 Whale Alerts</h2>
+                <div class="whale-feed" id="whale-feed">
+                    <p style="text-align: center; opacity: 0.7;">Loading whale movements...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECOND ROW -->
+        <div class="grid">
+            <!-- LIVE ACTIVITY LOG -->
+            <div class="card grid-full">
+                <h2>📜 Live Activity Log</h2>
+                <div class="activity-log" id="activity-log">
+                    <div class="log-entry">System initialized - Ready to trade</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // CONFIG
+        const API_URL = window.location.origin;
+        let currentMode = 'SPOT';
+        let updateInterval;
+
+        // INITIALIZE
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllData();
+            loadWhaleAlerts();
+            updateInterval = setInterval(loadAllData, 5000);
+            setInterval(updateClock, 1000);
+        });
+
+        // UPDATE CLOCK
+        function updateClock() {
+            document.getElementById('last-update').textContent = new Date().toLocaleTimeString();
+        }
+
+        // LOAD ALL DATA
+        async function loadAllData() {
+            try {
+                const response = await fetch(`${API_URL}/api/state`);
+                const data = await response.json();
+                
+                updateStatus(data);
+                loadStrategies(currentMode);
+                loadExchanges();
+            } catch (error) {
+                addLog('Error loading data: ' + error.message, 'error');
+            }
+        }
+
+        // UPDATE STATUS
+        function updateStatus(data) {
+            // PnL
+            const pnl = data.total_pnl || 0;
+            const pnlElem = document.getElementById('total-pnl');
+            pnlElem.textContent = (pnl >= 0 ? '+' : '') + '$' + pnl.toFixed(2);
+            pnlElem.className = 'status-value ' + (pnl >= 0 ? 'pnl-positive' : 'pnl-negative');
+
+            // Recovery mode
+            if (data.recovery_mode) {
+                document.getElementById('recovery-banner').style.display = 'block';
+                document.getElementById('recovery-loss').textContent = (data.total_losses || 0).toFixed(2);
+                document.getElementById('recovery-target').textContent = (data.recovery_target || 0).toFixed(2);
+                document.getElementById('recovery-progress').style.width = (data.recovery_progress || 0) + '%';
+                document.getElementById('recovery-strategy').textContent = data.recovery_strategy || 'Conservative';
+            } else {
+                document.getElementById('recovery-banner').style.display = 'none';
+            }
+
+            // Volatility
+            const volatility = data.volatility_regime || 'medium';
+            const volElem = document.getElementById('volatility-indicator');
+            volElem.className = 'status-item volatility-indicator volatility-' + volatility.toLowerCase();
+            document.getElementById('volatility-regime').textContent = volatility.toUpperCase();
+
+            // Market Regime
+            document.getElementById('market-regime').textContent = (data.market_regime || 'Sideways').toUpperCase();
+
+            // Active strategy
+            document.getElementById('active-strategy').textContent = data.active_strategy || 'None';
+        }
+
+        // SELECT MODE
+        async function selectMode(mode) {
+            currentMode = mode;
+            
+            // Update UI
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.mode-btn[data-mode="${mode}"]`).classList.add('active');
+            document.getElementById('current-mode-display').textContent = mode;
+
+            // API call to change mode
+            try {
+                await fetch(`${API_URL}/api/mode`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({mode: mode})
+                });
+                
+                addLog(`Mode changed to ${mode}`, 'success');
+                loadStrategies(mode);
+            } catch (error) {
+                addLog('Error changing mode: ' + error.message, 'error');
+            }
+        }
+
+        // LOAD STRATEGIES
+        async function loadStrategies(mode) {
+            try {
+                const response = await fetch(`${API_URL}/api/strategies?mode=${mode}`);
+                const data = await response.json();
+                
+                const container = document.getElementById('strategies-list');
+                container.innerHTML = '';
+
+                (data.strategies || []).forEach(strategy => {
+                    const div = document.createElement('div');
+                    div.className = 'strategy-item' + (strategy.enabled ? ' active' : '') + (strategy.recommended ? ' recommended' : '');
+                    
+                    div.innerHTML = `
+                        <div class="strategy-info">
+                            <div class="strategy-name">
+                                ${strategy.name}
+                                ${strategy.recommended ? '⭐' : ''}
+                                <span class="strategy-score">${strategy.score || 0}/100</span>
+                            </div>
+                            <div class="strategy-status">${strategy.reason || 'Ready'}</div>
+                        </div>
+                        <div class="toggle ${strategy.enabled ? 'active' : ''}" onclick="toggleStrategy('${mode}', '${strategy.id}', ${!strategy.enabled})"></div>
+                    `;
+                    
+                    container.appendChild(div);
+                });
+            } catch (error) {
+                addLog('Error loading strategies: ' + error.message, 'error');
+            }
+        }
+
+        // TOGGLE STRATEGY
+        async function toggleStrategy(mode, strategyId, enabled) {
+            try {
+                await fetch(`${API_URL}/api/strategy/toggle`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({mode: mode, strategy: strategyId, enabled: enabled})
+                });
+                
+                addLog(`Strategy ${strategyId} ${enabled ? 'enabled' : 'disabled'}`, 'success');
+                loadStrategies(mode);
+            } catch (error) {
+                addLog('Error toggling strategy: ' + error.message, 'error');
+            }
+        }
+
+        // LOAD EXCHANGES
+        async function loadExchanges() {
+            try {
+                const response = await fetch(`${API_URL}/api/exchanges`);
+                const data = await response.json();
+                
+                const container = document.getElementById('exchanges-list');
+                container.innerHTML = '';
+
+                (data.exchanges || []).forEach(exchange => {
+                    const div = document.createElement('div');
+                    div.className = 'exchange-item ' + (exchange.connected ? 'exchange-connected' : 'exchange-disconnected');
+                    
+                    div.innerHTML = `
+                        <div>
+                            <strong>${exchange.name}</strong><br>
+                            <span style="font-size: 0.85em; opacity: 0.8;">
+                                ${exchange.connected ? '✅ Connected' : '⚠️ Disconnected'} | 
+                                Balance: $${(exchange.balance || 0).toFixed(2)}
+                            </span>
+                        </div>
+                        <div class="toggle ${exchange.connected ? 'active' : ''}"></div>
+                    `;
+                    
+                    container.appendChild(div);
+                });
+            } catch (error) {
+                console.error('Error loading exchanges:', error);
+            }
+        }
+
+        // WHALE ALERTS (Mock - replace with real API)
+        async function loadWhaleAlerts() {
+            // Simulate whale alerts
+            const whales = [
+                {amount: '1,234 BTC', from: '0x1234...5678', to: 'Binance', time: '2 min ago', large: true},
+                {amount: '500 ETH', from: 'Kraken', to: '0xabcd...efgh', time: '5 min ago', large: false},
+                {amount: '2,500 BTC', from: 'Unknown', to: 'Coinbase', time: '12 min ago', large: true}
+            ];
+
+            const container = document.getElementById('whale-feed');
+            container.innerHTML = '';
+
+            whales.forEach(whale => {
+                const div = document.createElement('div');
+                div.className = 'whale-alert' + (whale.large ? ' large' : '');
+                div.innerHTML = `
+                    <strong>${whale.amount}</strong><br>
+                    <span style="font-size: 0.85em;">
+                        ${whale.from} → ${whale.to}<br>
+                        <span class="whale-time">${whale.time}</span>
+                    </span>
+                `;
+                container.appendChild(div);
+            });
+
+            // Refresh every 30s
+            setTimeout(loadWhaleAlerts, 30000);
+        }
+
+        // ADD LOG ENTRY
+        function addLog(message, type = 'info') {
+            const log = document.getElementById('activity-log');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry log-' + type;
+            entry.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            
+            log.insertBefore(entry, log.firstChild);
+            
+            // Keep only last 50 entries
+            while (log.children.length > 50) {
+                log.removeChild(log.lastChild);
+            }
+        }
+
+        // Simulate some activity
+        setInterval(() => {
+            const activities = [
+                {msg: 'Market scan completed - 5 signals detected', type: 'info'},
+                {msg: 'Adaptive Scalping: MEDIUM volatility detected', type: 'info'},
+                {msg: 'Position Manager: BTC/USDT analyzed - HOLD recommended', type: 'success'},
+                {msg: 'Flash Crash Hunter: No crash detected', type: 'info'}
+            ];
+            
+            const random = activities[Math.floor(Math.random() * activities.length)];
+            addLog(random.msg, random.type);
+        }, 10000);
+    </script>
+</body>
+</html>

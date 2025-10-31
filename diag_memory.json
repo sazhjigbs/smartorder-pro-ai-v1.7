@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "last_audit": null,
+  "resolved_issues": [],
+  "persistent_anomalies": [],
+  "system_state": {
+    "ai_learner": {
+      "status": "unknown",
+      "last_check": null,
+      "service_active": false,
+      "port": 8000
+    },
+    "auto_executor": {
+      "status": "unknown",
+      "last_check": null,
+      "service_active": false,
+      "port": 8001
+    },
+    "memory_sync": {
+      "status": "unknown",
+      "last_check": null,
+      "service_active": false
+    },
+    "dashboard": {
+      "status": "unknown",
+      "last_check": null,
+      "persistent_fix_loaded": false
+    },
+    "exchange_router": {
+      "status": "unknown",
+      "last_check": null,
+      "nginx_config_valid": false
+    }
+  },
+  "corrections_history": []
+}

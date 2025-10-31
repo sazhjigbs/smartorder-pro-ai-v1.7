@@ -48,7 +48,7 @@ from exchange_connectors.bybit_connector import BybitConnector
 from exchange_connectors.binance_connector import BinanceConnector
 from exchange_connectors.okx_connector import OKXConnector
 from exchange_connectors.kucoin_connector import KuCoinConnector
-from security.key_manager import SecurityManager
+from security.key_manager import SecureKeyManager
 from monitoring.exchange_health_monitor import ExchangeHealthMonitor
 
 LOG = logging.getLogger("unified_trading")
@@ -87,7 +87,7 @@ class UnifiedTradingManager:
         
         # Security manager
         if use_encryption:
-            self.security = SecurityManager()
+            self.security = SecureKeyManager()
         else:
             self.security = None
         

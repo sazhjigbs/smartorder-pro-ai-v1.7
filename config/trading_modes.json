@@ -1,0 +1,162 @@
+{
+  "current_mode": "spot",
+  "modes": {
+    "spot": {
+      "name": "Auto Spot AI",
+      "enabled": true,
+      "description": "Trading automatique Spot avec IA"
+    },
+    "futures": {
+      "name": "Auto Futures AI",
+      "enabled": false,
+      "description": "Trading automatique Futures avec levier"
+    },
+    "hybrid": {
+      "name": "Hybride Spot + Futures",
+      "enabled": false,
+      "description": "Combinaison intelligente Spot et Futures"
+    },
+    "manual": {
+      "name": "Manuel",
+      "enabled": false,
+      "description": "Contrôle manuel complet"
+    }
+  },
+  "strategies": {
+    "spot": [
+      {
+        "id": "grid_trading",
+        "name": "Grid Trading",
+        "enabled": true,
+        "description": "Grille automatique buy/sell",
+        "risk_level": "low",
+        "min_volatility": "low",
+        "max_volatility": "high"
+      },
+      {
+        "id": "dca",
+        "name": "DCA (Dollar Cost Averaging)",
+        "enabled": true,
+        "description": "Accumulation progressive",
+        "risk_level": "low",
+        "min_volatility": "low",
+        "max_volatility": "medium"
+      },
+      {
+        "id": "scalping_volatility",
+        "name": "Scalping Volatilité",
+        "enabled": false,
+        "description": "Profite des micro-mouvements",
+        "risk_level": "medium",
+        "min_volatility": "medium",
+        "max_volatility": "extreme"
+      },
+      {
+        "id": "mean_reversion",
+        "name": "Mean Reversion",
+        "enabled": true,
+        "description": "Retour à la moyenne",
+        "risk_level": "medium",
+        "min_volatility": "low",
+        "max_volatility": "high"
+      },
+      {
+        "id": "momentum_breakout",
+        "name": "Momentum Breakout",
+        "enabled": false,
+        "description": "Suit les cassures de tendance",
+        "risk_level": "high",
+        "min_volatility": "medium",
+        "max_volatility": "extreme"
+      },
+      {
+        "id": "adaptive_scalping",
+        "name": "Adaptive Scalping",
+        "enabled": false,
+        "description": "Scalping adaptatif selon volatilité",
+        "risk_level": "medium",
+        "min_volatility": "low",
+        "max_volatility": "extreme"
+      }
+    ],
+    "futures": [
+      {
+        "id": "infinity_grid",
+        "name": "Infinity Grid",
+        "enabled": true,
+        "description": "Grille infinie avec levier",
+        "risk_level": "high",
+        "leverage_range": [1, 10],
+        "funding_sensitive": true
+      },
+      {
+        "id": "multi_tp_optimizer",
+        "name": "Multi-TP Optimizer",
+        "enabled": true,
+        "description": "Prises de profit multiples optimisées",
+        "risk_level": "medium",
+        "leverage_range": [1, 5],
+        "funding_sensitive": false
+      },
+      {
+        "id": "futures_scalping",
+        "name": "Futures Scalping",
+        "enabled": false,
+        "description": "Scalping haute fréquence avec levier",
+        "risk_level": "extreme",
+        "leverage_range": [3, 20],
+        "funding_sensitive": true
+      },
+      {
+        "id": "trend_following_futures",
+        "name": "Trend Following Futures",
+        "enabled": false,
+        "description": "Suivi de tendance long terme",
+        "risk_level": "medium",
+        "leverage_range": [1, 5],
+        "funding_sensitive": true
+      },
+      {
+        "id": "hedging_strategy",
+        "name": "Hedging Strategy",
+        "enabled": false,
+        "description": "Couverture de positions spot",
+        "risk_level": "low",
+        "leverage_range": [1, 3],
+        "funding_sensitive": false
+      },
+      {
+        "id": "funding_arbitrage",
+        "name": "Funding Rate Arbitrage",
+        "enabled": false,
+        "description": "Arbitrage sur funding rate",
+        "risk_level": "low",
+        "leverage_range": [1, 2],
+        "funding_sensitive": true
+      }
+    ],
+    "hybrid": [
+      {
+        "id": "smart_allocation",
+        "name": "Smart Allocation",
+        "enabled": true,
+        "description": "Allocation intelligente Spot/Futures",
+        "risk_level": "medium"
+      },
+      {
+        "id": "cross_market_arbitrage",
+        "name": "Cross-Market Arbitrage",
+        "enabled": false,
+        "description": "Arbitrage entre Spot et Futures",
+        "risk_level": "low"
+      }
+    ]
+  },
+  "ai_strategy_selector": {
+    "enabled": false,
+    "auto_select_best": false,
+    "selection_interval_minutes": 60,
+    "min_confidence_score": 75
+  },
+  "updated_at": "2025-10-31T12:17:00Z"
+}

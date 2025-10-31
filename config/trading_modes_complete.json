@@ -1,0 +1,395 @@
+{
+  "current_mode": "spot",
+  "modes": {
+    "spot": {
+      "name": "Auto Spot AI",
+      "enabled": true,
+      "description": "Trading automatique Spot avec IA"
+    },
+    "futures": {
+      "name": "Auto Futures AI",
+      "enabled": false,
+      "description": "Trading automatique Futures avec levier"
+    },
+    "hybrid": {
+      "name": "Hybride Spot + Futures",
+      "enabled": false,
+      "description": "Combinaison intelligente Spot et Futures"
+    },
+    "manual": {
+      "name": "Manuel",
+      "enabled": false,
+      "description": "Contrôle manuel complet"
+    }
+  },
+  "strategies": {
+    "spot": [
+      {
+        "id": "grid_trading",
+        "label": "Grid Trading",
+        "mode": "spot",
+        "enabled": true,
+        "risk_profile": {
+          "level": "low",
+          "max_drawdown_pct": 5,
+          "volatility_range": ["low", "high"]
+        },
+        "indicators": ["price", "volume", "grid_levels"],
+        "params": {
+          "grid_size": 10,
+          "grid_spacing_pct": 0.5,
+          "tp_pct": 0.8,
+          "sl_pct": 2.0,
+          "timeframe": "5m",
+          "min_volume_24h": 1000000
+        },
+        "ai_allowed": true,
+        "last_score": 85,
+        "description": "Grille automatique buy/sell"
+      },
+      {
+        "id": "dca",
+        "label": "DCA (Dollar Cost Averaging)",
+        "mode": "spot",
+        "enabled": true,
+        "risk_profile": {
+          "level": "low",
+          "max_drawdown_pct": 3,
+          "volatility_range": ["low", "medium"]
+        },
+        "indicators": ["price", "ema_50", "ema_200"],
+        "params": {
+          "entry_interval_hours": 24,
+          "buy_amount_usd": 50,
+          "tp_pct": 5.0,
+          "sl_pct": 10.0,
+          "timeframe": "1h",
+          "trend_confirmation": true
+        },
+        "ai_allowed": true,
+        "last_score": 78,
+        "description": "Accumulation progressive"
+      },
+      {
+        "id": "scalping_volatility",
+        "label": "Scalping Volatilité",
+        "mode": "spot",
+        "enabled": false,
+        "risk_profile": {
+          "level": "medium",
+          "max_drawdown_pct": 8,
+          "volatility_range": ["medium", "extreme"]
+        },
+        "indicators": ["rsi", "bollinger_bands", "atr", "volume"],
+        "params": {
+          "rsi_period": 14,
+          "rsi_overbought": 70,
+          "rsi_oversold": 30,
+          "bb_period": 20,
+          "bb_std": 2,
+          "tp_pct": 0.5,
+          "sl_pct": 0.3,
+          "timeframe": "1m",
+          "min_atr": 0.5
+        },
+        "ai_allowed": true,
+        "last_score": 72,
+        "description": "Profite des micro-mouvements"
+      },
+      {
+        "id": "mean_reversion",
+        "label": "Mean Reversion",
+        "mode": "spot",
+        "enabled": true,
+        "risk_profile": {
+          "level": "medium",
+          "max_drawdown_pct": 6,
+          "volatility_range": ["low", "high"]
+        },
+        "indicators": ["sma_20", "bollinger_bands", "rsi"],
+        "params": {
+          "sma_period": 20,
+          "bb_period": 20,
+          "bb_std": 2,
+          "rsi_period": 14,
+          "entry_threshold_pct": 2.0,
+          "tp_pct": 1.5,
+          "sl_pct": 2.5,
+          "timeframe": "15m"
+        },
+        "ai_allowed": true,
+        "last_score": 81,
+        "description": "Retour à la moyenne"
+      },
+      {
+        "id": "momentum_breakout",
+        "label": "Momentum Breakout",
+        "mode": "spot",
+        "enabled": false,
+        "risk_profile": {
+          "level": "high",
+          "max_drawdown_pct": 12,
+          "volatility_range": ["medium", "extreme"]
+        },
+        "indicators": ["macd", "volume", "ema_20", "ema_50", "rsi"],
+        "params": {
+          "macd_fast": 12,
+          "macd_slow": 26,
+          "macd_signal": 9,
+          "volume_multiplier": 1.5,
+          "rsi_threshold": 60,
+          "tp_pct": 3.0,
+          "sl_pct": 1.5,
+          "timeframe": "5m"
+        },
+        "ai_allowed": true,
+        "last_score": 68,
+        "description": "Suit les cassures de tendance"
+      },
+      {
+        "id": "adaptive_scalping",
+        "label": "Adaptive Scalping",
+        "mode": "spot",
+        "enabled": false,
+        "risk_profile": {
+          "level": "medium",
+          "max_drawdown_pct": 7,
+          "volatility_range": ["low", "extreme"]
+        },
+        "indicators": ["atr", "rsi", "ema_9", "volume"],
+        "params": {
+          "atr_period": 14,
+          "atr_multiplier": 1.5,
+          "rsi_period": 14,
+          "ema_period": 9,
+          "tp_adaptive": true,
+          "sl_adaptive": true,
+          "timeframe": "3m",
+          "volatility_adjustment": true
+        },
+        "ai_allowed": true,
+        "last_score": 75,
+        "description": "Scalping adaptatif selon volatilité"
+      }
+    ],
+    "futures": [
+      {
+        "id": "infinity_grid",
+        "label": "Infinity Grid",
+        "mode": "futures",
+        "enabled": true,
+        "risk_profile": {
+          "level": "high",
+          "max_drawdown_pct": 15,
+          "leverage_range": [1, 10],
+          "volatility_range": ["medium", "extreme"]
+        },
+        "indicators": ["price", "volume", "funding_rate"],
+        "params": {
+          "grid_size": 20,
+          "grid_spacing_pct": 0.3,
+          "leverage": 5,
+          "tp_pct": 1.0,
+          "sl_pct": 3.0,
+          "timeframe": "5m",
+          "funding_rate_check": true
+        },
+        "ai_allowed": true,
+        "last_score": 79,
+        "funding_sensitive": true,
+        "description": "Grille infinie avec levier"
+      },
+      {
+        "id": "multi_tp_optimizer",
+        "label": "Multi-TP Optimizer",
+        "mode": "futures",
+        "enabled": true,
+        "risk_profile": {
+          "level": "medium",
+          "max_drawdown_pct": 10,
+          "leverage_range": [1, 5],
+          "volatility_range": ["low", "high"]
+        },
+        "indicators": ["ema_20", "rsi", "atr", "support_resistance"],
+        "params": {
+          "tp1_pct": 1.0,
+          "tp1_close_pct": 30,
+          "tp2_pct": 2.0,
+          "tp2_close_pct": 40,
+          "tp3_pct": 3.5,
+          "tp3_close_pct": 30,
+          "sl_pct": 2.0,
+          "leverage": 3,
+          "timeframe": "15m",
+          "trailing_enabled": true
+        },
+        "ai_allowed": true,
+        "last_score": 83,
+        "funding_sensitive": false,
+        "description": "Prises de profit multiples optimisées"
+      },
+      {
+        "id": "futures_scalping",
+        "label": "Futures Scalping",
+        "mode": "futures",
+        "enabled": false,
+        "risk_profile": {
+          "level": "extreme",
+          "max_drawdown_pct": 20,
+          "leverage_range": [3, 20],
+          "volatility_range": ["high", "extreme"]
+        },
+        "indicators": ["order_flow", "dom", "volume_profile", "rsi"],
+        "params": {
+          "leverage": 10,
+          "tp_pct": 0.3,
+          "sl_pct": 0.2,
+          "timeframe": "1m",
+          "order_flow_threshold": 1000000,
+          "dom_imbalance": 0.7,
+          "max_open_time_minutes": 5
+        },
+        "ai_allowed": false,
+        "last_score": 65,
+        "funding_sensitive": true,
+        "description": "Scalping haute fréquence avec levier"
+      },
+      {
+        "id": "trend_following_futures",
+        "label": "Trend Following Futures",
+        "mode": "futures",
+        "enabled": false,
+        "risk_profile": {
+          "level": "medium",
+          "max_drawdown_pct": 12,
+          "leverage_range": [1, 5],
+          "volatility_range": ["low", "high"]
+        },
+        "indicators": ["ema_50", "ema_200", "adx", "macd"],
+        "params": {
+          "ema_fast": 50,
+          "ema_slow": 200,
+          "adx_period": 14,
+          "adx_threshold": 25,
+          "leverage": 3,
+          "tp_pct": 5.0,
+          "sl_pct": 2.0,
+          "timeframe": "1h",
+          "trailing_stop": true
+        },
+        "ai_allowed": true,
+        "last_score": 76,
+        "funding_sensitive": true,
+        "description": "Suivi de tendance long terme"
+      },
+      {
+        "id": "hedging_strategy",
+        "label": "Hedging Strategy",
+        "mode": "futures",
+        "enabled": false,
+        "risk_profile": {
+          "level": "low",
+          "max_drawdown_pct": 5,
+          "leverage_range": [1, 3],
+          "volatility_range": ["low", "medium"]
+        },
+        "indicators": ["correlation", "spot_futures_spread"],
+        "params": {
+          "hedge_ratio": 1.0,
+          "leverage": 2,
+          "spread_threshold_pct": 0.5,
+          "rebalance_threshold_pct": 2.0,
+          "timeframe": "1h"
+        },
+        "ai_allowed": true,
+        "last_score": 70,
+        "funding_sensitive": false,
+        "description": "Couverture de positions spot"
+      },
+      {
+        "id": "funding_arbitrage",
+        "label": "Funding Rate Arbitrage",
+        "mode": "futures",
+        "enabled": false,
+        "risk_profile": {
+          "level": "low",
+          "max_drawdown_pct": 3,
+          "leverage_range": [1, 2],
+          "volatility_range": ["low", "medium"]
+        },
+        "indicators": ["funding_rate", "spot_futures_spread"],
+        "params": {
+          "min_funding_rate_pct": 0.05,
+          "leverage": 1,
+          "hold_duration_hours": 8,
+          "max_spread_pct": 0.3,
+          "timeframe": "1h"
+        },
+        "ai_allowed": true,
+        "last_score": 74,
+        "funding_sensitive": true,
+        "description": "Arbitrage sur funding rate"
+      }
+    ],
+    "hybrid": [
+      {
+        "id": "smart_allocation",
+        "label": "Smart Allocation",
+        "mode": "hybrid",
+        "enabled": true,
+        "risk_profile": {
+          "level": "medium",
+          "max_drawdown_pct": 8,
+          "volatility_range": ["low", "high"]
+        },
+        "indicators": ["market_regime", "volatility_index", "trend_strength"],
+        "params": {
+          "spot_allocation_pct": 60,
+          "futures_allocation_pct": 40,
+          "rebalance_threshold_pct": 10,
+          "timeframe": "1h",
+          "dynamic_adjustment": true
+        },
+        "ai_allowed": true,
+        "last_score": 80,
+        "description": "Allocation intelligente Spot/Futures"
+      },
+      {
+        "id": "cross_market_arbitrage",
+        "label": "Cross-Market Arbitrage",
+        "mode": "hybrid",
+        "enabled": false,
+        "risk_profile": {
+          "level": "low",
+          "max_drawdown_pct": 4,
+          "volatility_range": ["low", "medium"]
+        },
+        "indicators": ["spot_price", "futures_price", "spread"],
+        "params": {
+          "min_spread_pct": 0.3,
+          "execution_speed": "fast",
+          "max_position_hold_minutes": 30,
+          "timeframe": "1m"
+        },
+        "ai_allowed": true,
+        "last_score": 71,
+        "description": "Arbitrage entre Spot et Futures"
+      }
+    ]
+  },
+  "ai_selector": {
+    "enabled": false,
+    "auto_select_best": false,
+    "selection_interval_minutes": 60,
+    "min_score_to_trade": 70,
+    "scoring_weights": {
+      "market_alignment": 0.35,
+      "volatility_match": 0.25,
+      "risk_reward": 0.20,
+      "recent_performance": 0.15,
+      "technical_confluence": 0.05
+    },
+    "recompute_scores_every_minutes": 15
+  },
+  "updated_at": "2025-10-31T12:40:00Z"
+}

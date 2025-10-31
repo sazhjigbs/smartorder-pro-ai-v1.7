@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartOrder PRO - Dashboard Unifié</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 24px; font-weight: bold; }
+        .signature { font-size: 12px; opacity: 0.8; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 5px;
+        }
+        .btn-primary { background: #667eea; color: white; }
+        .btn-success { background: #48bb78; color: white; }
+        .btn-danger { background: #f56565; color: white; }
+        .btn-warning { background: #ed8936; color: white; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .badge-active { background: #48bb78; }
+        .badge-paused { background: #ed8936; }
+        .badge-manual { background: #a0aec0; }
+        .coin-item {
+            background: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .position-item {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .emergency-panel {
+            background: rgba(245, 101, 101, 0.2);
+            border: 2px solid #f56565;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .log-item {
+            background: rgba(0,0,0,0.2);
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin: 5px 0;
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+        }
+        input, select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(0,0,0,0.2);
+            color: white;
+            width: 100%;
+            margin: 5px 0;
+        }
+        .mode-selector {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .mode-btn {
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .mode-btn:hover { border-color: #667eea; }
+        .mode-btn.active { background: #667eea; border-color: #667eea; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">🔥 SmartOrder PRO - Dashboard</div>
+            <div class="signature">by MAIGA ABOUBACAR</div>
+        </div>
+
+        <!-- MODE Section -->
+        <div class="card">
+            <div class="card-title">🎯 MODE DE TRADING</div>
+            <div class="mode-selector">
+                <div class="mode-btn active" onclick="setMode('manual')">
+                    <div>✋ MANUAL</div>
+                    <small>Contrôle total</small>
+                </div>
+                <div class="mode-btn" onclick="setMode('spot')">
+                    <div>💰 AUTO SPOT AI</div>
+                    <small>Trading Spot Auto</small>
+                </div>
+                <div class="mode-btn" onclick="setMode('futures')">
+                    <div>📈 AUTO FUTURES AI</div>
+                    <small>Trading Futures Auto</small>
+                </div>
+                <div class="mode-btn" onclick="setMode('hybrid')">
+                    <div>🔄 HYBRIDE</div>
+                    <small>Mix Spot + Futures</small>
+                </div>
+            </div>
+            <div style="margin-top: 15px;">
+                <span class="status-badge badge-manual" id="modeStatus">MANUAL MODE</span>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- STRATEGIES -->
+            <div class="card">
+                <div class="card-title">⚙️ STRATÉGIES</div>
+                <div>
+                    <label><input type="checkbox" checked> Infinity Grid</label><br>
+                    <label><input type="checkbox"> DCA Intelligent</label><br>
+                    <label><input type="checkbox"> Scalping Volatility</label><br>
+                    <label><input type="checkbox"> Mean Reversion</label><br>
+                    <label><input type="checkbox"> Dual Direction</label>
+                </div>
+                <button class="btn btn-primary" style="margin-top: 15px;">Appliquer</button>
+            </div>
+
+            <!-- EXCHANGES -->
+            <div class="card">
+                <div class="card-title">🏦 EXCHANGES</div>
+                <div>
+                    <label><input type="checkbox" checked> Bybit</label><br>
+                    <label><input type="checkbox"> Binance</label><br>
+                    <label><input type="checkbox"> OKX</label><br>
+                    <label><input type="checkbox"> KuCoin</label>
+                </div>
+                <select style="margin-top: 10px;">
+                    <option>Bybit (Principal)</option>
+                    <option>Binance</option>
+                </select>
+            </div>
+
+            <!-- WATCHLIST -->
+            <div class="card">
+                <div class="card-title">🪙 WATCHLIST COINS</div>
+                <div class="coin-item">
+                    <span>BTC</span>
+                    <button class="btn btn-danger" style="padding: 5px 10px;">✕</button>
+                </div>
+                <div class="coin-item">
+                    <span>ETH</span>
+                    <button class="btn btn-danger" style="padding: 5px 10px;">✕</button>
+                </div>
+                <div class="coin-item">
+                    <span>SOL</span>
+                    <button class="btn btn-danger" style="padding: 5px 10px;">✕</button>
+                </div>
+                <input type="text" placeholder="Ajouter coin (ex: BTC)">
+                <button class="btn btn-success" style="width: 100%;">Ajouter</button>
+                <button class="btn btn-primary" style="width: 100%;">🔍 Auto-Scan Top Gainers</button>
+            </div>
+
+            <!-- RISK MANAGEMENT -->
+            <div class="card">
+                <div class="card-title">⚠️ RISK MANAGEMENT</div>
+                <label>Max Positions: <span id="maxPosVal">5</span></label>
+                <input type="range" min="1" max="10" value="5" oninput="document.getElementById('maxPosVal').innerText=this.value">
+                
+                <label style="margin-top: 10px;">Stop Loss (%): <span id="slVal">2.5</span></label>
+                <input type="range" min="0.5" max="5" step="0.5" value="2.5" oninput="document.getElementById('slVal').innerText=this.value">
+                
+                <label style="margin-top: 10px;">Take Profit (%): <span id="tpVal">5</span></label>
+                <input type="range" min="1" max="10" step="0.5" value="5" oninput="document.getElementById('tpVal').innerText=this.value">
+            </div>
+
+            <!-- POSITIONS -->
+            <div class="card">
+                <div class="card-title">📊 POSITIONS ACTIVES</div>
+                <div class="position-item">
+                    <div><strong>BTC/USDT</strong> - Long x3</div>
+                    <div>Entry: $50,000 | Current: $51,500</div>
+                    <div style="color: #48bb78;">PnL: +$750 (+3.0%)</div>
+                </div>
+                <div class="position-item">
+                    <div><strong>ETH/USDT</strong> - Grid</div>
+                    <div>Range: $2,900 - $3,100</div>
+                    <div style="color: #48bb78;">Profit: +$125 (+4.2%)</div>
+                </div>
+            </div>
+
+            <!-- PERFORMANCE -->
+            <div class="card">
+                <div class="card-title">📈 P&L TEMPS RÉEL</div>
+                <div style="font-size: 32px; text-align: center; margin: 20px 0;">
+                    <span style="color: #48bb78;">+$1,234.56</span>
+                </div>
+                <div style="text-align: center;">
+                    <div>Daily: <span style="color: #48bb78;">+2.34%</span></div>
+                    <div>Weekly: <span style="color: #48bb78;">+8.7%</span></div>
+                    <div>Win Rate: <span style="color: #48bb78;">68.5%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMERGENCY CONTROLS -->
+        <div class="emergency-panel">
+            <h2>🛑 CONTRÔLES D'URGENCE</h2>
+            <div style="margin-top: 20px;">
+                <button class="btn btn-danger" onclick="emergencyStop()">🛑 EMERGENCY STOP</button>
+                <button class="btn btn-warning" onclick="pauseTrading()">⏸ PAUSE</button>
+                <button class="btn btn-success" onclick="resumeTrading()">▶️ RESUME</button>
+            </div>
+        </div>
+
+        <!-- LOGS -->
+        <div class="card" style="margin-top: 20px;">
+            <div class="card-title">📋 LOGS & ALERTES</div>
+            <div class="log-item">[13:25:30] ✅ Signal validated: BTC/USDT Long</div>
+            <div class="log-item">[13:25:15] 📊 Grid order filled: ETH @ $3,025</div>
+            <div class="log-item">[13:24:50] ⚠️ High volatility detected: SOL</div>
+            <div class="log-item">[13:24:20] ✅ Position closed: BTC/USDT +3.2%</div>
+        </div>
+    </div>
+
+    <script>
+        let currentMode = 'manual';
+
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.closest('.mode-btn').classList.add('active');
+            
+            const statusMap = {
+                'manual': { text: 'MANUAL MODE', class: 'badge-manual' },
+                'spot': { text: 'AUTO SPOT AI', class: 'badge-active' },
+                'futures': { text: 'AUTO FUTURES AI', class: 'badge-active' },
+                'hybrid': { text: 'HYBRIDE MODE', class: 'badge-active' }
+            };
+            
+            const status = document.getElementById('modeStatus');
+            status.textContent = statusMap[mode].text;
+            status.className = 'status-badge ' + statusMap[mode].class;
+            
+            console.log('Mode changed to:', mode);
+            // TODO: Send to backend API
+        }
+
+        function emergencyStop() {
+            if (confirm('⚠️ ARRÊTER TOUTES LES OPÉRATIONS ?')) {
+                alert('🛑 EMERGENCY STOP ACTIVÉ');
+                console.log('EMERGENCY STOP');
+                // TODO: Call emergency stop API
+            }
+        }
+
+        function pauseTrading() {
+            alert('⏸ Trading mis en pause');
+            console.log('PAUSE');
+        }
+
+        function resumeTrading() {
+            alert('▶️ Trading repris');
+            console.log('RESUME');
+        }
+
+        // Auto-refresh data every 5 seconds
+        setInterval(() => {
+            console.log('Refreshing data...');
+            // TODO: Fetch data from API
+        }, 5000);
+    </script>
+</body>
+</html>

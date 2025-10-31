@@ -1,0 +1,342 @@
+﻿{
+  "timestamp": "2025-10-29T17:32:50.420995",
+  "summary": {
+    "ok": 19,
+    "warnings": 8,
+    "errors": 0,
+    "critical": 11,
+    "total": 38
+  },
+  "results": [
+    {
+      "category": "STRUCTURE",
+      "item": "core/adaptive_scalping_engine.py",
+      "status": "OK",
+      "message": "Module Adaptive Scalping pr\u00e9sent (14006 bytes)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "STRUCTURE",
+      "item": "core/smart_position_manager.py",
+      "status": "OK",
+      "message": "Module Position Manager pr\u00e9sent (18163 bytes)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "STRUCTURE",
+      "item": "core/multi_tp_and_funding_optimizer.py",
+      "status": "OK",
+      "message": "Module Multi-TP & Funding pr\u00e9sent (14414 bytes)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "STRUCTURE",
+      "item": "smart_strategy_manager.py",
+      "status": "OK",
+      "message": "Smart Strategy Manager pr\u00e9sent (13557 bytes)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "STRUCTURE",
+      "item": "api/main.py",
+      "status": "OK",
+      "message": "API Principale pr\u00e9sent (13953 bytes)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "STRUCTURE",
+      "item": "run_paper_infinity_pro.py",
+      "status": "OK",
+      "message": "Script Paper Trading pr\u00e9sent (12121 bytes)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "STRUCTURE",
+      "item": "strategies_config_complete.json",
+      "status": "OK",
+      "message": "Config Strat\u00e9gies pr\u00e9sent (11226 bytes)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "PYTHON",
+      "item": "core.adaptive_scalping_engine.AdaptiveScalpingEngine",
+      "status": "OK",
+      "message": "Import successful",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "PYTHON",
+      "item": "core.smart_position_manager.SmartPositionManager",
+      "status": "OK",
+      "message": "Import successful",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "PYTHON",
+      "item": "core.multi_tp_and_funding_optimizer.MultiTPFundingOptimizer",
+      "status": "WARNING",
+      "message": "Class MultiTPFundingOptimizer not found in module",
+      "solution": "V\u00e9rifier nom de classe",
+      "auto_fixable": false
+    },
+    {
+      "category": "DUPLICATES",
+      "item": "6 fichiers identiques",
+      "status": "WARNING",
+      "message": "Doublons: __init__.py, __init__.py, __init__.py, __init__.py, __init__.py, __init__.py",
+      "solution": "Supprimer fichiers en double, garder 1 seul",
+      "auto_fixable": true
+    },
+    {
+      "category": "DUPLICATES",
+      "item": "2 fichiers identiques",
+      "status": "WARNING",
+      "message": "Doublons: signal_memory.py, signal_memory.py",
+      "solution": "Supprimer fichiers en double, garder 1 seul",
+      "auto_fixable": true
+    },
+    {
+      "category": "DUPLICATES",
+      "item": "2 fichiers identiques",
+      "status": "WARNING",
+      "message": "Doublons: sentiment.py, sentiment.py",
+      "solution": "Supprimer fichiers en double, garder 1 seul",
+      "auto_fixable": true
+    },
+    {
+      "category": "DUPLICATES",
+      "item": "2 fichiers identiques",
+      "status": "WARNING",
+      "message": "Doublons: mode_manager.py, mode_manager.py",
+      "solution": "Supprimer fichiers en double, garder 1 seul",
+      "auto_fixable": true
+    },
+    {
+      "category": "DUPLICATES",
+      "item": "2 fichiers identiques",
+      "status": "WARNING",
+      "message": "Doublons: signal_simulator.py, signal_simulator.py",
+      "solution": "Supprimer fichiers en double, garder 1 seul",
+      "auto_fixable": true
+    },
+    {
+      "category": "SERVICES",
+      "item": "smartorder-api.service",
+      "status": "OK",
+      "message": "Service running",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "smartorder-papertrading.service",
+      "status": "OK",
+      "message": "Service running",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "SERVICES",
+      "item": "\u25cf",
+      "status": "CRITICAL",
+      "message": "Service FAILED",
+      "solution": "journalctl -u \u25cf --no-pager -n 50",
+      "auto_fixable": false
+    },
+    {
+      "category": "API",
+      "item": "Status API",
+      "status": "OK",
+      "message": "Endpoint responds (HTTP 200)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "API",
+      "item": "PnL API",
+      "status": "OK",
+      "message": "Endpoint responds (HTTP 200)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "API",
+      "item": "Strategies API",
+      "status": "OK",
+      "message": "Endpoint responds (HTTP 200)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "API",
+      "item": "Positions API",
+      "status": "OK",
+      "message": "Endpoint responds (HTTP 200)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "API",
+      "item": "Stats API",
+      "status": "OK",
+      "message": "Endpoint responds (HTTP 200)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "CONFIG",
+      "item": "strategies_config_complete.json",
+      "status": "OK",
+      "message": "Valid JSON (6 keys)",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "CONFIG",
+      "item": "config/trading_config.json",
+      "status": "WARNING",
+      "message": "Config file not found",
+      "solution": "Cr\u00e9er config/trading_config.json",
+      "auto_fixable": false
+    },
+    {
+      "category": "LOGS",
+      "item": "logs/paper_trading.log",
+      "status": "OK",
+      "message": "No errors in recent logs",
+      "solution": null,
+      "auto_fixable": false
+    },
+    {
+      "category": "LOGS",
+      "item": "logs/api.log",
+      "status": "WARNING",
+      "message": "2 errors found in recent logs",
+      "solution": "tail -100 /opt/smartorder-pro/logs/api.log",
+      "auto_fixable": false
+    },
+    {
+      "category": "PERFORMANCE",
+      "item": "Disk Space",
+      "status": "OK",
+      "message": "Disk usage: 17%",
+      "solution": null,
+      "auto_fixable": false
+    }
+  ],
+  "duplicates": {
+    "d41d8cd98f00b204e9800998ecf8427e": [
+      "/opt/smartorder-pro/backtesting/__init__.py",
+      "/opt/smartorder-pro/core/__init__.py",
+      "/opt/smartorder-pro/integrations/__init__.py",
+      "/opt/smartorder-pro/notifications/__init__.py",
+      "/opt/smartorder-pro/api/__init__.py",
+      "/opt/smartorder-pro/strategies/__init__.py"
+    ],
+    "be13c4543fe467321fab38802f20e985": [
+      "/opt/smartorder-pro/core/signal_memory.py",
+      "/opt/smartorder-pro/ai/signal_memory.py"
+    ],
+    "b9918c000b483b43b2261b86148ae7f6": [
+      "/opt/smartorder-pro/core/sentiment.py",
+      "/opt/smartorder-pro/ai/sentiment.py"
+    ],
+    "b7250b6fcd84828cf34855086c2a3578": [
+      "/opt/smartorder-pro/core/mode_manager.py",
+      "/opt/smartorder-pro/ai/mode_manager.py"
+    ],
+    "e0ca0cd7465d97e35a303e378395c495": [
+      "/opt/smartorder-pro/core/signal_simulator.py",
+      "/opt/smartorder-pro/ai/signal_simulator.py"
+    ]
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "version": "2.0",
+  "last_updated": "2025-10-29T09:15:00Z",
+  "by": "MAIGA ABOUBACAR",
+  
+  "modes": {
+    "SPOT": {
+      "name": "Auto Spot Trading",
+      "description": "Trading au comptant sans levier",
+      "active": false,
+      "capital_allocation": 5000,
+      "max_positions": 3,
+      "strategies": {
+        "infinity_grid": {
+          "name": "Infinity Grid Enhanced",
+          "enabled": false,
+          "priority": 1,
+          "market_regimes": ["sideways", "ranging"],
+          "config": {
+            "grid_count": 20,
+            "profit_per_grid": 1.0,
+            "mode": "geometric",
+            "trailing_enabled": true,
+            "auto_expand": true,
+            "compound_profit": true
+          },
+          "conditions": {
+            "volatility": {"min": 0.5, "max": 3.0},
+            "trend_strength": {"min": 0, "max": 40}
+          }
+        },
+        "grid_trading": {
+          "name": "Grid Trading Classic",
+          "enabled": true,
+          "priority": 2,
+          "market_regimes": ["sideways", "ranging"],
+          "config": {
+            "min_price": 0,
+            "max_price": 0,
+            "grid_levels": 10,
+            "profit_per_level": 0.8,
+            "capital_per_order": 100
+          },
+          "conditions": {
+            "volatility": {"min": 0.3, "max": 2.5},
+            "adx": {"min": 0, "max": 25}
+          }
+        },
+        "dca_strategy": {
+          "name": "DCA Strategy Advanced",
+          "enabled": true,
+          "priority": 3,
+          "market_regimes": ["downtrend", "sideways"],
+          "config": {
+            "initial_order": 100,
+            "safety_orders": 5,
+            "price_deviation": 2.5,
+            "safety_order_volume_scale": 1.5,
+            "take_profit": 3.0
+          },
+          "conditions": {
+            "rsi": {"min": 20, "max": 50},
+            "price_vs_ma": {"max": -5}
+          }
+        },
+        "scalping": {
+          "name": "Scalping Quick",
+          "enabled": true,
+          "priority": 4,
+          "market_regimes": ["volatile", "uptrend", "downtrend"],
+          "config": {
+            "timeframe": "1m",
+            "take_profit": 0.5,
+            "stop_loss": 0.3,
+            "max_trades_per_hour": 10
+          },
+          "conditions": {
+            "volatility": {"min": 1.0, "max": 10.0},
+            "volume_ratio": {"min": 1.5}
+          }
+        },
+        "adaptive_scalping": {
+          "name": "Adaptive Scalping AI",
+          "enabled": false,
+          "priority": 5,
+          "market_regimes": ["volatile", "uptrend", "downtrend"],
+          "config": {
+            "dynamic_timeframe": true,
+            "volatility_adaptive": true,
+            "leverage_auto_adjust": false,
+            "flash_crash_hunter": true
+          },
+          "conditions": {
+            "volatility": {"min": 2.0},
+            "atr_change": {"min": 1.5}
+          }
+        },
+        "trend_following": {
+          "name": "Trend Following",
+          "enabled": false,
+          "priority": 6,
+          "market_regimes": ["uptrend", "downtrend"],
+          "config": {
+            "ema_fast": 20,
+            "ema_slow": 50,
+            "confirmation_candles": 3,
+            "trailing_stop": 2.0
+          },
+          "conditions": {
+            "adx": {"min": 25},
+            "macd_trend": true
+          }
+        }
+      }
+    },
+    
+    "FUTURES": {
+      "name": "Auto Futures Trading",
+      "description": "Trading à terme avec levier",
+      "active": false,
+      "capital_allocation": 3000,
+      "max_positions": 2,
+      "max_leverage": 3,
+      "strategies": {
+        "infinity_grid_futures": {
+          "name": "Infinity Grid Futures",
+          "enabled": false,
+          "priority": 1,
+          "market_regimes": ["sideways", "ranging"],
+          "config": {
+            "grid_count": 15,
+            "profit_per_grid": 1.5,
+            "leverage": 3,
+            "hedge_enabled": true,
+            "liquidation_protection": true
+          },
+          "conditions": {
+            "volatility": {"min": 0.5, "max": 4.0},
+            "funding_rate": {"min": -0.1, "max": 0.1}
+          }
+        },
+        "long_short_momentum": {
+          "name": "Long/Short Momentum",
+          "enabled": true,
+          "priority": 2,
+          "market_regimes": ["uptrend", "downtrend"],
+          "config": {
+            "leverage": 3,
+            "position_size_percent": 20,
+            "stop_loss": 3.0,
+            "take_profit": 8.0,
+            "trailing_enabled": true
+          },
+          "conditions": {
+            "adx": {"min": 25},
+            "macd_strength": {"min": 0.5}
+          }
+        },
+        "scalping_futures": {
+          "name": "Scalping Futures 15m",
+          "enabled": true,
+          "priority": 3,
+          "market_regimes": ["volatile"],
+          "config": {
+            "timeframe": "15m",
+            "leverage": 2,
+            "take_profit": 1.5,
+            "stop_loss": 1.0,
+            "max_trades_per_day": 20
+          },
+          "conditions": {
+            "volatility": {"min": 2.0},
+            "volume_ratio": {"min": 2.0}
+          }
+        },
+        "hedge_spot_futures": {
+          "name": "Hedge Spot with Futures",
+          "enabled": false,
+          "priority": 4,
+          "market_regimes": ["downtrend", "volatile"],
+          "config": {
+            "hedge_ratio": 1.0,
+            "leverage": 1,
+            "rebalance_threshold": 5.0
+          },
+          "conditions": {
+            "spot_position_exists": true,
+            "drawdown": {"max": -3.0}
+          }
+        },
+        "multi_tp_futures": {
+          "name": "Multi-TP Futures",
+          "enabled": false,
+          "priority": 5,
+          "market_regimes": ["uptrend", "downtrend"],
+          "config": {
+            "leverage": 3,
+            "tp_levels": [
+              {"percent": 2.0, "close_percent": 30},
+              {"percent": 4.0, "close_percent": 40},
+              {"percent": 8.0, "close_percent": 30}
+            ],
+            "trailing_after_tp1": true
+          },
+          "conditions": {
+            "trend_strength": {"min": 60}
+          }
+        }
+      }
+    },
+    
+    "HYBRIDE": {
+      "name": "Hybrid Spot + Futures",
+      "description": "Combinaison intelligente Spot et Futures",
+      "active": false,
+      "capital_allocation": 8000,
+      "spot_allocation_percent": 60,
+      "futures_allocation_percent": 40,
+      "strategies": {
+        "spot_long_futures_hedge": {
+          "name": "Spot Long + Futures Hedge",
+          "enabled": true,
+          "priority": 1,
+          "market_regimes": ["volatile", "downtrend"],
+          "config": {
+            "spot_position_size": 500,
+            "futures_hedge_ratio": 0.5,
+            "rebalance_trigger": 10.0,
+            "auto_adjust": true
+          },
+          "conditions": {
+            "volatility": {"min": 2.0}
+          }
+        },
+        "arbitrage_internal": {
+          "name": "Internal Spot-Futures Arbitrage",
+          "enabled": false,
+          "priority": 2,
+          "market_regimes": ["sideways", "ranging"],
+          "config": {
+            "min_spread": 0.3,
+            "max_spread": 2.0,
+            "execution_speed": "fast"
+          },
+          "conditions": {
+            "funding_rate": {"min": 0.05}
+          }
+        },
+        "dynamic_allocation": {
+          "name": "Dynamic Capital Allocation",
+          "enabled": true,
+          "priority": 3,
+          "market_regimes": ["all"],
+          "config": {
+            "spot_weight_bullish": 70,
+            "futures_weight_bullish": 30,
+            "spot_weight_bearish": 40,
+            "futures_weight_bearish": 60,
+            "rebalance_interval_hours": 4
+          },
+          "conditions": {}
+        }
+      }
+    },
+    
+    "MANUEL": {
+      "name": "Mode Manuel",
+      "description": "Contrôle total avec assistance IA",
+      "active": true,
+      "capital_allocation": 10000,
+      "strategies": {
+        "signal_only": {
+          "name": "Signal Generator Only",
+          "enabled": true,
+          "priority": 1,
+          "market_regimes": ["all"],
+          "config": {
+            "generate_signals": true,
+            "auto_execute": false,
+            "notify_telegram": true,
+            "confidence_threshold": 0.7
+          },
+          "conditions": {}
+        },
+        "copy_trading": {
+          "name": "Copy Manual Trades",
+          "enabled": false,
+          "priority": 2,
+          "market_regimes": ["all"],
+          "config": {
+            "track_manual_trades": true,
+            "suggest_improvements": true,
+            "risk_warning": true
+          },
+          "conditions": {}
+        },
+        "alert_system": {
+          "name": "Advanced Alert System",
+          "enabled": true,
+          "priority": 3,
+          "market_regimes": ["all"],
+          "config": {
+            "price_alerts": true,
+            "indicator_alerts": true,
+            "regime_change_alerts": true,
+            "risk_alerts": true
+          },
+          "conditions": {}
+        }
+      }
+    }
+  },
+  
+  "strategy_selector": {
+    "mode": "AI_ASSISTED",
+    "allow_multi_strategy": true,
+    "max_concurrent_strategies": 3,
+    "ai_suggestions_enabled": true,
+    "auto_switch_on_regime_change": true,
+    "confidence_threshold": 0.75
+  },
+  
+  "market_regime_mappings": {
+    "uptrend": {
+      "description": "Marché haussier fort",
+      "recommended_strategies": {
+        "SPOT": ["trend_following", "scalping", "dca_strategy"],
+        "FUTURES": ["long_short_momentum", "multi_tp_futures"],
+        "HYBRIDE": ["dynamic_allocation"]
+      },
+      "leverage_adjustment": 1.0
+    },
+    "downtrend": {
+      "description": "Marché baissier fort",
+      "recommended_strategies": {
+        "SPOT": ["dca_strategy"],
+        "FUTURES": ["long_short_momentum", "scalping_futures"],
+        "HYBRIDE": ["spot_long_futures_hedge"]
+      },
+      "leverage_adjustment": 0.5
+    },
+    "sideways": {
+      "description": "Marché horizontal",
+      "recommended_strategies": {
+        "SPOT": ["infinity_grid", "grid_trading"],
+        "FUTURES": ["infinity_grid_futures"],
+        "HYBRIDE": ["arbitrage_internal"]
+      },
+      "leverage_adjustment": 1.2
+    },
+    "ranging": {
+      "description": "Consolidation",
+      "recommended_strategies": {
+        "SPOT": ["grid_trading", "infinity_grid"],
+        "FUTURES": ["infinity_grid_futures"],
+        "HYBRIDE": ["dynamic_allocation"]
+      },
+      "leverage_adjustment": 1.0
+    },
+    "volatile": {
+      "description": "Haute volatilité",
+      "recommended_strategies": {
+        "SPOT": ["adaptive_scalping", "scalping"],
+        "FUTURES": ["scalping_futures"],
+        "HYBRIDE": ["spot_long_futures_hedge"]
+      },
+      "leverage_adjustment": 0.3
+    }
+  }
+}

@@ -1,0 +1,533 @@
+{
+  "timestamp": "2025-10-29T18:48:13.885108",
+  "compatibility_issues": [
+    {
+      "file": "/opt/smartorder-pro/unified_backend.py",
+      "compatible": false,
+      "issues": [
+        {
+          "line": 2,
+          "issue": "Syntax error: EOL while scanning string literal",
+          "severity": "critical"
+        }
+      ]
+    }
+  ],
+  "incomplete_code": [
+    {
+      "file": "/opt/smartorder-pro/api_production_complete.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 130,
+          "code": "LOG.info(\"\ud83d\ude80 Starting SmartOrder PRO Production API...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 292,
+          "code": "'current_price': 50000,  # TODO: Get real price",
+          "issue": "TODO comment found"
+        },
+        {
+          "line": 478,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 484,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 505,
+          "code": "LOG.info(\"\ud83d\ude80 Starting SmartOrder PRO Production API on port 8001...\")",
+          "issue": "Ellipsis placeholder"
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "file": "/opt/smartorder-pro/run_paper_quantum_pro.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 73,
+          "code": "print(f\"\\n\ud83c\udfaf D\u00e9marrage du trading...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 91,
+          "code": "print(f\"[{timestamp}] \u26a0\ufe0f  Risk Manager: Limite atteinte, pause...\")",
+          "issue": "Ellipsis placeholder"
+        }
+      ],
+      "severity": "medium"
+    },
+    {
+      "file": "/opt/smartorder-pro/run_paper_infinity_pro.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 108,
+          "code": "LOG.info(f\"\ud83d\udcca Buy grids: {self.buy_levels[:3]}... (total {len(self.buy_levels)})\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 109,
+          "code": "LOG.info(f\"\ud83d\udcca Sell grids: {self.sell_levels[:3]}... (total {len(self.sell_levels)})\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 271,
+          "code": "print(\"\ud83d\ude80 Infinity Grid PRO running... (Press Ctrl+C to stop)\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 310,
+          "code": "print(\"\ud83d\uded1 Stopping Infinity Grid PRO...\")",
+          "issue": "Ellipsis placeholder"
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "file": "/opt/smartorder-pro/run_paper_trading.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 83,
+          "code": "print(\"\ud83d\ude80 Starting live paper trading... (Press Ctrl+C to stop)\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 96,
+          "code": "LOG.warning(\"\u26a0\ufe0f Could not fetch price, retrying...\")",
+          "issue": "Ellipsis placeholder"
+        }
+      ],
+      "severity": "medium"
+    },
+    {
+      "file": "/opt/smartorder-pro/ultimate_paper_trader.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 437,
+          "code": "print(f\"\\n\u23f3 Prochaine analyse dans {interval}s...\")",
+          "issue": "Ellipsis placeholder"
+        }
+      ],
+      "severity": "medium"
+    },
+    {
+      "file": "/opt/smartorder-pro/ultimate_trading_bot.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 274,
+          "code": "print(f\"\\n\u23f3 Prochaine analyse dans {interval}s...\")",
+          "issue": "Ellipsis placeholder"
+        }
+      ],
+      "severity": "medium"
+    },
+    {
+      "file": "/opt/smartorder-pro/run_paper_infinity_grid.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 107,
+          "code": "LOG.warning(f\"\u26a0\ufe0f Price {current_price:.2f} outside grid range, rebalancing...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 188,
+          "code": "print(\"\ud83d\ude80 Starting Infinity Grid... (Press Ctrl+C to stop)\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 202,
+          "code": "LOG.warning(\"\u26a0\ufe0f Could not fetch price, retrying...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 249,
+          "code": "print(\"\ud83d\uded1 Stopping Infinity Grid...\")",
+          "issue": "Ellipsis placeholder"
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "file": "/opt/smartorder-pro/smart_diagnostic_autocorrect.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 104,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 150,
+          "code": "(r'raise NotImplementedError', \"Function not implemented\"),",
+          "issue": "Function not implemented"
+        },
+        {
+          "line": 171,
+          "code": "# Check if class only has pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 178,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 275,
+          "code": "\"fix\": f\"Add: from core.{module} import ...\"",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 390,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 514,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 516,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 535,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 554,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 771,
+          "code": "print(\"\\n1\ufe0f\u20e3 Check compatibilit\u00e9 Python...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 780,
+          "code": "print(\"\\n2\ufe0f\u20e3 Check code incomplet...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 794,
+          "code": "print(\"\\n3\ufe0f\u20e3 Check strat\u00e9gies...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 800,
+          "code": "print(\"\\n4\ufe0f\u20e3 Check coh\u00e9rence...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 806,
+          "code": "print(\"\\n5\ufe0f\u20e3 Auto-corrections...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 812,
+          "code": "print(\"\\n6\ufe0f\u20e3 Validation progression...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 819,
+          "code": "print(f\"\\n\u2705 Check termin\u00e9. Prochaine v\u00e9rification dans {interval}s...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 843,
+          "code": "print(\"\ud83d\udd0d Analyse compl\u00e8te du syst\u00e8me...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 846,
+          "code": "print(\"  Checking compatibility...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 854,
+          "code": "print(\"  Checking incomplete code...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 861,
+          "code": "print(\"  Checking missing strategies...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 865,
+          "code": "print(\"  Checking consistency...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 869,
+          "code": "print(\"  Checking imports...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 873,
+          "code": "print(\"  Checking duplicates...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 877,
+          "code": "print(\"  Validating progress...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 881,
+          "code": "print(\"  Checking dashboard health...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 885,
+          "code": "print(\"  Checking frontend errors...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 889,
+          "code": "print(\"  Checking dashboard features...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 893,
+          "code": "print(\"  Auto-fixing dashboard issues...\")",
+          "issue": "Ellipsis placeholder"
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "file": "/opt/smartorder-pro/bot_diagnostic_pro.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 62,
+          "code": "print(\"\ud83d\udcc2 [1/8] Analyse structure fichiers...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 66,
+          "code": "print(\"\ud83d\udc0d [2/8] Test modules Python...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 70,
+          "code": "print(\"\ud83d\udd04 [3/8] D\u00e9tection doublons...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 74,
+          "code": "print(\"\u2699\ufe0f  [4/8] V\u00e9rification services...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 78,
+          "code": "print(\"\ud83d\udce1 [5/8] Test APIs...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 82,
+          "code": "print(\"\u2699\ufe0f  [6/8] Validation configuration...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 86,
+          "code": "print(\"\ud83d\udcdc [7/8] Analyse logs & crashes...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 90,
+          "code": "print(\"\u26a1 [8/8] Check performance...\")",
+          "issue": "Ellipsis placeholder"
+        },
+        {
+          "line": 210,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 508,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "file": "/opt/smartorder-pro/unified_backend_ultimate.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 39,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 80,
+          "code": "pass",
+          "issue": "Empty function with just 'pass'"
+        },
+        {
+          "line": 81,
+          "code": "return None",
+          "issue": "Function returns None explicitly"
+        },
+        {
+          "line": 197,
+          "code": "# TODO: Impl\u00e9menter lecture positions depuis bot",
+          "issue": "TODO comment found"
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "file": "/opt/smartorder-pro/auto_trading_modes.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 61,
+          "code": "return None",
+          "issue": "Function returns None explicitly"
+        },
+        {
+          "line": 66,
+          "code": "return None",
+          "issue": "Function returns None explicitly"
+        },
+        {
+          "line": 115,
+          "code": "return None",
+          "issue": "Function returns None explicitly"
+        },
+        {
+          "line": 180,
+          "code": "return None",
+          "issue": "Function returns None explicitly"
+        },
+        {
+          "line": 185,
+          "code": "return None",
+          "issue": "Function returns None explicitly"
+        },
+        {
+          "line": 232,
+          "code": "return None",
+          "issue": "Function returns None explicitly"
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "file": "/opt/smartorder-pro/run_all_strategies_paper.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 307,
+          "code": "print(f\"\\n\u23f3 Prochain cycle dans {interval}s...\")",
+          "issue": "Ellipsis placeholder"
+        }
+      ],
+      "severity": "medium"
+    },
+    {
+      "file": "/opt/smartorder-pro/backtesting/backtesting_engine_pro.py",
+      "complete": false,
+      "issues": [
+        {
+          "line": 346,
+          "code": "return None",
+          "issue": "Function returns None explicitly"
+        },
+        {
+          "line": 355,
+          "code": "return None",
+          "issue": "Function returns None explicitly"
+        }
+      ],
+      "severity": "medium"
+    }
+  ],
+  "missing_strategies": {
+    "config_strategies": [],
+    "implemented": [
+      "quantum_grid",
+      "cross_strategy_hedger",
+      "smart_order_engine",
+      "copy_trading_engine",
+      "auto_spot_trader",
+      "paper_trading_engine_v2",
+      "grid_infinity_engine",
+      "adaptive_scalping_engine",
+      "auto_trading_engine",
+      "execution_engine",
+      "auto_futures_trader",
+      "quantum_grid_real",
+      "dual_direction_trader",
+      "hybrid_trader",
+      "grid_trading_strategy",
+      "paper_trading_engine",
+      "pnl_engine",
+      "auto_trader",
+      "dca_strategy"
+    ],
+    "missing": [],
+    "complete": true
+  },
+  "consistency_issues": [],
+  "import_fixes": [
+    {
+      "error": "ModuleNotFoundError: No module named 'ccxt'",
+      "fix": "pip install ccxt",
+      "auto_fixable": true
+    }
+  ],
+  "duplicate_fixes": [],
+  "progress_gaps": {
+    "error": "PROGRESS_TRACKER.json not found"
+  },
+  "dashboard_health": {
+    "api_running": true,
+    "nginx_running": true,
+    "issues": [
+      {
+        "component": "Dashboard Directory",
+        "status": "missing",
+        "severity": "critical",
+        "fix": "Restore dashboard directory"
+      }
+    ],
+    "healthy": false
+  },
+  "frontend_errors": {
+    "files_checked": 0,
+    "issues": [],
+    "clean": true
+  },
+  "dashboard_features": {
+    "missing_features": [
+      {
+        "feature": "Active Strategies List",
+        "endpoint": "/api/strategies",
+        "issue": "Endpoint missing 'strategies' key",
+        "severity": "high"
+      }
+    ],
+    "total": 1,
+    "complete": false
+  },
+  "dashboard_fixes": []
+}

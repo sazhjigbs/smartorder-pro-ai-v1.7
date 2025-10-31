@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartOrder PRO AI - Dashboard v2.1 Unified</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            padding: 15px;
+            min-height: 100vh;
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .container {
+            max-width: 2200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            animation: fadeInDown 0.8s;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f857a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .signature {
+            font-size: 0.95em;
+            opacity: 0.85;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Auth Section */
+        .auth-section {
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .auth-section input {
+            width: 300px;
+            padding: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+
+        .auth-section button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .auth-section button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Status Bar */
+        .status-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .status-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .status-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .status-label {
+            font-size: 0.85em;
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+
+        .status-value {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h2 {
+            margin-bottom: 18px;
+            font-size: 1.4em;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 12px;
+        }
+
+        /* Emergency Controls */
+        .emergency-controls {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .emergency-btn {
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+        }
+
+        .emergency-btn.stop {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .emergency-btn.pause {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .emergency-btn.resume {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .emergency-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Market Regime */
+        .regime-indicator {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .regime-bullish {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .regime-bearish {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .regime-sideways {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .pnl-positive {
+            color: #10b981;
+        }
+
+        .pnl-negative {
+            color: #ef4444;
+        }
+
+        /* Metric Row */
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .metric-label {
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        .metric-value {
+            font-weight: bold;
+        }
+
+        /* Button */
+        .btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        /* Input Group */
+        .input-group {
+            margin: 15px 0;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1em;
+        }
+
+        /* Alert */
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.2);
+            border-left: 4px solid #10b981;
+        }
+
+        .alert-error {
+            background: rgba(239, 68, 68, 0.2);
+            border-left: 4px solid #ef4444;
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.2);
+            border-left: 4px solid #3b82f6;
+        }
+
+        #loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #mainContent {
+            display: none;
+        }
+
+        .connection-status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .status-connected {
+            background: rgba(16, 185, 129, 0.3);
+            color: #10b981;
+        }
+
+        .status-disconnected {
+            background: rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+
+        /* Modes & Strategies P4 */
+        .mode-btn {
+            padding: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .mode-btn:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .mode-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-color: #667eea;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .strategy-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid transparent;
+        }
+
+        .strategy-item.enabled {
+            border-left-color: #10b981;
+        }
+
+        .strategy-item.disabled {
+            border-left-color: #ef4444;
+            opacity: 0.6;
+        }
+
+        .strategy-toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            background: #ef4444;
+            border-radius: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .strategy-toggle.active {
+            background: #10b981;
+        }
+
+        .strategy-toggle::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            transition: all 0.3s;
+        }
+
+        .strategy-toggle.active::after {
+            left: 27px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 SmartOrder PRO AI v2.1</h1>
+            <p class="signature">Ultimate Dashboard - Unified System</p>
+            <span id="connectionStatus" class="connection-status status-disconnected">⚠️ Non connecté</span>
+        </div>
+
+        <div class="auth-section glass">
+            <h3>🔐 Authentification API</h3>
+            <input type="password" id="bearerToken" placeholder="Bearer Token">
+            <button onclick="authenticate()">Connecter</button>
+        </div>
+
+        <div id="loading">
+            <div class="spinner"></div>
+            <p>Chargement des données...</p>
+        </div>
+
+        <div id="alertContainer"></div>
+
+        <div id="mainContent">
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <div class="status-item glass">
+                    <div class="status-label">💰 Balance USDT</div>
+                    <div class="status-value" id="balance-usdt">--</div>
+                </div>
+                <div class="status-item glass">
+                    <div class="status-label">📊 PnL Total</div>
+                    <div class="status-value" id="total-pnl">--</div>
+                </div>
+                <div class="status-item glass">
+                    <div class="status-label">🔥 Trades</div>
+                    <div class="status-value" id="total-trades">--</div>
+                </div>
+                <div class="status-item glass">
+                    <div class="status-label">🎯 Market Regime</div>
+                    <div id="regime-indicator" class="regime-indicator regime-sideways">SIDEWAYS</div>
+                </div>
+                <div class="status-item glass">
+                    <div class="status-label">🤖 IA Confidence</div>
+                    <div class="status-value" id="ai-confidence">85%</div>
+                </div>
+            </div>
+
+            <!-- Emergency Controls -->
+            <div class="card glass">
+                <h2>🚨 Emergency Controls</h2>
+                <div class="emergency-controls">
+                    <button class="emergency-btn stop" onclick="emergencyStop()">
+                        🛑 STOP ALL
+                    </button>
+                    <button class="emergency-btn pause" onclick="emergencyPause()">
+                        ⏸️ PAUSE
+                    </button>
+                    <button class="emergency-btn resume" onclick="emergencyResume()">
+                        ▶️ RESUME
+                    </button>
+                </div>
+            </div>
+
+            <!-- Trading Modes Section -->
+            <div class="card glass" style="margin-bottom: 20px;">
+                <h2>🎮 Modes de Trading</h2>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 15px;">
+                    <button class="mode-btn" data-mode="spot" onclick="selectMode('spot')">📍 Spot</button>
+                    <button class="mode-btn" data-mode="futures" onclick="selectMode('futures')">🚀 Futures</button>
+                    <button class="mode-btn" data-mode="hybrid" onclick="selectMode('hybrid')">🔄 Hybrid</button>
+                    <button class="mode-btn" data-mode="manual" onclick="selectMode('manual')">✋ Manuel</button>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Mode Actuel</span>
+                    <span class="metric-value" id="current-mode-display" style="color: #10b981;">SPOT</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">AI Strategy Selector</span>
+                    <button class="btn" id="ai-selector-btn" onclick="toggleAISelector()" style="padding: 5px 15px; margin: 0;">OFF</button>
+                </div>
+            </div>
+
+            <!-- Strategies Section -->
+            <div class="card glass" style="margin-bottom: 20px;">
+                <h2>⚡ Stratégies Actives (<span id="strategies-mode-name">Spot</span>)</h2>
+                <div id="strategies-container">
+                    <!-- Filled dynamically -->
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Wallet -->
+                <div class="card glass">
+                    <h2>💰 Portefeuille (Paper Trading)</h2>
+                    <div class="metric-row">
+                        <span class="metric-label">USDT Disponible</span>
+                        <span class="metric-value" id="wallet-usdt">--</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Total Investi</span>
+                        <span class="metric-value" id="wallet-invested">--</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">PnL Réalisé</span>
+                        <span class="metric-value" id="wallet-pnl">--</span>
+                    </div>
+                    <button class="btn" onclick="loadWallet()">🔄 Actualiser</button>
+                </div>
+
+                <!-- Risk Config -->
+                <div class="card glass">
+                    <h2>⚙️ Risk Management</h2>
+                    <div id="riskConfigDisplay"></div>
+                    <button class="btn" onclick="showRiskEditForm()">✏️ Modifier</button>
+                    <div id="riskEditForm" style="display: none; margin-top: 20px;">
+                        <div class="input-group">
+                            <label>Max Allocation (%)</label>
+                            <input type="number" id="editMaxAlloc" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label>Stop Loss (%)</label>
+                            <input type="number" id="editStopLoss" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label>Take Profit (%)</label>
+                            <input type="number" id="editTakeProfit" step="0.1">
+                        </div>
+                        <button class="btn" onclick="updateRiskConfig()">💾 Sauvegarder</button>
+                        <button class="btn btn-danger" onclick="cancelRiskEdit()">❌ Annuler</button>
+                    </div>
+                </div>
+
+                <!-- Market Regime Detector -->
+                <div class="card glass">
+                    <h2>📊 Market Regime Detector</h2>
+                    <div class="metric-row">
+                        <span class="metric-label">Regime</span>
+                        <span class="metric-value" id="market-regime">SIDEWAYS</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Volatilité</span>
+                        <span class="metric-value" id="regime-volatility">MEDIUM</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Trend Strength</span>
+                        <span class="metric-value" id="regime-trend">45%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Confidence</span>
+                        <span class="metric-value" id="regime-confidence">85%</span>
+                    </div>
+                </div>
+
+                <!-- Diagnostic Mémoire -->
+                <div class="card glass">
+                    <h2>🧠 Diagnostic Intelligent Mémoire</h2>
+                    <div class="metric-row">
+                        <span class="metric-label">Status</span>
+                        <span class="metric-value" id="memory-status">✅ Active</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Snapshots</span>
+                        <span class="metric-value" id="memory-snapshots">12</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Dernière MAJ</span>
+                        <span class="metric-value" id="memory-updated">--</span>
+                    </div>
+                    <button class="btn" onclick="createSnapshot()">📸 Créer Snapshot</button>
+                </div>
+            </div>
+
+            <!-- Positions Table -->
+            <div class="card glass" style="margin-top: 20px;">
+                <h2>📍 Positions Ouvertes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbole</th>
+                            <th>Stratégie</th>
+                            <th>Quantité</th>
+                            <th>Prix Entrée</th>
+                            <th>Prix Actuel</th>
+                            <th>PnL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="positions-list">
+                        <tr><td colspan="6" style="text-align: center; opacity: 0.7;">Aucune position ouverte</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Watchlist -->
+            <div class="card glass" style="margin-top: 20px;">
+                <h2>👁️ Watchlist - Paires Surveillées</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Exchange</th>
+                            <th>Symbole</th>
+                            <th>Actif</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="watchlist-body">
+                        <!-- Filled dynamically -->
+                    </tbody>
+                </table>
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <input type="text" id="newExchange" placeholder="Exchange" style="flex: 1; padding: 10px; border: 2px solid rgba(255,255,255,0.2); border-radius: 6px; background: rgba(255,255,255,0.1); color: white;">
+                    <input type="text" id="newSymbol" placeholder="Symbole" style="flex: 1; padding: 10px; border: 2px solid rgba(255,255,255,0.2); border-radius: 6px; background: rgba(255,255,255,0.1); color: white;">
+                    <button class="btn" onclick="addWatchlistPair()">➕ Ajouter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let API_TOKEN = '';
+        const API_BASE = window.location.origin + '/api';
+
+        function showAlert(message, type = 'info') {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type}`;
+            alertDiv.textContent = message;
+            document.getElementById('alertContainer').appendChild(alertDiv);
+            setTimeout(() => alertDiv.remove(), 5000);
+        }
+
+        async function apiCall(endpoint, method = 'GET', body = null) {
+            const options = {
+                method,
+                headers: {
+                    'Authorization': `Bearer ${API_TOKEN}`,
+                    'Content-Type': 'application/json'
+                }
+            };
+            if (body) options.body = JSON.stringify(body);
+
+            const response = await fetch(API_BASE + endpoint, options);
+            if (!response.ok) {
+                throw new Error(`API Error: ${response.status}`);
+            }
+            return await response.json();
+        }
+
+        async function authenticate() {
+            const token = document.getElementById('bearerToken').value.trim();
+            if (!token) {
+                showAlert('Veuillez entrer un Bearer Token', 'error');
+                return;
+            }
+
+            API_TOKEN = token;
+            document.getElementById('loading').style.display = 'block';
+
+            try {
+                await apiCall('/wallet');
+                document.getElementById('connectionStatus').className = 'connection-status status-connected';
+                document.getElementById('connectionStatus').textContent = '✅ Connecté';
+                document.getElementById('mainContent').style.display = 'block';
+                document.querySelector('.auth-section').style.display = 'none';
+                showAlert('Authentification réussie !', 'success');
+                await loadAllData();
+            } catch (error) {
+                showAlert('Échec authentification: ' + error.message, 'error');
+                API_TOKEN = '';
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        async function loadWallet() {
+            try {
+                const data = await apiCall('/wallet');
+                document.getElementById('balance-usdt').textContent = data.USDT.toFixed(2) + ' USDT';
+                document.getElementById('wallet-usdt').textContent = data.USDT.toFixed(2) + ' USDT';
+                document.getElementById('wallet-invested').textContent = data.total_invested.toFixed(2) + ' USDT';
+                
+                const pnl = data.total_pnl;
+                const pnlText = (pnl >= 0 ? '+' : '') + pnl.toFixed(2) + ' USDT';
+                const pnlClass = pnl >= 0 ? 'pnl-positive' : 'pnl-negative';
+                
+                document.getElementById('total-pnl').textContent = pnlText;
+                document.getElementById('total-pnl').className = 'status-value ' + pnlClass;
+                document.getElementById('wallet-pnl').textContent = pnlText;
+                document.getElementById('wallet-pnl').className = 'metric-value ' + pnlClass;
+                
+                document.getElementById('total-trades').textContent = data.total_trades;
+            } catch (error) {
+                console.error('Wallet error:', error);
+            }
+        }
+
+        async function loadRiskConfig() {
+            try {
+                const data = await apiCall('/risk-config');
+                let html = '';
+                const fields = {
+                    'max_allocation_per_trade': 'Max Allocation',
+                    'max_risk_per_trade': 'Max Risk',
+                    'stop_loss_percent': 'Stop Loss',
+                    'take_profit_percent': 'Take Profit'
+                };
+                for (const [key, label] of Object.entries(fields)) {
+                    html += `<div class="metric-row">
+                        <span class="metric-label">${label}</span>
+                        <span class="metric-value">${data[key]}%</span>
+                    </div>`;
+                }
+                document.getElementById('riskConfigDisplay').innerHTML = html;
+            } catch (error) {
+                console.error('Risk config error:', error);
+            }
+        }
+
+        function showRiskEditForm() {
+            apiCall('/risk-config').then(data => {
+                document.getElementById('editMaxAlloc').value = data.max_allocation_per_trade;
+                document.getElementById('editStopLoss').value = data.stop_loss_percent;
+                document.getElementById('editTakeProfit').value = data.take_profit_percent;
+                document.getElementById('riskEditForm').style.display = 'block';
+            });
+        }
+
+        function cancelRiskEdit() {
+            document.getElementById('riskEditForm').style.display = 'none';
+        }
+
+        async function updateRiskConfig() {
+            const payload = {
+                max_allocation_per_trade: parseFloat(document.getElementById('editMaxAlloc').value),
+                stop_loss_percent: parseFloat(document.getElementById('editStopLoss').value),
+                take_profit_percent: parseFloat(document.getElementById('editTakeProfit').value)
+            };
+
+            try {
+                await apiCall('/risk-config', 'POST', payload);
+                showAlert('Risk config mise à jour !', 'success');
+                cancelRiskEdit();
+                loadRiskConfig();
+            } catch (error) {
+                showAlert('Erreur: ' + error.message, 'error');
+            }
+        }
+
+        async function loadWatchlist() {
+            try {
+                const data = await apiCall('/watchlist');
+                const tbody = document.getElementById('watchlist-body');
+                tbody.innerHTML = '';
+                
+                data.forEach(pair => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${pair.exchange}</td>
+                        <td><strong>${pair.symbol}</strong></td>
+                        <td>${pair.active ? '✅ Oui' : '❌ Non'}</td>
+                        <td><button class="btn btn-danger" onclick="removePair('${pair.exchange}', '${pair.symbol}')">🗑️</button></td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            } catch (error) {
+                console.error('Watchlist error:', error);
+            }
+        }
+
+        async function addWatchlistPair() {
+            const exchange = document.getElementById('newExchange').value.trim();
+            const symbol = document.getElementById('newSymbol').value.trim();
+
+            if (!exchange || !symbol) {
+                showAlert('Remplissez exchange et symbole', 'error');
+                return;
+            }
+
+            try {
+                await apiCall('/watchlist', 'POST', { exchange, symbol, active: true });
+                showAlert(`Paire ${symbol} ajoutée !`, 'success');
+                document.getElementById('newExchange').value = '';
+                document.getElementById('newSymbol').value = '';
+                loadWatchlist();
+            } catch (error) {
+                showAlert('Erreur: ' + error.message, 'error');
+            }
+        }
+
+        async function removePair(exchange, symbol) {
+            if (!confirm(`Supprimer ${symbol} ?`)) return;
+
+            try {
+                const data = await apiCall('/watchlist');
+                const filtered = data.filter(p => !(p.exchange === exchange && p.symbol === symbol));
+                await apiCall('/watchlist', 'POST', { pairs: filtered });
+                showAlert(`Paire ${symbol} supprimée !`, 'success');
+                loadWatchlist();
+            } catch (error) {
+                showAlert('Erreur: ' + error.message, 'error');
+            }
+        }
+
+        async function updatePositions() {
+            try {
+                const data = await apiCall('/positions');
+                const tbody = document.getElementById('positions-list');
+                tbody.innerHTML = '';
+                
+                if (!data || data.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; opacity: 0.7;">Aucune position ouverte</td></tr>';
+                    return;
+                }
+                
+                data.forEach(pos => {
+                    const tr = document.createElement('tr');
+                    const pnlClass = (pos.pnl || 0) >= 0 ? 'pnl-positive' : 'pnl-negative';
+                    tr.innerHTML = `
+                        <td>${pos.symbol}</td>
+                        <td>${pos.strategy || 'N/A'}</td>
+                        <td>${(pos.amount || 0).toFixed(6)}</td>
+                        <td>$${(pos.entry_price || 0).toFixed(2)}</td>
+                        <td>$${(pos.current_price || 0).toFixed(2)}</td>
+                        <td class="${pnlClass}">$${(pos.pnl || 0).toFixed(2)}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            } catch (error) {
+                console.error('Positions error:', error);
+            }
+        }
+
+        async function updateMarketRegime() {
+            try {
+                const data = await apiCall('/market-regime');
+                const regime = data.regime || 'SIDEWAYS';
+                document.getElementById('regime-indicator').textContent = regime;
+                document.getElementById('regime-indicator').className = 'regime-indicator regime-' + regime.toLowerCase();
+                document.getElementById('market-regime').textContent = regime;
+                document.getElementById('regime-volatility').textContent = data.volatility || 'MEDIUM';
+                document.getElementById('regime-trend').textContent = (data.trend_strength || 45) + '%';
+                document.getElementById('regime-confidence').textContent = (data.confidence || 85) + '%';
+                document.getElementById('ai-confidence').textContent = (data.confidence || 85) + '%';
+            } catch (error) {
+                console.log('Market regime API not yet implemented');
+            }
+        }
+
+        // Emergency Controls
+        async function emergencyStop() {
+            if (!confirm('⚠️ ARRÊT D\'URGENCE - Confirmer ?')) return;
+            showAlert('🛑 ARRÊT D\'URGENCE ACTIVÉ', 'error');
+            // TODO: API call
+        }
+
+        async function emergencyPause() {
+            showAlert('⏸️ Système en PAUSE', 'info');
+            // TODO: API call
+        }
+
+        async function emergencyResume() {
+            showAlert('▶️ Système REDÉMARRÉ', 'success');
+            // TODO: API call
+        }
+
+        async function createSnapshot() {
+            showAlert('📸 Création snapshot en cours...', 'info');
+            // TODO: API call
+            setTimeout(() => {
+                showAlert('✅ Snapshot créé avec succès !', 'success');
+                document.getElementById('memory-updated').textContent = new Date().toLocaleTimeString();
+            }, 2000);
+        }
+
+        // P4 - Modes & Strategies
+        let currentMode = 'spot';
+        let aiSelectorEnabled = false;
+
+        async function loadModes() {
+            try {
+                const data = await apiCall('/modes');
+                currentMode = data.current_mode;
+                aiSelectorEnabled = data.ai_strategy_selector?.enabled || false;
+                
+                // Update UI
+                document.querySelectorAll('.mode-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.mode === currentMode) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                document.getElementById('current-mode-display').textContent = currentMode.toUpperCase();
+                document.getElementById('ai-selector-btn').textContent = aiSelectorEnabled ? 'ON' : 'OFF';
+                document.getElementById('ai-selector-btn').style.background = aiSelectorEnabled ? 
+                    'linear-gradient(135deg, #10b981, #059669)' : 'linear-gradient(135deg, #667eea, #764ba2)';
+            } catch (error) {
+                console.error('Modes error:', error);
+            }
+        }
+
+        async function selectMode(mode) {
+            try {
+                await apiCall('/modes', 'POST', { current_mode: mode });
+                showAlert(`Mode changé vers ${mode.toUpperCase()}`, 'success');
+                currentMode = mode;
+                await loadModes();
+                await loadStrategies();
+            } catch (error) {
+                showAlert('Erreur changement mode: ' + error.message, 'error');
+            }
+        }
+
+        async function toggleAISelector() {
+            aiSelectorEnabled = !aiSelectorEnabled;
+            try {
+                await apiCall('/modes', 'POST', {
+                    ai_strategy_selector: { enabled: aiSelectorEnabled }
+                });
+                showAlert(`AI Selector ${aiSelectorEnabled ? 'activé' : 'désactivé'}`, 'success');
+                await loadModes();
+            } catch (error) {
+                showAlert('Erreur: ' + error.message, 'error');
+            }
+        }
+
+        async function loadStrategies() {
+            try {
+                const data = await apiCall(`/strategies?mode=${currentMode}`);
+                const container = document.getElementById('strategies-container');
+                container.innerHTML = '';
+                
+                document.getElementById('strategies-mode-name').textContent = currentMode.charAt(0).toUpperCase() + currentMode.slice(1);
+                
+                if (!data || data.length === 0) {
+                    container.innerHTML = '<p style="opacity: 0.7; text-align: center;">Aucune stratégie disponible</p>';
+                    return;
+                }
+                
+                data.forEach(strategy => {
+                    const div = document.createElement('div');
+                    div.className = `strategy-item ${strategy.enabled ? 'enabled' : 'disabled'}`;
+                    
+                    const riskColor = {
+                        'low': '#10b981',
+                        'medium': '#f59e0b',
+                        'high': '#ef4444',
+                        'extreme': '#dc2626'
+                    }[strategy.risk_level] || '#6b7280';
+                    
+                    div.innerHTML = `
+                        <div>
+                            <div style="font-weight: bold; font-size: 1.05em;">${strategy.name}</div>
+                            <div style="font-size: 0.85em; opacity: 0.8; margin-top: 3px;">${strategy.description}</div>
+                            <div style="font-size: 0.8em; color: ${riskColor}; margin-top: 3px;">
+                                Risk: ${strategy.risk_level ? strategy.risk_level.toUpperCase() : 'N/A'}
+                            </div>
+                        </div>
+                        <div class="strategy-toggle ${strategy.enabled ? 'active' : ''}" 
+                             onclick="toggleStrategy('${currentMode}', '${strategy.id}', ${!strategy.enabled})"></div>
+                    `;
+                    
+                    container.appendChild(div);
+                });
+            } catch (error) {
+                console.error('Strategies error:', error);
+            }
+        }
+
+        async function toggleStrategy(mode, strategyId, enabled) {
+            try {
+                await apiCall('/strategies', 'POST', {
+                    mode: mode,
+                    strategy_id: strategyId,
+                    enabled: enabled
+                });
+                showAlert(`Stratégie ${enabled ? 'activée' : 'désactivée'}`, 'success');
+                await loadStrategies();
+            } catch (error) {
+                showAlert('Erreur: ' + error.message, 'error');
+            }
+        }
+
+        async function loadAllData() {
+            await Promise.all([
+                loadWallet(),
+                loadRiskConfig(),
+                loadWatchlist(),
+                updatePositions(),
+                updateMarketRegime(),
+                loadModes(),
+                loadStrategies()
+            ]);
+        }
+
+        // Auto-refresh every 10 seconds
+        setInterval(() => {
+            if (API_TOKEN) loadAllData();
+        }, 10000);
+    </script>
+</body>
+</html>

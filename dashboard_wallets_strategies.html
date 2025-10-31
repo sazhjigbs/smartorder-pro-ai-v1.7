@@ -1,0 +1,229 @@
+<!-- SECTION WALLETS EXCHANGE (à insérer dans dashboard.html après Multi-Exchange Manager) -->
+
+        <!-- WALLETS PAR EXCHANGE -->
+        <div class="card glass" style="grid-column: 1 / -1;">
+            <h2>💰 Wallets Exchange - Balances Réelles</h2>
+            <div id="wallets-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 15px;">
+                <!-- Wallets dynamiques chargés via JS -->
+            </div>
+            <div style="margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; text-align: center;">
+                <strong>Total Balance:</strong> <span id="total-balance" style="font-size: 1.3em; color: #10b981;">$0.00</span>
+            </div>
+        </div>
+
+        <!-- STRATÉGIES AI COMPLÈTES -->
+        <div class="card glass" style="grid-column: 1 / -1;">
+            <h2>🧠 Stratégies AI - Liste Complète avec Indicateurs</h2>
+            <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+                <button onclick="filterStrategies('all')" class="mode-btn" style="padding: 10px 20px;">Toutes</button>
+                <button onclick="filterStrategies('spot')" class="mode-btn" style="padding: 10px 20px;">Spot</button>
+                <button onclick="filterStrategies('futures')" class="mode-btn" style="padding: 10px 20px;">Futures</button>
+                <button onclick="filterStrategies('hybride')" class="mode-btn" style="padding: 10px 20px;">Hybride</button>
+                <button onclick="filterStrategies('enabled')" class="mode-btn" style="padding: 10px 20px; background: #10b981;">Activées</button>
+            </div>
+            <div id="strategies-complete-list">
+                <!-- Stratégies chargées dynamiquement -->
+            </div>
+        </div>
+
+<style>
+.wallet-card {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.wallet-header {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wallet-balance {
+    font-size: 1.3em;
+    color: #10b981;
+    margin: 5px 0;
+}
+
+.wallet-coins {
+    margin-top: 10px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.strategy-complete-item {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid transparent;
+    transition: all 0.3s;
+}
+
+.strategy-complete-item.enabled {
+    border-left-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.strategy-complete-item:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateX(5px);
+}
+
+.strategy-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.indicator-badge {
+    background: rgba(102, 126, 234, 0.3);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    border: 1px solid rgba(102, 126, 234, 0.5);
+}
+</style>
+
+<script>
+// UPDATE EXCHANGE WALLETS
+async function updateExchangeWallets() {
+    try {
+        const response = await fetch(`${API_BASE}/api/exchange-wallets`);
+        const data = await response.json();
+        
+        const container = document.getElementById('wallets-container');
+        container.innerHTML = '';
+        
+        for (const [key, wallet] of Object.entries(data.wallets)) {
+            const card = document.createElement('div');
+            card.className = 'wallet-card';
+            
+            const statusBadge = wallet.connected 
+                ? '<span style="color: #10b981;">●</span>' 
+                : '<span style="color: #ef4444;">●</span>';
+            
+            const paperBadge = wallet.paper_trading 
+                ? '<span style="background: #f59e0b; padding: 2px 8px; border-radius: 8px; font-size: 0.8em;">PAPER</span>' 
+                : '';
+            
+            let coinsHTML = '';
+            if (wallet.coins && wallet.coins.length > 0) {
+                coinsHTML = '<div class="wallet-coins"><strong>Coins:</strong><br>';
+                wallet.coins.forEach(coin => {
+                    coinsHTML += `${coin.symbol}: ${coin.amount} (~$${coin.value_usdt})<br>`;
+                });
+                coinsHTML += '</div>';
+            }
+            
+            card.innerHTML = `
+                <div class="wallet-header">
+                    <span>${statusBadge} ${wallet.exchange}</span>
+                    ${paperBadge}
+                </div>
+                <div style="font-size: 0.9em; opacity: 0.8; margin-bottom: 8px;">Mode: ${wallet.mode || 'spot'}</div>
+                <div class="wallet-balance">$${(wallet.balance_usdt || 0).toFixed(2)}</div>
+                <div style="font-size: 0.9em; margin-top: 5px;">
+                    Available: $${(wallet.available || 0).toFixed(2)}<br>
+                    In Positions: $${(wallet.in_positions || 0).toFixed(2)}
+                </div>
+                ${coinsHTML}
+            `;
+            
+            container.appendChild(card);
+        }
+        
+        document.getElementById('total-balance').textContent = `$${data.total_balance_usdt.toFixed(2)}`;
+        
+        console.log('💰 Wallets updated');
+        
+    } catch (error) {
+        console.error('❌ Wallets error:', error);
+    }
+}
+
+// UPDATE STRATEGIES COMPLETE
+let strategiesCompleteCache = [];
+
+async function updateStrategiesComplete() {
+    try {
+        const response = await fetch(`${API_BASE}/api/strategies/complete`);
+        const data = await response.json();
+        
+        strategiesCompleteCache = data.strategies;
+        renderStrategiesComplete(strategiesCompleteCache);
+        
+        console.log('🧠 Strategies complete updated:', data.total);
+        
+    } catch (error) {
+        console.error('❌ Strategies complete error:', error);
+    }
+}
+
+function renderStrategiesComplete(strategies) {
+    const container = document.getElementById('strategies-complete-list');
+    container.innerHTML = '';
+    
+    if (strategies.length === 0) {
+        container.innerHTML = '<p style="text-align: center; opacity: 0.7;">No strategies found</p>';
+        return;
+    }
+    
+    strategies.forEach(strat => {
+        const item = document.createElement('div');
+        item.className = 'strategy-complete-item' + (strat.enabled ? ' enabled' : '');
+        
+        const enabledBadge = strat.enabled 
+            ? '<span style="background: #10b981; padding: 4px 12px; border-radius: 8px; font-size: 0.85em;">ACTIVE</span>' 
+            : '<span style="background: #6b7280; padding: 4px 12px; border-radius: 8px; font-size: 0.85em;">INACTIVE</span>';
+        
+        const indicatorsHTML = strat.indicators.map(ind => 
+            `<span class="indicator-badge">${ind}</span>`
+        ).join('');
+        
+        item.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <div>
+                    <strong style="font-size: 1.1em;">${strat.name}</strong>
+                    <span style="margin-left: 10px; opacity: 0.7;">[${strat.mode.toUpperCase()}]</span>
+                </div>
+                ${enabledBadge}
+            </div>
+            <div style="font-size: 0.9em; opacity: 0.8; margin-bottom: 8px;">
+                Score: ${strat.score}/100 | PnL: $${strat.pnl.toFixed(2)} | Win Rate: ${strat.win_rate}%
+            </div>
+            <div style="font-size: 0.9em; opacity: 0.9; margin-bottom: 10px;">
+                ${strat.description}
+            </div>
+            <div class="strategy-indicators">
+                <strong style="width: 100%; margin-bottom: 5px;">Indicateurs Techniques:</strong>
+                ${indicatorsHTML}
+            </div>
+        `;
+        
+        container.appendChild(item);
+    });
+}
+
+function filterStrategies(filter) {
+    let filtered = strategiesCompleteCache;
+    
+    if (filter === 'spot') filtered = strategiesCompleteCache.filter(s => s.mode === 'spot');
+    else if (filter === 'futures') filtered = strategiesCompleteCache.filter(s => s.mode === 'futures');
+    else if (filter === 'hybride') filtered = strategiesCompleteCache.filter(s => s.mode === 'hybride');
+    else if (filter === 'enabled') filtered = strategiesCompleteCache.filter(s => s.enabled);
+    
+    renderStrategiesComplete(filtered);
+}
+
+// Ajouter aux appels initiaux et périodiques
+setTimeout(updateExchangeWallets, 3000);
+setTimeout(updateStrategiesComplete, 4000);
+setInterval(updateExchangeWallets, 30000);  // Toutes les 30s
+setInterval(updateStrategiesComplete, 60000);  // Toutes les 60s
+</script>
