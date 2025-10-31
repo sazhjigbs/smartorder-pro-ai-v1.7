@@ -1,0 +1,722 @@
+<!-- ========================================= -->
+<!-- BLOCS MANQUANTS DASHBOARD P4 - À INTÉGRER -->
+<!-- ========================================= -->
+
+<!-- 1️⃣ BLOC AI STRATEGY SCORES PAR PAIRE -->
+<div class="card glass">
+    <h2>🎯 AI Strategy Scores - Analyse par Paire</h2>
+    <p style="opacity: 0.8; margin-bottom: 15px;">Scores calculés en temps réel par stratégie et paire</p>
+    <div id="ai-scores-container">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<style>
+.score-pair-block {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.score-pair-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.score-pair-symbol {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.score-pair-price {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.score-strategy-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    margin: 5px 0;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+}
+
+.score-strategy-row.winner {
+    border-left-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.score-strategy-name {
+    flex: 1;
+    font-weight: 500;
+}
+
+.score-strategy-value {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.score-bar {
+    width: 100px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.score-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.5s ease;
+}
+
+.score-bar-fill.high {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.score-bar-fill.medium {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.score-bar-fill.low {
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.score-number {
+    font-weight: bold;
+    font-size: 1.1em;
+    min-width: 40px;
+    text-align: right;
+}
+
+.winner-badge {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+</style>
+
+<script>
+async function loadAIScores() {
+    try {
+        // Charger les stratégies du mode actuel
+        const strategiesData = await apiCall(`/strategies?mode=${currentMode}`);
+        const watchlistData = await apiCall('/watchlist');
+        
+        const container = document.getElementById('ai-scores-container');
+        container.innerHTML = '';
+        
+        if (!watchlistData || watchlistData.length === 0) {
+            container.innerHTML = '<p style="opacity: 0.7; text-align: center;">Aucune paire dans la watchlist</p>';
+            return;
+        }
+        
+        // Pour chaque paire de la watchlist
+        watchlistData.forEach(pair => {
+            if (!pair.active) return;
+            
+            const pairBlock = document.createElement('div');
+            pairBlock.className = 'score-pair-block';
+            
+            // Header avec symbole + prix
+            const header = `
+                <div class="score-pair-header">
+                    <div class="score-pair-symbol">${pair.symbol}</div>
+                    <div class="score-pair-price">$--</div>
+                </div>
+            `;
+            
+            // Scores par stratégie
+            let strategiesHTML = '';
+            let maxScore = 0;
+            let winnerStrategy = null;
+            
+            // Calculer scores et trouver le gagnant
+            strategiesData.forEach(strategy => {
+                const score = strategy.last_score || 0;
+                if (score > maxScore) {
+                    maxScore = score;
+                    winnerStrategy = strategy.id;
+                }
+            });
+            
+            strategiesData.forEach(strategy => {
+                const score = strategy.last_score || 0;
+                const isWinner = strategy.id === winnerStrategy;
+                const scoreClass = score >= 80 ? 'high' : score >= 60 ? 'medium' : 'low';
+                
+                strategiesHTML += `
+                    <div class="score-strategy-row ${isWinner ? 'winner' : ''}">
+                        <div class="score-strategy-name">${strategy.label || strategy.name}</div>
+                        <div class="score-strategy-value">
+                            <div class="score-bar">
+                                <div class="score-bar-fill ${scoreClass}" style="width: ${score}%"></div>
+                            </div>
+                            <div class="score-number">${score}</div>
+                            ${isWinner ? '<span class="winner-badge">✅ ACTIVE</span>' : ''}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            pairBlock.innerHTML = header + strategiesHTML;
+            container.appendChild(pairBlock);
+        });
+    } catch (error) {
+        console.error('AI Scores error:', error);
+    }
+}
+</script>
+
+<!-- ========================================= -->
+<!-- 2️⃣ MODES AUTO SPOT / FUTURES / HYBRID AI -->
+<!-- ========================================= -->
+
+<div class="card glass">
+    <h2>🤖 Modes de Trading Automatiques</h2>
+    <p style="opacity: 0.8; margin-bottom: 15px;">Sélectionnez le mode d'exécution AI</p>
+    
+    <div class="auto-modes-grid">
+        <div class="auto-mode-card" id="auto-spot-card">
+            <div class="auto-mode-icon">📈</div>
+            <div class="auto-mode-name">Auto Spot AI</div>
+            <div class="auto-mode-desc">Trading automatique Spot avec IA</div>
+            <div class="auto-mode-toggle-wrapper">
+                <div class="auto-mode-status" id="auto-spot-status">OFF</div>
+                <button class="auto-mode-btn" onclick="toggleAutoMode('spot')">Activer</button>
+            </div>
+        </div>
+        
+        <div class="auto-mode-card" id="auto-futures-card">
+            <div class="auto-mode-icon">⚡</div>
+            <div class="auto-mode-name">Auto Futures AI</div>
+            <div class="auto-mode-desc">Trading automatique Futures avec levier</div>
+            <div class="auto-mode-toggle-wrapper">
+                <div class="auto-mode-status" id="auto-futures-status">OFF</div>
+                <button class="auto-mode-btn" onclick="toggleAutoMode('futures')">Activer</button>
+            </div>
+        </div>
+        
+        <div class="auto-mode-card" id="auto-hybrid-card">
+            <div class="auto-mode-icon">🔄</div>
+            <div class="auto-mode-name">Hybride Spot + Futures</div>
+            <div class="auto-mode-desc">Combinaison intelligente multi-marchés</div>
+            <div class="auto-mode-toggle-wrapper">
+                <div class="auto-mode-status" id="auto-hybrid-status">OFF</div>
+                <button class="auto-mode-btn" onclick="toggleAutoMode('hybrid')">Activer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.auto-modes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.auto-mode-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.auto-mode-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(102, 126, 234, 0.5);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.auto-mode-card.active {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+}
+
+.auto-mode-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.auto-mode-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.auto-mode-desc {
+    font-size: 0.9em;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.auto-mode-toggle-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.auto-mode-status {
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.auto-mode-status.on {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.auto-mode-status.off {
+    background: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+.auto-mode-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.auto-mode-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+</style>
+
+<script>
+let autoModes = {
+    spot: false,
+    futures: false,
+    hybrid: false
+};
+
+async function toggleAutoMode(mode) {
+    autoModes[mode] = !autoModes[mode];
+    
+    try {
+        // Changer le mode actuel
+        await apiCall('/modes', 'POST', { current_mode: mode });
+        
+        // Mettre à jour l'UI
+        updateAutoModesUI();
+        
+        showAlert(`Mode ${mode.toUpperCase()} ${autoModes[mode] ? 'activé' : 'désactivé'}`, 'success');
+    } catch (error) {
+        showAlert('Erreur: ' + error.message, 'error');
+        autoModes[mode] = !autoModes[mode]; // Revert
+    }
+}
+
+function updateAutoModesUI() {
+    ['spot', 'futures', 'hybrid'].forEach(mode => {
+        const card = document.getElementById(`auto-${mode}-card`);
+        const status = document.getElementById(`auto-${mode}-status`);
+        const btn = card.querySelector('.auto-mode-btn');
+        
+        const isActive = currentMode === mode;
+        
+        if (isActive) {
+            card.classList.add('active');
+            status.textContent = 'ON';
+            status.className = 'auto-mode-status on';
+            btn.textContent = 'Désactiver';
+        } else {
+            card.classList.remove('active');
+            status.textContent = 'OFF';
+            status.className = 'auto-mode-status off';
+            btn.textContent = 'Activer';
+        }
+    });
+}
+</script>
+
+<!-- ========================================= -->
+<!-- 4️⃣ AI CONFIDENCE & MARKET ADAPTATION -->
+<!-- ========================================= -->
+
+<div class="card glass">
+    <h2>🧠 AI Confidence & Market Adaptation</h2>
+    <p style="opacity: 0.8; margin-bottom: 15px;">Correspondance régime marché ↔ stratégies IA</p>
+    
+    <div class="market-adaptation-grid">
+        <!-- Régime actuel -->
+        <div class="adaptation-section">
+            <h3 style="margin-bottom: 12px; font-size: 1.1em;">📊 Régime Marché Actuel</h3>
+            <div class="regime-display">
+                <div class="regime-type" id="market-regime-type">SIDEWAYS</div>
+                <div class="regime-details">
+                    <div class="regime-detail-item">
+                        <span class="regime-detail-label">Volatilité:</span>
+                        <span class="regime-detail-value" id="market-volatility-level">MEDIUM</span>
+                    </div>
+                    <div class="regime-detail-item">
+                        <span class="regime-detail-label">Trend Strength:</span>
+                        <span class="regime-detail-value" id="market-trend-strength">45%</span>
+                    </div>
+                    <div class="regime-detail-item">
+                        <span class="regime-detail-label">AI Confidence:</span>
+                        <span class="regime-detail-value" id="market-ai-confidence">85%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stratégies adaptées -->
+        <div class="adaptation-section">
+            <h3 style="margin-bottom: 12px; font-size: 1.1em;">⚙️ Stratégies Adaptées au Régime</h3>
+            <div id="adapted-strategies-container">
+                <!-- Filled dynamically -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.market-adaptation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .market-adaptation-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.adaptation-section {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.regime-display {
+    text-align: center;
+}
+
+.regime-type {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.regime-type.trending {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.regime-type.volatile {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.regime-type.sideways {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.regime-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.regime-detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.regime-detail-label {
+    opacity: 0.8;
+}
+
+.regime-detail-value {
+    font-weight: bold;
+}
+
+.adapted-strategy-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+}
+
+.adapted-strategy-item.enabled {
+    border-left-color: #10b981;
+}
+
+.adapted-strategy-item.disabled {
+    border-left-color: #ef4444;
+    opacity: 0.5;
+}
+
+.adapted-strategy-icon {
+    font-size: 1.5em;
+}
+
+.adapted-strategy-info {
+    flex: 1;
+}
+
+.adapted-strategy-name {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.adapted-strategy-reason {
+    font-size: 0.85em;
+    opacity: 0.7;
+}
+
+.adapted-strategy-status {
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.adapted-strategy-status.auto-on {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.adapted-strategy-status.auto-off {
+    background: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+</style>
+
+<script>
+async function loadMarketAdaptation() {
+    try {
+        // Charger régime marché
+        const regimeData = await apiCall('/market-regime').catch(() => ({
+            regime: 'SIDEWAYS',
+            volatility: 'MEDIUM',
+            trend_strength: 45,
+            confidence: 85
+        }));
+        
+        // Mettre à jour régime
+        document.getElementById('market-regime-type').textContent = regimeData.regime || 'SIDEWAYS';
+        document.getElementById('market-regime-type').className = `regime-type ${(regimeData.regime || 'SIDEWAYS').toLowerCase()}`;
+        document.getElementById('market-volatility-level').textContent = regimeData.volatility || 'MEDIUM';
+        document.getElementById('market-trend-strength').textContent = (regimeData.trend_strength || 45) + '%';
+        document.getElementById('market-ai-confidence').textContent = (regimeData.confidence || 85) + '%';
+        
+        // Charger stratégies adaptées
+        const strategiesData = await apiCall(`/strategies?mode=${currentMode}`);
+        const container = document.getElementById('adapted-strategies-container');
+        container.innerHTML = '';
+        
+        if (!strategiesData || strategiesData.length === 0) {
+            container.innerHTML = '<p style="opacity: 0.7; text-align: center;">Aucune stratégie</p>';
+            return;
+        }
+        
+        // Logique d'adaptation selon régime
+        const adaptationRules = {
+            'TRENDING': ['momentum_breakout', 'trend_following', 'breakout'],
+            'VOLATILE': ['grid_trading', 'scalping', 'volatility_scalping'],
+            'SIDEWAYS': ['mean_reversion', 'grid_trading', 'range_trading']
+        };
+        
+        const regime = regimeData.regime || 'SIDEWAYS';
+        const recommendedStrategies = adaptationRules[regime] || [];
+        
+        strategiesData.forEach(strategy => {
+            const isRecommended = recommendedStrategies.some(rec => strategy.id.includes(rec));
+            const isEnabled = strategy.enabled && isRecommended;
+            
+            const item = document.createElement('div');
+            item.className = `adapted-strategy-item ${isEnabled ? 'enabled' : 'disabled'}`;
+            
+            item.innerHTML = `
+                <div class="adapted-strategy-icon">${isEnabled ? '✅' : '❌'}</div>
+                <div class="adapted-strategy-info">
+                    <div class="adapted-strategy-name">${strategy.label || strategy.name}</div>
+                    <div class="adapted-strategy-reason">
+                        ${isRecommended ? `Optimale pour ${regime}` : 'Non recommandée pour ce régime'}
+                    </div>
+                </div>
+                <div class="adapted-strategy-status ${isEnabled ? 'auto-on' : 'auto-off'}">
+                    ${isEnabled ? 'AUTO ON' : 'OFF'}
+                </div>
+            `;
+            
+            container.appendChild(item);
+        });
+    } catch (error) {
+        console.error('Market Adaptation error:', error);
+    }
+}
+</script>
+
+<!-- ========================================= -->
+<!-- 5️⃣ MODALES DE SUCCÈS POUR RISK MANAGEMENT -->
+<!-- ========================================= -->
+
+<style>
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-icon {
+    font-size: 4em;
+    margin-bottom: 15px;
+}
+
+.modal-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal-message {
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.modal-btn-primary {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.modal-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+</style>
+
+<div id="successModal" class="modal-overlay">
+    <div class="modal-content glass">
+        <div class="modal-header">
+            <div class="modal-icon">✅</div>
+            <div class="modal-title" id="modalTitle">Succès !</div>
+            <div class="modal-message" id="modalMessage">Opération réussie</div>
+        </div>
+        <div class="modal-actions">
+            <button class="modal-btn modal-btn-primary" onclick="closeModal()">OK</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function showSuccessModal(title, message) {
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalMessage').textContent = message;
+    document.getElementById('successModal').classList.add('show');
+}
+
+function closeModal() {
+    document.getElementById('successModal').classList.remove('show');
+}
+
+// Améliorer les fonctions existantes avec modales
+const originalUpdateRiskConfig = updateRiskConfig;
+updateRiskConfig = async function() {
+    await originalUpdateRiskConfig();
+    showSuccessModal('Risk Config Mise à Jour', 'Les paramètres de risk management ont été sauvegardés avec succès.');
+};
+
+const originalCreateSnapshot = createSnapshot;
+createSnapshot = async function() {
+    await originalCreateSnapshot();
+    showSuccessModal('Snapshot Créé', `Snapshot mémoire créé avec succès à ${new Date().toLocaleTimeString()}`);
+};
+</script>
