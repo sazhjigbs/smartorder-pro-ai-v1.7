@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartOrder Test Dashboard</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #1a1a1a; color: #fff; }
+        .section { background: #2a2a2a; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #444; }
+        .online { color: #0f0; }
+        .offline { color: #f00; }
+        .profit { color: #0f0; }
+        .loss { color: #f00; }
+    </style>
+</head>
+<body>
+    <h1>🚀 SmartOrder PRO - Test Dashboard</h1>
+    
+    <div class="section">
+        <h2>💰 Wallet</h2>
+        <div id="wallet">Chargement...</div>
+    </div>
+    
+    <div class="section">
+        <h2>📊 Positions Ouvertes</h2>
+        <table id="positions-table">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Strategy</th>
+                    <th>Qty</th>
+                    <th>Entry</th>
+                    <th>SL</th>
+                    <th>TP</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="7">Chargement...</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>💱 Exchanges</h2>
+        <div id="exchanges">Chargement...</div>
+    </div>
+    
+    <div class="section">
+        <h2>📈 Moteur Status</h2>
+        <div id="engine-status">Chargement...</div>
+    </div>
+
+    <script>
+        const API_BASE = window.location.origin;
+        
+        async function updateWallet() {
+            try {
+                const response = await fetch(`${API_BASE}/api/wallet`);
+                const data = await response.json();
+                document.getElementById('wallet').innerHTML = `
+                    <p><strong>Balance:</strong> $${data.balance_usdt.toLocaleString()}</p>
+                    <p><strong>Total PnL:</strong> $${data.total_pnl.toFixed(2)}</p>
+                    <p><strong>Open Positions:</strong> ${data.open_positions}</p>
+                    <p><strong>Total Trades:</strong> ${data.total_trades}</p>
+                `;
+            } catch (error) {
+                document.getElementById('wallet').innerHTML = `<p style="color:red">Erreur: ${error.message}</p>`;
+            }
+        }
+        
+        async function updatePositions() {
+            try {
+                const response = await fetch(`${API_BASE}/api/positions`);
+                const positions = await response.json();
+                const tbody = document.querySelector('#positions-table tbody');
+                
+                if (positions.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7">No positions</td></tr>';
+                    return;
+                }
+                
+                tbody.innerHTML = positions.map(pos => `
+                    <tr>
+                        <td>${pos.symbol}</td>
+                        <td>${pos.strategy}</td>
+                        <td>${pos.quantity.toFixed(6)}</td>
+                        <td>$${pos.entry_price.toLocaleString()}</td>
+                        <td>$${pos.sl.toLocaleString()}</td>
+                        <td>$${pos.tp.toLocaleString()}</td>
+                        <td>$${pos.value_usdt.toFixed(2)}</td>
+                    </tr>
+                `).join('');
+            } catch (error) {
+                document.querySelector('#positions-table tbody').innerHTML = 
+                    `<tr><td colspan="7" style="color:red">Erreur: ${error.message}</td></tr>`;
+            }
+        }
+        
+        async function updateExchanges() {
+            try {
+                const response = await fetch(`${API_BASE}/api/exchanges`);
+                const exchanges = await response.json();
+                document.getElementById('exchanges').innerHTML = exchanges.map(ex => `
+                    <p><strong>${ex.name}:</strong> <span class="${ex.enabled ? 'online' : 'offline'}">${ex.enabled ? '🟢 Online' : '🔴 Offline'}</span></p>
+                `).join('');
+            } catch (error) {
+                document.getElementById('exchanges').innerHTML = `<p style="color:red">Erreur: ${error.message}</p>`;
+            }
+        }
+        
+        async function updateEngineStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/api/`);
+                const data = await response.json();
+                document.getElementById('engine-status').innerHTML = `
+                    <p><strong>Service:</strong> ${data.service}</p>
+                    <p><strong>Version:</strong> ${data.version}</p>
+                    <p><strong>Status:</strong> ${data.status}</p>
+                `;
+            } catch (error) {
+                document.getElementById('engine-status').innerHTML = `<p style="color:red">Erreur: ${error.message}</p>`;
+            }
+        }
+        
+        // Refresh all
+        function refreshAll() {
+            updateWallet();
+            updatePositions();
+            updateExchanges();
+            updateEngineStatus();
+        }
+        
+        // Initial load
+        refreshAll();
+        
+        // Auto-refresh every 3 seconds
+        setInterval(refreshAll, 3000);
+        
+        console.log('✅ Test Dashboard loaded - Auto-refresh 3s');
+    </script>
+</body>
+</html>

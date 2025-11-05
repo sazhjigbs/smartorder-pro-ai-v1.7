@@ -1,0 +1,6 @@
+            for strat in mode_strategies:
+                print(f"DEBUG Toggle: mode={mode}, strat_type={type(strat)}")
+                if not isinstance(strat, dict):
+                    print(f"ERROR: strat is {type(strat)}, not dict! Content: {strat}")
+                    continue
+                if strat.get('id') == strategy_id or strat.get('label') == strategy_id:

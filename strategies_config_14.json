@@ -1,0 +1,257 @@
+{
+  "strategies": [
+    {
+      "id": "rsi_macd_bb",
+      "name": "RSI_MACD_BB",
+      "type": "SPOT",
+      "enabled": true,
+      "score": 85,
+      "risk_level": "MEDIUM",
+      "timeframe": "15m",
+      "last_signal": "BUY",
+      "last_signal_time": "2025-11-04T23:45:00Z",
+      "indicators": {
+        "rsi": 45.2,
+        "macd": 0.32,
+        "atr": 1250.5,
+        "volume": 152000,
+        "ema": 106250
+      }
+    },
+    {
+      "id": "volume_surge",
+      "name": "Volume_Surge",
+      "type": "SPOT",
+      "enabled": true,
+      "score": 72,
+      "risk_level": "LOW",
+      "timeframe": "5m",
+      "last_signal": "BUY",
+      "last_signal_time": "2025-11-04T23:42:00Z",
+      "indicators": {
+        "rsi": 52.8,
+        "macd": 0.15,
+        "atr": 980.2,
+        "volume": 245000,
+        "ema": 106180
+      }
+    },
+    {
+      "id": "swing_break",
+      "name": "Swing_Break",
+      "type": "SPOT",
+      "enabled": true,
+      "score": 78,
+      "risk_level": "MEDIUM",
+      "timeframe": "1h",
+      "last_signal": "HOLD",
+      "last_signal_time": "2025-11-04T23:00:00Z",
+      "indicators": {
+        "rsi": 58.1,
+        "macd": 0.08,
+        "atr": 1450.8,
+        "volume": 98000,
+        "ema": 106300
+      }
+    },
+    {
+      "id": "ema_cross",
+      "name": "EMA_Cross",
+      "type": "SPOT",
+      "enabled": false,
+      "score": 65,
+      "risk_level": "LOW",
+      "timeframe": "30m",
+      "last_signal": "HOLD",
+      "last_signal_time": "2025-11-04T23:30:00Z",
+      "indicators": {
+        "rsi": 48.5,
+        "macd": -0.05,
+        "atr": 1100.3,
+        "volume": 120000,
+        "ema": 106220
+      }
+    },
+    {
+      "id": "support_resistance",
+      "name": "Support_Resistance",
+      "type": "SPOT",
+      "enabled": true,
+      "score": 81,
+      "risk_level": "MEDIUM",
+      "timeframe": "4h",
+      "last_signal": "BUY",
+      "last_signal_time": "2025-11-04T20:00:00Z",
+      "indicators": {
+        "rsi": 42.3,
+        "macd": 0.22,
+        "atr": 1680.5,
+        "volume": 85000,
+        "ema": 106150
+      }
+    },
+    {
+      "id": "bollinger_bounce",
+      "name": "Bollinger_Bounce",
+      "type": "SPOT",
+      "enabled": true,
+      "score": 74,
+      "risk_level": "LOW",
+      "timeframe": "15m",
+      "last_signal": "HOLD",
+      "last_signal_time": "2025-11-04T23:30:00Z",
+      "indicators": {
+        "rsi": 55.7,
+        "macd": 0.12,
+        "atr": 1050.8,
+        "volume": 135000,
+        "ema": 106280
+      }
+    },
+    {
+      "id": "breakout_trend",
+      "name": "Breakout_Trend",
+      "type": "FUTURES",
+      "enabled": true,
+      "score": 88,
+      "risk_level": "HIGH",
+      "timeframe": "15m",
+      "last_signal": "BUY",
+      "last_signal_time": "2025-11-04T23:40:00Z",
+      "indicators": {
+        "rsi": 62.5,
+        "macd": 0.45,
+        "atr": 1850.2,
+        "volume": 320000,
+        "ema": 106400
+      }
+    },
+    {
+      "id": "momentum_pulse",
+      "name": "Momentum_Pulse",
+      "type": "FUTURES",
+      "enabled": true,
+      "score": 76,
+      "risk_level": "HIGH",
+      "timeframe": "5m",
+      "last_signal": "BUY",
+      "last_signal_time": "2025-11-04T23:50:00Z",
+      "indicators": {
+        "rsi": 68.2,
+        "macd": 0.38,
+        "atr": 1250.5,
+        "volume": 410000,
+        "ema": 106500
+      }
+    },
+    {
+      "id": "range_bounce",
+      "name": "Range_Bounce",
+      "type": "FUTURES",
+      "enabled": true,
+      "score": 82,
+      "risk_level": "MEDIUM",
+      "timeframe": "30m",
+      "last_signal": "HOLD",
+      "last_signal_time": "2025-11-04T23:30:00Z",
+      "indicators": {
+        "rsi": 50.8,
+        "macd": 0.05,
+        "atr": 1350.8,
+        "volume": 180000,
+        "ema": 106320
+      }
+    },
+    {
+      "id": "volatility_rider",
+      "name": "Volatility_Rider",
+      "type": "FUTURES",
+      "enabled": true,
+      "score": 79,
+      "risk_level": "HIGH",
+      "timeframe": "15m",
+      "last_signal": "BUY",
+      "last_signal_time": "2025-11-04T23:45:00Z",
+      "indicators": {
+        "rsi": 58.5,
+        "macd": 0.28,
+        "atr": 2150.3,
+        "volume": 380000,
+        "ema": 106450
+      }
+    },
+    {
+      "id": "scalp_master",
+      "name": "Scalp_Master",
+      "type": "FUTURES",
+      "enabled": false,
+      "score": 68,
+      "risk_level": "HIGH",
+      "timeframe": "1m",
+      "last_signal": "HOLD",
+      "last_signal_time": "2025-11-04T23:52:00Z",
+      "indicators": {
+        "rsi": 52.3,
+        "macd": 0.08,
+        "atr": 850.2,
+        "volume": 520000,
+        "ema": 106380
+      }
+    },
+    {
+      "id": "trend_follower",
+      "name": "Trend_Follower",
+      "type": "FUTURES",
+      "enabled": true,
+      "score": 85,
+      "risk_level": "MEDIUM",
+      "timeframe": "1h",
+      "last_signal": "BUY",
+      "last_signal_time": "2025-11-04T23:00:00Z",
+      "indicators": {
+        "rsi": 61.2,
+        "macd": 0.42,
+        "atr": 1750.5,
+        "volume": 220000,
+        "ema": 106420
+      }
+    },
+    {
+      "id": "adaptive_hedge",
+      "name": "Adaptive_Hedge",
+      "type": "HYBRID",
+      "enabled": true,
+      "score": 92,
+      "risk_level": "MEDIUM",
+      "timeframe": "30m",
+      "last_signal": "HEDGE",
+      "last_signal_time": "2025-11-04T23:30:00Z",
+      "indicators": {
+        "rsi": 54.8,
+        "macd": 0.18,
+        "atr": 1450.8,
+        "volume": 285000,
+        "ema": 106350
+      }
+    },
+    {
+      "id": "safeswitch",
+      "name": "SafeSwitch",
+      "type": "HYBRID",
+      "enabled": true,
+      "score": 90,
+      "risk_level": "LOW",
+      "timeframe": "15m",
+      "last_signal": "HOLD",
+      "last_signal_time": "2025-11-04T23:45:00Z",
+      "indicators": {
+        "rsi": 50.2,
+        "macd": 0.10,
+        "atr": 1150.5,
+        "volume": 195000,
+        "ema": 106290
+      }
+    }
+  ],
+  "last_update": "2025-11-04T23:53:00Z"
+}

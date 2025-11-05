@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartOrder PRO AI v2.3 - Full Sync Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            padding: 15px;
+            min-height: 100vh;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .container {
+            max-width: 2200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            animation: fadeInDown 0.8s;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f857a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .signature {
+            font-size: 0.95em;
+            opacity: 0.85;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Status Bar */
+        .status-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .status-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .status-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .status-label {
+            font-size: 0.85em;
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+
+        .status-value {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        /* Modes Section */
+        .modes-section {
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .modes-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .mode-btn {
+            padding: 18px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 1.05em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .mode-btn:hover {
+            transform: scale(1.05);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .mode-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-color: #667eea;
+            box-shadow: 0 5px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h2 {
+            margin-bottom: 18px;
+            font-size: 1.4em;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 12px;
+        }
+
+        /* Strategies */
+        .strategy-item {
+            background: rgba(255,255,255,0.05);
+            padding: 14px;
+            border-radius: 10px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            border-left: 4px solid transparent;
+        }
+
+        .strategy-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(5px);
+        }
+
+        .strategy-item.enabled {
+            border-left-color: #10b981;
+        }
+
+        .strategy-name {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 5px;
+        }
+
+        .strategy-score {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* Exchanges */
+        .exchange-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .exchange-toggle {
+            position: relative;
+            width: 55px;
+            height: 28px;
+            background: #ef4444;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .exchange-toggle.active {
+            background: #10b981;
+        }
+
+        .exchange-toggle::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .exchange-toggle.active::after {
+            transform: translateX(27px);
+        }
+
+        /* Positions Table */
+        .positions-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .positions-table th {
+            background: rgba(255,255,255,0.1);
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .positions-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .pnl-positive {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .pnl-negative {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        /* Risk Management Sliders */
+        .risk-slider {
+            margin: 20px 0;
+        }
+
+        .risk-slider label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .slider {
+            flex: 1;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            cursor: pointer;
+        }
+
+        .slider-value {
+            min-width: 60px;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        /* Coins Watchlist */
+        .coin-item {
+            background: rgba(255,255,255,0.05);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .coin-remove {
+            background: #ef4444;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+
+        .coin-add-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .coin-add-form input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+            color: white;
+        }
+
+        .coin-add-form button {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Emergency Controls */
+        .emergency-controls {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .emergency-btn {
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.05em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .emergency-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .emergency-btn.stop {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+        }
+
+        .emergency-btn.pause {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+        }
+
+        .emergency-btn.resume {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+
+        /* Logs */
+        .log-container {
+            max-height: 320px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.4);
+            padding: 12px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .log-entry {
+            padding: 6px;
+            margin: 3px 0;
+            border-left: 3px solid rgba(255,255,255,0.3);
+            padding-left: 12px;
+        }
+
+        .log-success {
+            border-left-color: #10b981;
+        }
+
+        .log-error {
+            border-left-color: #ef4444;
+        }
+
+        .log-warning {
+            border-left-color: #f59e0b;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .badge-online {
+            background: #10b981;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+        }
+
+        .badge-offline {
+            background: #ef4444;
+        }
+
+        .badge-enabled {
+            background: #3b82f6;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            .emergency-controls {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🚀 SmartOrder PRO AI v2.3 - Full Sync Dashboard</h1>
+            <p class="signature">Real-Time Trading Intelligence by MAIGA ABOUBAKR</p>
+        </div>
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <div class="status-item glass">
+                <div class="status-label">Bot Status</div>
+                <div class="status-value"><span class="badge badge-online" id="bot-status">LOADING...</span></div>
+            </div>
+            <div class="status-item glass">
+                <div class="status-label">Active Mode</div>
+                <div class="status-value" id="current-mode">SPOT</div>
+            </div>
+            <div class="status-item glass">
+                <div class="status-label">Wallet Balance</div>
+                <div class="status-value" id="wallet-balance">$0.00</div>
+            </div>
+            <div class="status-item glass">
+                <div class="status-label">Total PnL</div>
+                <div class="status-value pnl-positive" id="total-pnl">+$0.00</div>
+            </div>
+            <div class="status-item glass">
+                <div class="status-label">Open Positions</div>
+                <div class="status-value" id="open-positions-count">0</div>
+            </div>
+            <div class="status-item glass">
+                <div class="status-label">Market Regime</div>
+                <div class="status-value" id="market-regime">LOADING...</div>
+            </div>
+            <div class="status-item glass">
+                <div class="status-label">AI Confidence</div>
+                <div class="status-value" id="ai-confidence">0%</div>
+            </div>
+            <div class="status-item glass">
+                <div class="status-label">Active Exchanges</div>
+                <div class="status-value" id="active-exchanges">0/0</div>
+            </div>
+        </div>
+
+        <!-- MODES DE TRADING -->
+        <div class="modes-section glass">
+            <h2>🎯 MODES DE TRADING</h2>
+            <div class="modes-buttons">
+                <button class="mode-btn active" data-mode="SPOT" onclick="selectMode('SPOT')">
+                    📊 Auto Spot AI
+                </button>
+                <button class="mode-btn" data-mode="FUTURES" onclick="selectMode('FUTURES')">
+                    📈 Auto Futures AI
+                </button>
+                <button class="mode-btn" data-mode="HYBRID" onclick="selectMode('HYBRID')">
+                    ⚡ Hybride AI
+                </button>
+            </div>
+        </div>
+
+        <!-- DASHBOARD GRID -->
+        <div class="dashboard-grid">
+            <!-- STRATEGIES -->
+            <div class="card glass">
+                <h2>⚙️ Active Strategies <span style="font-size:0.8em;opacity:0.7;">(Mode: <span id="mode-display">SPOT</span>)</span></h2>
+                <div id="strategies-container">
+                    <p style="opacity: 0.7; text-align: center;">Loading strategies...</p>
+                </div>
+            </div>
+
+            <!-- MULTI-EXCHANGE MANAGER -->
+            <div class="card glass">
+                <h2>💱 Multi-Exchange Manager</h2>
+                <div id="exchanges-container">
+                    <p style="opacity: 0.7; text-align: center;">Loading exchanges...</p>
+                </div>
+            </div>
+
+            <!-- COINS WATCHLIST -->
+            <div class="card glass">
+                <h2>🪙 Coins Watchlist</h2>
+                <div id="coins-container">
+                    <p style="opacity: 0.7; text-align: center;">No coins in watchlist</p>
+                </div>
+                <div class="coin-add-form">
+                    <input type="text" id="coin-input" placeholder="Add coin (e.g., BTC/USDT)" />
+                    <button onclick="addCoin()">➕ Add</button>
+                </div>
+            </div>
+
+            <!-- RISK MANAGEMENT -->
+            <div class="card glass">
+                <h2>⚖️ Risk Management</h2>
+                <div class="risk-slider">
+                    <label>Max Position Size (%)</label>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="100" value="25" class="slider" id="max-position" oninput="updateRiskSlider('max-position', this.value)">
+                        <span class="slider-value" id="max-position-value">25%</span>
+                    </div>
+                </div>
+                <div class="risk-slider">
+                    <label>Stop Loss (%)</label>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="50" value="5" class="slider" id="stop-loss" oninput="updateRiskSlider('stop-loss', this.value)">
+                        <span class="slider-value" id="stop-loss-value">5%</span>
+                    </div>
+                </div>
+                <div class="risk-slider">
+                    <label>Take Profit (%)</label>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="100" value="15" class="slider" id="take-profit" oninput="updateRiskSlider('take-profit', this.value)">
+                        <span class="slider-value" id="take-profit-value">15%</span>
+                    </div>
+                </div>
+                <div class="risk-slider">
+                    <label>Max Open Trades</label>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="20" value="5" class="slider" id="max-trades" oninput="updateRiskSlider('max-trades', this.value)">
+                        <span class="slider-value" id="max-trades-value">5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POSITIONS -->
+            <div class="card glass">
+                <h2>📊 Open Positions & P&L</h2>
+                <div style="overflow-x: auto;">
+                    <table class="positions-table">
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Side</th>
+                                <th>Amount</th>
+                                <th>Entry</th>
+                                <th>Current</th>
+                                <th>SL / TP</th>
+                                <th>PnL</th>
+                            </tr>
+                        </thead>
+                        <tbody id="positions-list">
+                            <tr><td colspan="7" style="text-align: center; opacity: 0.7;">Loading positions...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- EMERGENCY CONTROLS -->
+            <div class="card glass">
+                <h2>🚨 Emergency Controls</h2>
+                <div class="emergency-controls">
+                    <button class="emergency-btn stop" onclick="emergencyStop()">
+                        🛑 STOP ALL
+                    </button>
+                    <button class="emergency-btn pause" onclick="emergencyPause()">
+                        ⏸️ PAUSE
+                    </button>
+                    <button class="emergency-btn resume" onclick="emergencyResume()">
+                        ▶️ RESUME
+                    </button>
+                </div>
+                <div style="margin-top: 18px; padding: 12px; background: rgba(0,0,0,0.3); border-radius: 10px;">
+                    <strong>Status:</strong> <span id="emergency-status">Normal Operation</span>
+                </div>
+            </div>
+
+            <!-- LIVE LOGS -->
+            <div class="card glass">
+                <h2>📜 Live Activity Log</h2>
+                <div class="log-container" id="activity-log">
+                    <div class="log-entry">[--:--:--] Initializing dashboard...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = window.location.origin;
+        let currentMode = 'SPOT';
+        let refreshInterval = 3000;
+        let watchlistCoins = [];
+        let riskSettings = {
+            max_position: 25,
+            stop_loss: 5,
+            take_profit: 15,
+            max_trades: 5
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            addLog('🚀 SmartOrder PRO AI v2.3 Dashboard Started', 'success');
+            loadWatchlist();
+            loadRiskSettings();
+            updateAll();
+            setInterval(updateAll, refreshInterval);
+        });
+
+        // UPDATE ALL
+        async function updateAll() {
+            try {
+                await Promise.all([
+                    updateWallet(),
+                    updateStrategies(),
+                    updateExchanges(),
+                    updatePositions(),
+                    updateMarketRegime(),
+                    updateLogs()
+                ]);
+                console.log('✅ Dashboard updated', new Date().toLocaleTimeString());
+            } catch (error) {
+                console.error('❌ Update error:', error);
+            }
+        }
+
+        // UPDATE WALLET
+        async function updateWallet() {
+            try {
+                const response = await fetch(`${API_BASE}/api/wallet`);
+                const data = await response.json();
+                
+                const balance = data.balance_usdt || data.balance || 0;
+                const pnl = data.total_pnl || 0;
+                
+                document.getElementById('wallet-balance').textContent = '$' + balance.toFixed(2);
+                document.getElementById('total-pnl').textContent = (pnl >= 0 ? '+' : '') + '$' + pnl.toFixed(2);
+                document.getElementById('total-pnl').className = 'status-value ' + (pnl >= 0 ? 'pnl-positive' : 'pnl-negative');
+                document.getElementById('bot-status').textContent = 'ONLINE';
+                document.getElementById('bot-status').className = 'badge badge-online';
+            } catch (error) {
+                console.error('Wallet error:', error);
+                document.getElementById('bot-status').textContent = 'OFFLINE';
+                document.getElementById('bot-status').className = 'badge badge-offline';
+            }
+        }
+
+        // UPDATE STRATEGIES
+        async function updateStrategies() {
+            try {
+                const response = await fetch(`${API_BASE}/api/strategies?mode=${currentMode.toLowerCase()}`);
+                const data = await response.json();
+                
+                const container = document.getElementById('strategies-container');
+                container.innerHTML = '';
+                
+                const strategies = data.strategies || data || [];
+                
+                if (strategies.length === 0) {
+                    container.innerHTML = '<p style="opacity: 0.7; text-align: center;">No strategies for this mode</p>';
+                    return;
+                }
+                
+                strategies.forEach(strategy => {
+                    const div = document.createElement('div');
+                    div.className = 'strategy-item' + (strategy.enabled ? ' enabled' : '');
+                    div.onclick = () => toggleStrategy(strategy.id || strategy.name, !strategy.enabled);
+                    
+                    div.innerHTML = `
+                        <div class="strategy-info">
+                            <div class="strategy-name">${strategy.name}</div>
+                            <div class="strategy-score">Score: ${strategy.score || 0}/100 ${strategy.recommended ? '⭐' : ''}</div>
+                        </div>
+                        <span class="badge ${strategy.enabled ? 'badge-enabled' : 'badge-offline'}">
+                            ${strategy.enabled ? 'ENABLED' : 'DISABLED'}
+                        </span>
+                    `;
+                    
+                    container.appendChild(div);
+                });
+                
+            } catch (error) {
+                console.error('Strategies error:', error);
+            }
+        }
+
+        // TOGGLE STRATEGY
+        async function toggleStrategy(id, newState) {
+            try {
+                await fetch(`${API_BASE}/api/strategies/simple-toggle`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({id: id, enabled: newState})
+                });
+                addLog(`${newState ? '✅' : '❌'} Strategy ${id} ${newState ? 'enabled' : 'disabled'}`, newState ? 'success' : 'warning');
+                await updateStrategies();
+            } catch (error) {
+                addLog(`❌ Error toggling strategy: ${error.message}`, 'error');
+            }
+        }
+
+        // UPDATE EXCHANGES
+        async function updateExchanges() {
+            try {
+                const response = await fetch(`${API_BASE}/api/exchanges`);
+                const data = await response.json();
+                
+                const container = document.getElementById('exchanges-container');
+                container.innerHTML = '';
+                
+                const exchanges = Array.isArray(data) ? data : (data.exchanges || []);
+                
+                const exchangeMap = {};
+                exchanges.forEach(ex => {
+                    exchangeMap[ex.id] = ex;
+                });
+                
+                const allExchanges = [
+                    {id: 'bybit_spot', name: 'Bybit Spot'},
+                    {id: 'bybit_futures', name: 'Bybit Futures'},
+                    {id: 'binance_spot', name: 'Binance Spot'},
+                    {id: 'okx_spot', name: 'OKX Spot'}
+                ];
+                
+                let activeCount = 0;
+                allExchanges.forEach(exchange => {
+                    const exData = exchangeMap[exchange.id] || {enabled: false};
+                    const enabled = exData.enabled === true;
+                    if (enabled) activeCount++;
+                    
+                    const div = document.createElement('div');
+                    div.className = 'exchange-item';
+                    
+                    div.innerHTML = `
+                        <div>
+                            <div style="font-weight: bold; font-size: 1.1em;">${exchange.name}</div>
+                            <div style="font-size: 0.9em; opacity: 0.8; margin-top: 5px;">
+                                ${enabled ? '🟢 Online' : '🔴 Offline'}
+                            </div>
+                        </div>
+                        <div class="exchange-toggle ${enabled ? 'active' : ''}" 
+                             onclick="toggleExchange('${exchange.id}', ${!enabled})">
+                        </div>
+                    `;
+                    
+                    container.appendChild(div);
+                });
+                
+                document.getElementById('active-exchanges').textContent = `${activeCount}/${allExchanges.length}`;
+                
+            } catch (error) {
+                console.error('Exchanges error:', error);
+            }
+        }
+
+        // TOGGLE EXCHANGE
+        async function toggleExchange(id, newState) {
+            try {
+                await fetch(`${API_BASE}/api/exchanges/simple-toggle`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({id: id, enabled: newState})
+                });
+                addLog(`${newState ? '✅' : '❌'} Exchange ${id} ${newState ? 'enabled' : 'disabled'}`, newState ? 'success' : 'warning');
+                await updateExchanges();
+            } catch (error) {
+                addLog(`❌ Error toggling exchange: ${error.message}`, 'error');
+            }
+        }
+
+        // UPDATE POSITIONS
+        async function updatePositions() {
+            try {
+                const response = await fetch(`${API_BASE}/api/positions`);
+                const data = await response.json();
+                
+                const tbody = document.getElementById('positions-list');
+                tbody.innerHTML = '';
+                
+                const positions = Array.isArray(data) ? data : (data.positions || []);
+                
+                document.getElementById('open-positions-count').textContent = positions.length;
+                
+                if (positions.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; opacity: 0.7;">No open positions</td></tr>';
+                    return;
+                }
+                
+                positions.forEach(pos => {
+                    const tr = document.createElement('tr');
+                    const pnl = pos.pnl || 0;
+                    const pnlClass = pnl >= 0 ? 'pnl-positive' : 'pnl-negative';
+                    
+                    tr.innerHTML = `
+                        <td>${pos.symbol || 'N/A'}</td>
+                        <td>${pos.side || 'BUY'}</td>
+                        <td>${(pos.amount || 0).toFixed(6)}</td>
+                        <td>$${(pos.entry_price || 0).toFixed(2)}</td>
+                        <td>$${(pos.current_price || 0).toFixed(2)}</td>
+                        <td>SL: $${(pos.stop_loss || 0).toFixed(2)}<br>TP: $${(pos.take_profit || 0).toFixed(2)}</td>
+                        <td class="${pnlClass}">$${pnl.toFixed(2)}</td>
+                    `;
+                    
+                    tbody.appendChild(tr);
+                });
+                
+            } catch (error) {
+                console.error('Positions error:', error);
+            }
+        }
+
+        // UPDATE MARKET REGIME
+        async function updateMarketRegime() {
+            try {
+                const response = await fetch(`${API_BASE}/api/market/regime`);
+                const data = await response.json();
+                
+                const regime = data.regime || 'NEUTRAL';
+                const confidence = data.confidence || 0;
+                
+                document.getElementById('market-regime').textContent = regime;
+                document.getElementById('ai-confidence').textContent = confidence + '%';
+                
+            } catch (error) {
+                // Default values if API not available
+                console.log('Market regime API not available');
+            }
+        }
+
+        // UPDATE LOGS
+        async function updateLogs() {
+            try {
+                const response = await fetch(`${API_BASE}/api/logs?limit=10`);
+                const data = await response.json();
+                
+                const logs = data.logs || data || [];
+                
+                if (logs.length > 0) {
+                    const container = document.getElementById('activity-log');
+                    container.innerHTML = '';
+                    
+                    logs.forEach(log => {
+                        const entry = document.createElement('div');
+                        entry.className = 'log-entry log-' + (log.level || 'info');
+                        entry.textContent = `[${log.timestamp || '--:--:--'}] ${log.message}`;
+                        container.appendChild(entry);
+                    });
+                }
+            } catch (error) {
+                console.log('Logs API not available');
+            }
+        }
+
+        // SELECT MODE
+        async function selectMode(mode) {
+            currentMode = mode;
+            
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.mode-btn[data-mode="${mode}"]`).classList.add('active');
+            document.getElementById('current-mode').textContent = mode;
+            document.getElementById('mode-display').textContent = mode;
+            
+            try {
+                await fetch(`${API_BASE}/api/mode`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({mode: mode.toLowerCase()})
+                });
+                
+                addLog(`✅ Mode changed to ${mode}`, 'success');
+                await updateStrategies();
+            } catch (error) {
+                addLog(`❌ Error changing mode: ${error.message}`, 'error');
+            }
+        }
+
+        // COINS WATCHLIST
+        function loadWatchlist() {
+            const saved = localStorage.getItem('watchlist');
+            if (saved) {
+                watchlistCoins = JSON.parse(saved);
+                updateWatchlistDisplay();
+            }
+        }
+
+        function addCoin() {
+            const input = document.getElementById('coin-input');
+            const coin = input.value.trim().toUpperCase();
+            
+            if (coin && !watchlistCoins.includes(coin)) {
+                watchlistCoins.push(coin);
+                localStorage.setItem('watchlist', JSON.stringify(watchlistCoins));
+                updateWatchlistDisplay();
+                addLog(`➕ Added ${coin} to watchlist`, 'success');
+                input.value = '';
+            }
+        }
+
+        function removeCoin(coin) {
+            watchlistCoins = watchlistCoins.filter(c => c !== coin);
+            localStorage.setItem('watchlist', JSON.stringify(watchlistCoins));
+            updateWatchlistDisplay();
+            addLog(`➖ Removed ${coin} from watchlist`, 'warning');
+        }
+
+        function updateWatchlistDisplay() {
+            const container = document.getElementById('coins-container');
+            
+            if (watchlistCoins.length === 0) {
+                container.innerHTML = '<p style="opacity: 0.7; text-align: center;">No coins in watchlist</p>';
+                return;
+            }
+            
+            container.innerHTML = '';
+            watchlistCoins.forEach(coin => {
+                const div = document.createElement('div');
+                div.className = 'coin-item';
+                div.innerHTML = `
+                    <span style="font-weight: bold;">${coin}</span>
+                    <button class="coin-remove" onclick="removeCoin('${coin}')">🗑️ Remove</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // RISK MANAGEMENT
+        function loadRiskSettings() {
+            const saved = localStorage.getItem('riskSettings');
+            if (saved) {
+                riskSettings = JSON.parse(saved);
+                document.getElementById('max-position').value = riskSettings.max_position;
+                document.getElementById('stop-loss').value = riskSettings.stop_loss;
+                document.getElementById('take-profit').value = riskSettings.take_profit;
+                document.getElementById('max-trades').value = riskSettings.max_trades;
+                updateRiskSlider('max-position', riskSettings.max_position);
+                updateRiskSlider('stop-loss', riskSettings.stop_loss);
+                updateRiskSlider('take-profit', riskSettings.take_profit);
+                updateRiskSlider('max-trades', riskSettings.max_trades);
+            }
+        }
+
+        async function updateRiskSlider(id, value) {
+            const suffix = id === 'max-trades' ? '' : '%';
+            document.getElementById(id + '-value').textContent = value + suffix;
+            
+            const key = id.replace('-', '_');
+            riskSettings[key] = parseFloat(value);
+            localStorage.setItem('riskSettings', JSON.stringify(riskSettings));
+            
+            try {
+                await fetch(`${API_BASE}/api/risk/update`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(riskSettings)
+                });
+            } catch (error) {
+                console.log('Risk API not available yet');
+            }
+        }
+
+        // EMERGENCY CONTROLS
+        async function emergencyStop() {
+            if (confirm('⚠️ STOP ALL trading operations?')) {
+                try {
+                    await fetch(`${API_BASE}/api/engine/stop`, {method: 'POST'});
+                    addLog('🛑 EMERGENCY STOP activated!', 'error');
+                    document.getElementById('emergency-status').textContent = '🛑 ALL STOPPED';
+                    document.getElementById('bot-status').textContent = 'STOPPED';
+                    document.getElementById('bot-status').className = 'badge badge-offline';
+                } catch (error) {
+                    addLog('❌ Stop command failed', 'error');
+                }
+            }
+        }
+
+        async function emergencyPause() {
+            try {
+                await fetch(`${API_BASE}/api/engine/pause`, {method: 'POST'});
+                addLog('⏸️ Trading PAUSED', 'warning');
+                document.getElementById('emergency-status').textContent = '⏸️ PAUSED';
+            } catch (error) {
+                addLog('❌ Pause command failed', 'error');
+            }
+        }
+
+        async function emergencyResume() {
+            try {
+                await fetch(`${API_BASE}/api/engine/resume`, {method: 'POST'});
+                addLog('▶️ Trading RESUMED', 'success');
+                document.getElementById('emergency-status').textContent = '✅ Normal Operation';
+            } catch (error) {
+                addLog('❌ Resume command failed', 'error');
+            }
+        }
+
+        // ADD LOG
+        function addLog(message, type = 'info') {
+            const log = document.getElementById('activity-log');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry log-' + type;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            
+            log.insertBefore(entry, log.firstChild);
+            
+            while (log.children.length > 50) {
+                log.removeChild(log.lastChild);
+            }
+        }
+    </script>
+</body>
+</html>

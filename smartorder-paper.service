@@ -1,0 +1,22 @@
+[Unit]
+Description=SmartOrder PRO - Paper Trading Engine CCXT v2.2
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/smartorder-pro
+ExecStart=/usr/bin/python3 /opt/smartorder-pro/core/paper_trading_engine_realistic.py
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment="PYTHONUNBUFFERED=1"
+
+# Limits
+LimitNOFILE=65536
+MemoryLimit=512M
+
+[Install]
+WantedBy=multi-user.target

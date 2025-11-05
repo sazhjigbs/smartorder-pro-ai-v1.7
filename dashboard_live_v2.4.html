@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartOrder PRO AI — Dashboard Live v2.4</title>
+  <style>
+    :root{
+      --bg:#0c1033; --panel:#1a1f4a; --panel-2:#0f1440; --text:#e6e8ff;
+      --muted:#9aa1ff; --accent:#7c5cff; --good:#28c76f; --bad:#ff4d4f; --warn:#ffb020;
+      --chip:#232a66; --chip2:#2b3282; --chip3:#10153d; --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(1200px 600px at 65% -10%,#1a2070 0%,transparent 60%), var(--bg); color:var(--text); font:14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif}
+    .wrap{max-width:1220px;margin:28px auto;padding:0 18px}
+    .grid{display:grid;gap:14px}
+    .row-tiles{grid-template-columns:repeat(7,1fr)}
+    .tile{background:linear-gradient(180deg,var(--panel),var(--panel-2)); border:1px solid #2a2f65; border-radius:14px; padding:14px 16px; box-shadow:var(--shadow)}
+    .tile h4{margin:0 0 6px 0; font-weight:600; color:#cfd3ff; letter-spacing:.3px}
+    .kpi{font-size:18px; font-weight:700}
+    .kpi.good{color:var(--good)} .kpi.bad{color:var(--bad)} .kpi.muted{color:var(--muted)}
+    .section-title{display:flex;align-items:center;gap:10px;margin:4px 0 10px}
+    .tabs{display:flex;gap:8px}
+    .btn{appearance:none;border:0;border-radius:10px;padding:10px 14px;background:var(--chip);
+      color:var(--text);cursor:pointer;transition:.15s all ease;font-weight:600}
+    .btn:hover{filter:brightness(1.07)}
+    .btn.primary{background:var(--accent)}
+    .btn.ghost{background:#121740;border:1px solid #2a2f65}
+    .btn.good{background:var(--good);color:#041a0e}
+    .btn.bad{background:var(--bad)}
+    .btn.warn{background:var(--warn);color:#2a1a00}
+    .btn.small{padding:6px 9px;border-radius:8px;font-size:12px}
+    .pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#0e1441;border:1px solid #2c3370;color:#b6bbff;font-size:12px}
+    .row-3{grid-template-columns:2fr 1.2fr 1.2fr 1.2fr}
+    .list{display:grid;gap:8px;max-height:390px;overflow:auto;padding-right:6px}
+    .card{border:1px solid #2a2f65;background:linear-gradient(180deg,#11174a,#0e133f);border-radius:12px;padding:10px 12px}
+    .card-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .name{font-weight:700;color:#e6e8ff}
+    .muted{color:#9aa1ff}
+    .switch{position:relative;width:46px;height:26px;background:#29306d;border-radius:999px;cursor:pointer;border:1px solid #3f4594}
+    .switch input{display:none}
+    .switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#c8cdfc;transition:.18s}
+    .switch.on{background:#2bc27a;border-color:#2bc27a}
+    .switch.on::after{left:23px;background:white}
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{padding:8px 10px;border-bottom:1px solid #2a2f65;text-align:left;white-space:nowrap}
+    .table th{color:#b6bbff;font-weight:700}
+    .flex{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .mr-auto{margin-right:auto}
+    .log{background:#0a0e2f;border:1px solid #25307a;border-radius:12px;padding:10px;height:148px;overflow:auto;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;font-size:12px;color:#bcd}
+    .slider{width:100%}
+    a.clean{color:#b6bbff;text-decoration:none}
+    .ok{color:var(--good)} .off{color:#ff7a7c}
+    .hint{font-size:12px;color:#8f96ff}
+    .footer{opacity:.75;margin-top:14px}
+    @media (max-width:1100px){.row-tiles{grid-template-columns:repeat(4,1fr)} .row-3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="grid row-tiles">
+      <div class="tile"><h4>Bot Status</h4><div id="kpiStatus" class="kpi muted">—</div></div>
+      <div class="tile"><h4>Active Mode</h4><div id="kpiMode" class="kpi">—</div></div>
+      <div class="tile"><h4>Total PnL</h4><div id="kpiPnl" class="kpi muted">—</div></div>
+      <div class="tile"><h4>💰 Wallet USDT</h4><div id="kpiWallet" class="kpi">—</div></div>
+      <div class="tile"><h4>Market Regime</h4><div id="kpiRegime" class="kpi muted">—</div></div>
+      <div class="tile"><h4>AI Confidence</h4><div id="kpiConf" class="kpi muted">—</div></div>
+      <div class="tile"><h4>Active Exchanges</h4><div id="kpiExch" class="kpi muted">—</div></div>
+    </header>
+
+    <section class="tile" style="margin-top:14px;">
+      <div class="section-title">
+        <h3 style="margin:0">🎯 MODES DE TRADING</h3>
+        <span class="pill">sélectionne le mode pour filtrer les stratégies</span>
+      </div>
+      <div class="tabs">
+        <button id="tab-spot" class="btn primary">📊 Auto Spot AI</button>
+        <button id="tab-futures" class="btn ghost">📈 Auto Futures AI</button>
+        <button id="tab-hybrid" class="btn ghost">⚡ Hybride AI</button>
+        <span class="mr-auto"></span>
+        <a class="clean hint" href="/dashboard">⟵ revenir à /dashboard</a>
+      </div>
+    </section>
+
+    <section class="grid row-3">
+      <!-- Active Strategies -->
+      <div class="tile">
+        <div class="section-title"><h3 style="margin:0">⚙️ Active Strategies (<span id="modeTag">SPOT</span>)</h3></div>
+        <div id="strategiesList" class="list"></div>
+      </div>
+
+      <!-- Exchanges -->
+      <div class="tile">
+        <div class="section-title"><h3 style="margin:0">💱 Multi-Exchange Manager</h3></div>
+        <div id="exchangesList" class="list"></div>
+      </div>
+
+      <!-- Watchlist + Risk -->
+      <div class="grid" style="gap:14px">
+        <div class="tile">
+          <div class="section-title"><h3 style="margin:0">🪙 Coins Watchlist</h3></div>
+          <div class="flex" style="margin-bottom:8px">
+            <input id="coinInput" placeholder="ex: BTC/USDT" class="btn ghost" style="padding:8px 10px;width:60%">
+            <button id="addCoin" class="btn small">➕ Ajouter</button>
+            <button id="scan" class="btn small warn">🔍 Scan Top Gainers</button>
+          </div>
+          <div id="watchlist" class="list"></div>
+          <div class="hint">NB: la watchlist est synchronisée avec l'API si disponible, sinon fallback local.</div>
+        </div>
+
+        <div class="tile">
+          <div class="section-title"><h3 style="margin:0">⚖️ Risk Management</h3></div>
+          <div class="flex"><div class="mr-auto">Max Position Size (%)</div><div id="r_ms_lab" class="pill">—</div></div>
+          <input id="r_ms" type="range" class="slider" min="1" max="100" value="25" />
+          <div class="flex" style="margin-top:10px"><div class="mr-auto">Stop Loss (%)</div><div id="r_sl_lab" class="pill">—</div></div>
+          <input id="r_sl" type="range" class="slider" min="0" max="50" value="5" />
+          <div class="flex" style="margin-top:10px"><div class="mr-auto">Take Profit (%)</div><div id="r_tp_lab" class="pill">—</div></div>
+          <input id="r_tp" type="range" class="slider" min="0" max="100" value="15" />
+          <div class="flex" style="margin-top:10px"><div class="mr-auto">Max Open Trades</div><div id="r_mot_lab" class="pill">—</div></div>
+          <input id="r_mot" type="range" class="slider" min="1" max="20" value="5" />
+          <div class="flex" style="margin-top:12px">
+            <button id="saveRisk" class="btn good">💾 Enregistrer</button>
+            <span id="riskSaved" class="hint"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Positions + Emergency -->
+    <section class="grid" style="grid-template-columns: 2fr 1fr; margin-top:14px">
+      <div class="tile">
+        <div class="section-title"><h3 style="margin:0">📊 Open Positions & PnL</h3></div>
+        <div style="overflow:auto">
+          <table class="table" id="positionsTable">
+            <thead>
+              <tr>
+                <th>Symbol</th><th>Strategy</th><th>Qty</th><th>Entry</th><th>Current</th><th>SL</th><th>TP</th><th>PnL</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="section-title"><h3 style="margin:0">🚨 Emergency Controls</h3></div>
+        <div class="flex" style="gap:8px">
+          <button id="btnStop" class="btn bad">🛑 STOP ALL</button>
+          <button id="btnPause" class="btn warn">⏸️ PAUSE</button>
+          <button id="btnResume" class="btn good">▶️ RESUME</button>
+        </div>
+        <div class="footer hint" id="engineStatus" style="margin-top:12px">Status: —</div>
+      </div>
+    </section>
+
+    <!-- Full strategies + Market + Logs -->
+    <section class="grid" style="grid-template-columns: 2fr 1fr; margin-top:14px">
+      <div class="tile">
+        <div class="section-title">
+          <h3 style="margin:0">🧠 Stratégies AI — Liste complète avec Indicateurs Techniques</h3>
+          <span class="pill">filtres</span>
+        </div>
+        <div class="tabs" style="margin-bottom:10px">
+          <button class="btn small ghost" data-filter="all">Toutes</button>
+          <button class="btn small ghost" data-filter="spot">Spot</button>
+          <button class="btn small ghost" data-filter="futures">Futures</button>
+          <button class="btn small ghost" data-filter="active">Activées</button>
+        </div>
+        <div id="strategiesFull" class="list" style="max-height:220px"></div>
+      </div>
+      <div class="tile">
+        <div class="section-title"><h3 style="margin:0">📜 Live Activity Log</h3></div>
+        <div id="log" class="log">[init] attente des événements…</div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // ============= CONFIG =============
+    const API = {
+      pnl: "/api/pnl",
+      wallet: "/api/wallet",
+      positions: "/api/positions",
+      strategies: (mode) => `/api/strategies?mode=${encodeURIComponent(mode)}`,
+      strategiesToggle: "/api/strategies/toggle",
+      exchanges: "/api/exchanges",
+      exchangesToggle: "/api/exchanges/toggle",
+      riskGet: "/api/risk/get",
+      riskUpdate: "/api/risk/update",
+      regime: "/api/market-regime",
+      logs: "/api/logs",
+      engine: "/api/engine"
+    };
+
+    let currentMode = "spot";
+    let strategiesCache = [];
+    let watchlistLocal = JSON.parse(localStorage.getItem("sop_watchlist")||"[]");
+
+    // ============= UTIL =============
+    const $ = (q)=>document.querySelector(q);
+    const el = (tag, cls, txt)=>{const n=document.createElement(tag); if(cls) n.className=cls; if(txt!==undefined) n.textContent=txt; return n;}
+    const fmtUsd = (n)=> (n===null||n===undefined||isNaN(n))? "—" :
+      (Number(n)>=0? "$"+Number(n).toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2}) :
+                     "-$"+Math.abs(Number(n)).toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2}));
+    const fmtQty = (n)=> (n===null||n===undefined||isNaN(n))? "0" : Number(n).toFixed(6);
+    const safe = (o,k,def=null)=> (o&&k in o)? o[k]:def;
+
+    async function jget(url){
+      const r = await fetch(url, {cache:"no-store"});
+      if(!r.ok) throw new Error(url+" → "+r.status);
+      const ct = r.headers.get("content-type")||"";
+      if(ct.includes("application/json")) return r.json();
+      return r.text();
+    }
+    async function jpost(url, body){
+      const r = await fetch(url, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body||{})});
+      if(!r.ok) throw new Error(url+" → "+r.status);
+      try { return await r.json(); } catch { return {}; }
+    }
+
+    function setMode(newMode){
+      currentMode = newMode;
+      $("#kpiMode").textContent = newMode.toUpperCase();
+      $("#modeTag").textContent = newMode.toUpperCase();
+      ["spot","futures","hybrid"].forEach(m=>{
+        const b = $("#tab-"+m);
+        b.classList.toggle("primary", m===newMode);
+        b.classList.toggle("ghost", m!==newMode);
+      });
+      loadStrategies();
+    }
+
+    // ============= LOADERS =============
+    async function loadKpis(){
+      try {
+        const [pnl, wallet, regime, exchs] = await Promise.all([
+          jget(API.pnl).catch(()=>({total:null})),
+          jget(API.wallet).catch(()=>({balance_usdt:null})),
+          jget(API.regime).catch(()=>({regime:"—", volatility:"—", trend_strength:"—", confidence:"—"})),
+          jget(API.exchanges).catch(()=>[])
+        ]);
+
+        $("#kpiStatus").textContent = "ONLINE";
+        $("#kpiStatus").className = "kpi good";
+        const pnlVal = pnl.total_pnl ?? pnl.total ?? 0;
+        $("#kpiPnl").textContent = pnlVal>=0? "+"+fmtUsd(pnlVal): fmtUsd(pnlVal);
+        $("#kpiPnl").className = "kpi " + (pnlVal>=0? "good":"bad");
+        $("#kpiWallet").textContent = fmtUsd(wallet.balance_usdt);
+        $("#kpiRegime").textContent = safe(regime,"regime","—");
+        $("#kpiConf").textContent = (safe(regime,"confidence","—")) + "%";
+        const actives = exchs.filter(e=>e.enabled).length;
+        $("#kpiExch").textContent = `${actives}/${exchs.length||0}`;
+      } catch(e){ 
+        console.warn("KPI error:", e); 
+        $("#kpiStatus").textContent = "OFFLINE";
+        $("#kpiStatus").className = "kpi bad";
+      }
+    }
+
+    async function loadPositions(){
+      try {
+        const items = await jget(API.positions).catch(()=>[]);
+        const tbody = $("#positionsTable tbody");
+        tbody.innerHTML = "";
+        for(const p of items){
+          const tr = el("tr","");
+          const qty = p.qty ?? p.quantity ?? p.size ?? p.amount ?? 0;
+          tr.append(
+            td(p.symbol||"—"),
+            td(p.strategy||"—"),
+            td(fmtQty(qty)),
+            td(fmtUsd(p.entry||p.entry_price)),
+            td(fmtUsd(p.current||p.current_price||p.mark_price||p.last||p.price)),
+            td(fmtUsd(p.sl||p.stop_loss)),
+            td(fmtUsd(p.tp||p.take_profit)),
+            td(fmtUsd(p.pnl||p.unrealized_pnl||0))
+          );
+          tbody.append(tr);
+        }
+        if(items.length===0){
+          const tr = el("tr",""); const td1 = el("td","muted","No open positions");
+          td1.colSpan=8; tr.append(td1); tbody.append(tr);
+        }
+      } catch(e){
+        console.warn("Positions error:", e);
+      }
+      function td(txt){ const c=el("td"); c.textContent=txt; return c; }
+    }
+
+    async function loadStrategies(){
+      try {
+        const data = await jget(API.strategies(currentMode)).catch(()=>({strategies:[], count:0, mode:currentMode}));
+        const list = $("#strategiesList"); list.innerHTML="";
+        strategiesCache = data.strategies||[];
+        for(const s of strategiesCache){
+          const row = el("div","card");
+          const top = el("div","card-row");
+          const left = el("div");
+          left.append(el("div","name", s.name || s.id),
+                      el("div","muted", "Score: "+(s.score??"—")));
+          const sw = buildSwitch(s.enabled, async (state)=>{
+            try{
+              await jpost(API.strategiesToggle, {strategy_id: s.id, enabled: state});
+              toast(`Stratégie ${s.id} → ${state? "ENABLE":"DISABLE"}`);
+              loadStrategiesFull();
+            }catch(e){ toast("Erreur toggle stratégie: "+e, true); }
+          });
+          top.append(left, sw); row.append(top);
+          list.append(row);
+        }
+        loadStrategiesFull();
+      } catch(e){ console.warn("Strategies error:", e); }
+    }
+
+    async function loadExchanges(){
+      try{
+        const ex = await jget(API.exchanges).catch(()=>[]);
+        const list = $("#exchangesList"); list.innerHTML="";
+        for(const x of ex){
+          const row = el("div","card");
+          const r1 = el("div","card-row");
+          const left = el("div");
+          left.append(el("div","name", x.name||x.id),
+                      el("div","muted", (x.enabled? "🟢 Online":"🔴 Offline")));
+          const sw = buildSwitch(!!x.enabled, async (state)=>{
+            try{
+              await jpost(API.exchangesToggle, {exchange_id: x.id, enabled: state});
+              toast(`Exchange ${x.id} → ${state? "ON":"OFF"}`);
+              loadKpis();
+            }catch(e){ toast("Erreur toggle exchange: "+e, true); }
+          });
+          r1.append(left, sw); row.append(r1); list.append(row);
+        }
+      }catch(e){ console.warn("Exchanges error:", e); }
+    }
+
+    async function loadRisk(){
+      try{
+        const r = await jget(API.riskGet).catch(()=>null);
+        const ms = r?.max_position_size ?? 25,
+              sl = r?.stop_loss ?? 5,
+              tp = r?.take_profit ?? 15,
+              mot= r?.max_open_trades ?? 5;
+        $("#r_ms").value = ms; $("#r_sl").value = sl; $("#r_tp").value = tp; $("#r_mot").value = mot;
+        $("#r_ms_lab").textContent = ms+"%"; $("#r_sl_lab").textContent = sl+"%";
+        $("#r_tp_lab").textContent = tp+"%"; $("#r_mot_lab").textContent = mot;
+      }catch(e){ console.warn("Risk get error:", e); }
+    }
+
+    async function saveRisk(){
+      const body = {
+        max_position_size: Number($("#r_ms").value),
+        stop_loss: Number($("#r_sl").value),
+        take_profit: Number($("#r_tp").value),
+        max_open_trades: Number($("#r_mot").value)
+      };
+      try{
+        await jpost(API.riskUpdate, body);
+        $("#riskSaved").textContent = "Paramètres sauvegardés ✔";
+        setTimeout(()=>$("#riskSaved").textContent="", 2000);
+      }catch(e){
+        $("#riskSaved").textContent = "Erreur de sauvegarde ❌";
+      }
+    }
+
+    async function loadLogs(){
+      try{
+        const raw = await jget(API.logs).catch(()=>"[no logs]");
+        $("#log").textContent = (typeof raw==="string")? raw : JSON.stringify(raw, null, 2);
+        $("#log").scrollTop = $("#log").scrollHeight;
+      }catch(e){ /* ignore */ }
+    }
+
+    async function engineAction(action){
+      try{
+        await jpost(API.engine, {action});
+        toast("Engine: "+action);
+        $("#engineStatus").textContent = "Status: "+action.toUpperCase()+" sent";
+      }catch(e){ toast("Erreur engine "+action+": "+e, true); }
+    }
+
+    // ============= FULL STRATEGIES LIST =============
+    function loadStrategiesFull(filter="all"){
+      const root = $("#strategiesFull"); root.innerHTML="";
+      const source = strategiesCache || [];
+      const list = source.filter(s=>{
+        if(filter==="all") return true;
+        if(filter==="active") return !!s.enabled;
+        if(filter==="spot")   return (s.mode||"").toLowerCase()==="spot";
+        if(filter==="futures")return (s.mode||"").toLowerCase()==="futures";
+        return true;
+      });
+      for(const s of list){
+        const row = el("div","card");
+        const line1 = el("div","card-row");
+        const left = el("div");
+        left.append(el("div","name", (s.name||s.id)+"  "),
+                    el("div","muted", `Mode: ${(s.mode||'—').toUpperCase()} • Score: ${s.score??'—'}`));
+        const sw = buildSwitch(!!s.enabled, async (state)=>{
+          try{
+            await jpost(API.strategiesToggle, {strategy_id: s.id, enabled: state});
+            toast(`Stratégie ${s.id} → ${state? "ENABLE":"DISABLE"}`);
+            loadStrategies();
+          }catch(e){ toast("Erreur toggle stratégie: "+e, true); }
+        });
+        line1.append(left, sw);
+        const line2 = el("div","hint");
+        line2.textContent = "Indicateurs: "+(s.indicators? s.indicators.join(", "): "RSI, MACD, Bollinger, S/R");
+        row.append(line1, line2);
+        root.append(row);
+      }
+    }
+
+    // ============= UI helpers =============
+    function buildSwitch(initial, onChange){
+      const w = el("div","switch"+(initial?" on":"" )); w.role="switch"; w.ariaChecked=initial?"true":"false";
+      w.addEventListener("click", async ()=>{
+        w.classList.toggle("on");
+        const state = w.classList.contains("on");
+        try{ await onChange(state); }
+        catch(e){ w.classList.toggle("on"); }
+      });
+      return w;
+    }
+    function toast(msg, isErr=false){
+      console[isErr?"error":"log"](msg);
+      const d = el("div","pill", msg);
+      Object.assign(d.style,{position:"fixed",right:"14px",bottom:"14px",zIndex:9999,background:isErr?"#ff4d4f":"#2bc27a",color:isErr?"#2a0002":"#041a0e",boxShadow:"0 10px 30px rgba(0,0,0,.35)"});
+      document.body.append(d); setTimeout(()=>d.remove(),1800);
+    }
+
+    // ============= Watchlist =============
+    async function refreshWatchlist(){
+      const list = $("#watchlist"); list.innerHTML="";
+      for(const c of watchlistLocal){
+        const row = el("div","card");
+        const r = el("div","card-row");
+        const left = el("div"); left.append(el("div","name", c));
+        const btn = el("button","btn small bad","🗑 Supprimer");
+        btn.onclick = ()=>{ watchlistLocal = watchlistLocal.filter(x=>x!==c); saveWatchlist(); refreshWatchlist(); }
+        r.append(left, btn); row.append(r); list.append(row);
+      }
+    }
+    function saveWatchlist(){ localStorage.setItem("sop_watchlist", JSON.stringify(watchlistLocal)); }
+
+    // ============= WIRES =============
+    $("#tab-spot").onclick    = ()=>setMode("spot");
+    $("#tab-futures").onclick = ()=>setMode("futures");
+    $("#tab-hybrid").onclick  = ()=>setMode("hybrid");
+    $("#saveRisk").onclick    = saveRisk;
+    $("#r_ms").oninput=e=>$("#r_ms_lab").textContent=e.target.value+"%";
+    $("#r_sl").oninput=e=>$("#r_sl_lab").textContent=e.target.value+"%";
+    $("#r_tp").oninput=e=>$("#r_tp_lab").textContent=e.target.value+"%";
+    $("#r_mot").oninput=e=>$("#r_mot_lab").textContent=e.target.value;
+    $("#btnStop").onclick   = ()=>engineAction("stop");
+    $("#btnPause").onclick  = ()=>engineAction("pause");
+    $("#btnResume").onclick = ()=>engineAction("resume");
+    $("#addCoin").onclick   = ()=>{
+      const v = ($("#coinInput").value||"").trim().toUpperCase();
+      if(!v) return; if(!watchlistLocal.includes(v)) watchlistLocal.push(v);
+      $("#coinInput").value=""; saveWatchlist(); refreshWatchlist();
+    };
+    $("#scan").onclick = ()=>toast("Scan top gainers: à brancher sur /api/scan-top-gainers");
+
+    document.querySelectorAll('[data-filter]').forEach(b=>{
+      b.addEventListener('click', ()=>loadStrategiesFull(b.getAttribute('data-filter')));
+    });
+
+    // ============= INIT & POLL =============
+    async function init(){
+      setMode("spot");
+      await Promise.all([loadKpis(), loadPositions(), loadExchanges(), loadRisk(), loadLogs()]);
+      refreshWatchlist();
+      poll();
+    }
+    function poll(){
+      setInterval(()=>{
+        loadKpis(); loadPositions(); loadLogs();
+      }, 3000);
+      setInterval(()=>{ loadExchanges(); loadStrategies(); }, 20000);
+    }
+    init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "last_update": "2025-11-05T09:30:00Z",
+  "exchanges": [
+    {
+      "id": "bybit_spot",
+      "name": "Bybit Spot",
+      "enabled": true,
+      "api_configured": true
+    },
+    {
+      "id": "bybit_futures",
+      "name": "Bybit Futures",
+      "enabled": true,
+      "api_configured": true
+    },
+    {
+      "id": "binance",
+      "name": "Binance",
+      "enabled": false,
+      "api_configured": false
+    },
+    {
+      "id": "okx",
+      "name": "OKX",
+      "enabled": false,
+      "api_configured": false
+    },
+    {
+      "id": "kucoin",
+      "name": "KuCoin",
+      "enabled": false,
+      "api_configured": false
+    }
+  ]
+}
